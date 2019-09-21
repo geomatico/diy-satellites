@@ -1,0 +1,9 @@
+# flask cache
+__pycache__/
+
+# vscode settings
+.vscode/
+
+*.log
+
+password.py
