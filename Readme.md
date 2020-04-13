@@ -1,4 +1,4 @@
-##Instructions:
+## Instructions:
  ```
  mv password_.py password.py     #Database credentials hardcoded in password_.py (for now, do not deploy), change name to password.py
  sudo docker-compose up
@@ -8,9 +8,9 @@
  
  To shut down, pres `ctrl-c` and wait, it sometimes takes a while.
  ___
-##Debugign/Development
+## Debugign/Development
 You can know edit the app.py file and it will reload automaticaly, so you only need to refresh the page. 
-###Flask
+### Flask
 Best way is to not use nginx/gunicorn in development beacause it interferes with the flask debuging system. So the best way is to run:
 ```
 docker exec -it diy-satellites_flask_1 /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"
@@ -23,16 +23,16 @@ The logs will be printed in the same shell.
  
 Go then to http://localhost:5000
 To get to specific directorys do like this: http://localhost:5000/api/getall/
-##Viewing logs
+## Viewing logs
 Logs are automaticaly printed in the terminal together when using docker-compose. Python app.py prints extra to the mylog.log file. This can be used to print to the file and track things for example in the api_getall() funktion there is an example of how to use it.
 ___
-##Clean up
+## Clean up
 To delete database files and all folder/files that outside the permisions of the host user:
 ```
 sudo bash clean_rm.sh
 ```
 ___
-##Useful comands 
+## Useful comands 
 `docker ps -a` list all running conteiner with extra information
 `docker-compose down` tu shutdown the conteiners opened by the docker-compose.yml and `docker-compose up`
 `docker-compose build` you have to build image manualy when `Dockerfile` is changed 
