@@ -1,0 +1,5 @@
+# database should not be uploaded
+databse/
+__pycache__/
+temp/
+*.log

@@ -1,3 +1,4 @@
+// Pablo Fernández R. 
 var map;
 var heat = null;
 var heatLayers = [];
@@ -27,7 +28,7 @@ function initmap() {
         layers: [osm]
     });
 
-     processData("");///////////////////////////77
+    processData("");///////////////////////////77
     //{ "type": "Point", "coordinates": [-3.693736, 40.4103952] }
     var a = { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-3.693736, 40.4103952] } };
     var campus = {
@@ -66,7 +67,8 @@ function initmap() {
     //     onEachFeature: onEachFeature,
     // }).addTo(map);
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://cansat.mooo.com/api/getall');
+    let host = window.location.hostname;
+    xhr.open('GET', 'http://' + host + '/api/getall');
     //xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.responseType = 'json';
     xhr.onload = function () {

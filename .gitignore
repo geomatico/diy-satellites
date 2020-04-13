@@ -1,9 +1,11 @@
 # flask cache
-__pycache__/
+__pycache__
 
+databse
+temp
 # vscode settings
-.vscode/
+.vscode
 
 *.log
-
+# we don't want our database credentials uploaded
 password.py

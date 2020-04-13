@@ -1,8 +1,12 @@
+# Pablo Fernández R.
+import logging.handlers
+from logging import FileHandler
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
 from geoalchemy2 import Geometry
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
+from werkzeug.debug import DebuggedApplication
 import csv
 import os.path
 from config import Config
@@ -12,8 +16,6 @@ from datetime import datetime
 app = Flask(__name__)
 app.config.from_object(Config)
 
-from logging import FileHandler
-import logging.handlers
 file_handler = FileHandler('mylog.log')
 file_handler.setLevel(logging.DEBUG)
 app.logger.addHandler(file_handler)
@@ -25,6 +27,7 @@ db.init_app(app)
 # def internal_error(exception):
 #     app.logger.error(exception)
 #     return render_template('500.html'), 500
+
 
 @app.route("/")
 def main_html():
@@ -53,33 +56,36 @@ def api_getall():
      ),
      \'type\',       \'Feature\'
     )  FROM data;"""
-    
+
     out = "{\"type\":\"FeatureCollection\",\"features\":["
-        
+
     for q in db.session.execute(querry):
         for d in q:
-            out+=str(d).replace('\'','\"') #.split('(')[1].split(')')[0]
-        out+=","
-    out = out[:-1] # remove "," at the end
-    out+="]}"
-    #db.session
+            out += str(d).replace('\'', '\"')  # .split('(')[1].split(')')[0]
+        out += ","
+    out = out[:-1]  # remove "," at the end
+    out += "]}"
+    # db.session
     #a = db.session.query(func.ST_AsGeoJSON(Dataline.query.all())).scalar()
-    #db.session.query(func.ST_AsGeoJSON(Dataline.geo)).all()
+    # db.session.query(func.ST_AsGeoJSON(Dataline.geo)).all()
     #a = jsonify(ast.literal_eval(Dataline.query.first().geo.ST_AsGeoJSON()))
     with open('mylog.log', 'a') as the_file:
         the_file.write('access  {}\n'.format(datetime.now()))
-        #pass
+        # pass
     for d in db.session.execute(querry):
-        pass #db.alll()
+        pass  # db.alll()
 
-    return out # str(db.session.query(func.ST_AsGeoJSON(Dataline.geo)).first()).split('\'')[1] # "{\"type\":\"Feature\",\"geometry\":"+(str(db.session.query(func.ST_AsGeoJSON(Dataline.geo)).first()).split('\'')[1])+"}"
+    # str(db.session.query(func.ST_AsGeoJSON(Dataline.geo)).first()).split('\'')[1] # "{\"type\":\"Feature\",\"geometry\":"+(str(db.session.query(func.ST_AsGeoJSON(Dataline.geo)).first()).split('\'')[1])+"}"
+    return out
 # out # (type(req['n']))
 # https://stackoverflow.com/questions/23740548/how-do-i-pass-variables-and-data-from-php-to-javascript
 # https://stackoverflow.com/questions/1873083/in-postgis-how-do-i-find-all-points-within-a-polygon
     # https://postgis.net/workshops/postgis-intro/spatial_relationships.html#st-within-and-st-contains
 
-@app.route("/api/get/") #https://ipfs-sec.stackexchange.cloudflare-ipfs.com/gis/A/question/16374.html
-def api_get(): #TODO only numbers can be pass
+
+# https://ipfs-sec.stackexchange.cloudflare-ipfs.com/gis/A/question/16374.html
+@app.route("/api/get/")
+def api_get():  # TODO only numbers can be pass
     querry = """SELECT json_build_object(
     \'geometry\',   ST_AsGeoJSON(geo)::json,
     \'properties\', json_build_object(
@@ -100,63 +106,74 @@ def api_get(): #TODO only numbers can be pass
      ),
      \'type\',       \'Feature\'
     )  FROM data;"""
-    
+
     out = "{\"type\":\"FeatureCollection\",\"features\":["
-        
+
     for q in db.session.execute(querry):
         for d in q:
-            out+=str(d).replace('\'','\"') #.split('(')[1].split(')')[0]
-        out+=","
-    out = out[:-1] # remove "," at the end
-    out+="]}"
-    #db.session
+            out += str(d).replace('\'', '\"')  # .split('(')[1].split(')')[0]
+        out += ","
+    out = out[:-1]  # remove "," at the end
+    out += "]}"
+    # db.session
     #a = db.session.query(func.ST_AsGeoJSON(Dataline.query.all())).scalar()
-    #db.session.query(func.ST_AsGeoJSON(Dataline.geo)).all()
+    # db.session.query(func.ST_AsGeoJSON(Dataline.geo)).all()
     #a = jsonify(ast.literal_eval(Dataline.query.first().geo.ST_AsGeoJSON()))
     with open('mylog.log', 'a') as the_file:
         the_file.write('access  {}\n'.format(datetime.now()))
-        #pass
+        # pass
     for d in db.session.execute(querry):
-        pass #db.alll()
+        pass  # db.alll()
 
     return out
 
+
 @app.route("/api/send/")
 def api_send():
-    #print(Dataline.add_dataline("7/7/19","17:57:50",40.4103952,-3.693736+0.00001*int(request.args.get('n')),0,26.58,32,618.9,941.09,34.99,2.97,0,0,0,2))
+    # print(Dataline.add_dataline("7/7/19","17:57:50",40.4103952,-3.693736+0.00001*int(request.args.get('n')),0,26.58,32,618.9,941.09,34.99,2.97,0,0,0,2))
     n = request.args.get('n')
-    return str(-3.693736+0.00001*int(request.args.get('n')))+'\n'  # (type(req['n']))
+    # (type(req['n']))
+    return str(-3.693736+0.00001*int(request.args.get('n')))+'\n'
 # https://postgis.net/workshops/postgis-intro/indexing.html#analyzing  #update its internal statistics
 # https://postgis.net/workshops/postgis-intro/indexing.html#vacuuming
 
-@app.route('/getfile', methods=['GET','POST'])
+
+@app.route('/getfile', methods=['GET', 'POST'])
 def getfile():
     if request.method == 'POST':
 
         # for secure filenames. Read the documentation.
         file = request.files['myfile']
-        filename = secure_filename(file.filename) 
+        filename = secure_filename(file.filename)
 
         # os.path.join is used so that paths work in every operating system
-        #file.save(os.path.join("temp",filename))
-        file.save(os.path.join("/data/www/temp",filename))
+        # file.save(os.path.join("temp",filename))
+        file.save(os.path.join("/data/www/temp", filename))
 
-        with open(os.path.join("/data/www/temp",filename)) as f:
+        with open(os.path.join("/data/www/temp", filename)) as f:
             csvreader = csv.reader(f, delimiter=',')
-            next(csvreader)# first line contains labels
-            next(csvreader)# second line is empty
-            for row in csvreader:
-               Dataline.add_dataline(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14])
+            next(csvreader)  # first line contains labels
+            next(csvreader)  # second line is empty
+            # 0     1    2       3     4   5        6        7    8   9    10      11    12       13   14
+            # .csv = Lat, Long, AltGPS, Temp, Hum, AltBar, Pressure, NO2, CO, NH3, PM1.0, PM2.5, PM10.0 ,Date, Time
+            #add_dataline = cls, Date, Time, Latitude, Longitude, AltGPS, Temp, Hum, AltBar, Pressure, NO2, CO, NH3, PM1_0, PM2_5, PM10_0
+            for row in csvreader:  # TODO adapt to NOTO .csv form
+                Dataline.add_dataline(row[13], row[14], row[0], row[1], row[2], row[3], row[4], row[5], row[6],
+                                      row[7], row[8], row[9], row[10], row[11], row[12])
+                # Dataline.add_dataline(row[0], row[1], row[2], row[3], row[4], row[5], row[6],
+                #                       row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14])
             f.close()
-            os.remove(os.path.join("/data/www/temp",filename))
-        
+            os.remove(os.path.join("/data/www/temp", filename))
+
         return redirect('/')
     else:
         result = request.args.get['myfile']
-        result+="ERROROROR"
+        result += "ERROROROR"
     return result
 
 # borrows heavily from the wonderlful tutorial from jgriffith23: https://github.com/jgriffith23/postgis-tutorial
+
+
 class Dataline(db.Model):
     """A datapoint collection aka dataline with Date & Timestamp"""
 
@@ -188,9 +205,11 @@ class Dataline(db.Model):
     #     return City.query.filter(func.ST_Distance_Sphere(City.geo, self.geo) < radius).all()
 
     @classmethod
-    def add_dataline(cls ,Date, Time, Latitude, Longitude, AltGPS, Temp, Hum, AltBar, Pressure, NO2, CO, NH3, PM1_0, PM2_5, PM10_0 ):
+    def add_dataline(cls, Date, Time, Latitude, Longitude, AltGPS, Temp, Hum, AltBar, Pressure, NO2, CO, NH3, PM1_0, PM2_5, PM10_0):
         """Put a new dataline in the database."""
-        db.session.add(Dataline(DateTime=datetime.now(),geo =  'POINT({} {})'.format(Longitude, Latitude) ,Latitude=Latitude, Longitude=Longitude, AltGPS=AltGPS, Temp=Temp, Hum=Hum, AltBar=AltBar, Pressure=Pressure, NO2=NO2, CO=CO, NH3=NH3, PM1_0=PM1_0, PM2_5=PM2_5, PM10_0=PM10_0))
+        # TODO DateTime
+        db.session.add(Dataline(DateTime=datetime.now(), geo='POINT({} {})'.format(Longitude, Latitude), Latitude=Latitude, Longitude=Longitude,
+                                AltGPS=AltGPS, Temp=Temp, Hum=Hum, AltBar=AltBar, Pressure=Pressure, NO2=NO2, CO=CO, NH3=NH3, PM1_0=PM1_0, PM2_5=PM2_5, PM10_0=PM10_0))
         db.session.commit()
 
 
@@ -198,5 +217,6 @@ with app.app_context():
     db.create_all()
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
-
-
+    print("drfgklhjñḱ")
+    if app.debug:
+        app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)

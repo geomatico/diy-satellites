@@ -1,3 +1,4 @@
+// Pablo Fernández R. 
 var map;
 var heat = null;
 var heatLayers = [];
