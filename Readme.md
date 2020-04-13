@@ -34,8 +34,9 @@ sudo bash clean_rm.sh
 ___
 ## Useful comands 
 `docker ps -a` list all running conteiner with extra information
-`docker-compose down` tu shutdown the conteiners opened by the docker-compose.yml and `docker-compose up`
 `docker-compose build` you have to build image manualy when `Dockerfile` is changed 
+`docker-compose up -d` runs docker conteiners detacht, shut down with...
+`docker-compose down` tu shutdown the conteiners opened by the docker-compose.yml and `docker-compose up -d`
 ___
 # TODO
 * Change how .csv are read so that it reads the ones from https://github.com/silviatelo/NOTOS: 
