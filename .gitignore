@@ -13,3 +13,5 @@ password.py
 # webstorm
 
 .idea
+
+.env
