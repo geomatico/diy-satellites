@@ -1,8 +1,8 @@
 import os
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from distutils.util import strtobool
-
+load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -10,10 +10,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^_la4nq&pwzh8i1(s+er36e&f_+x#2r$j@-wid&kq3@%(_jpy!'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("debug")
 
 ALLOWED_HOSTS = []
 
@@ -69,11 +69,11 @@ WSGI_APPLICATION = 'diysatellite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'cansat',
-        'USER': 'cansat',
-        'PASSWORD': 'mysecretpassword',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv("APIDBNAME"),
+        'USER': os.getenv("APIDBUSER"),
+        'PASSWORD': os.getenv("APIDBPASSWORD"),
+        'HOST': os.getenv("APIDBHOST"),
+        'PORT': os.getenv("APIDBPORT"),
     }
 }
 
