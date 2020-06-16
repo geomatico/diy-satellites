@@ -5,7 +5,7 @@ from django.contrib.gis.db import models
 class Observation(models.Model):
     observationId = models.IntegerField(primary_key=True)
     datetime = models.DateTimeField()
-    geom = models.PointField()
+    geom = models.GeometryField()
     altGPS = models.FloatField(default=0.0)
     temp = models.FloatField(default=0.0)
     hum = models.FloatField(default=0.0)

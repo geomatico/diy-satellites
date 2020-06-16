@@ -1,9 +1,11 @@
-from rest_framework import serializers
+from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
 from api.models import Observation
 
 
-class ObservationSerializer(serializers.ModelSerializer):
+class ObservationSerializer(GeoFeatureModelSerializer):
     class Meta:
-        queryset = Observation.objects.all()
-        fields = "__all__"
+        model = Observation
+        geo_field = "geom"
+        fields = ('observationId', 'datetime', 'altGPS', 'temp', 'hum', 'altBar', 'pressure', 'NO2', 'CO',
+                  'NH3', 'PM1_0', 'PM2_5', 'PM10_0')

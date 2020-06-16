@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_gis',
     'api.apps.ApiConfig',
 ]
 
@@ -67,7 +68,7 @@ WSGI_APPLICATION = 'diysatellite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'cansat',
         'USER': 'cansat',
         'PASSWORD': 'mysecretpassword',
