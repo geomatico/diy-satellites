@@ -1,10 +1,9 @@
 import os
 from dotenv import load_dotenv
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from distutils.util import strtobool
+from django.utils.translation import ugettext_lazy as _
+
 load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -20,10 +19,10 @@ ALLOWED_HOSTS = [
     os.getenv("APISERVER")
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +37,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -65,7 +65,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'diysatellite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -79,7 +78,6 @@ DATABASES = {
         'PORT': os.getenv("APIDBPORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -99,11 +97,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'es-es'
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+)
 
 TIME_ZONE = 'Europe/Madrid'
 
@@ -113,8 +115,13 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOCALE_PATHS = (
+    BASE_DIR + '/locale/',
+)
+
+GRAPPELLI_ADMIN_TITLE = _('Administrator CANSAT')

@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-25 13:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: api/models.py:7
+msgid "datetime"
+msgstr "Fecha"
+
+#: api/models.py:8
+msgid "geom"
+msgstr "Geometría"
+
+#: api/models.py:9
+msgid "altGPS"
+msgstr ""
+
+#: api/models.py:10
+msgid "temp"
+msgstr "Temperatura"
+
+#: api/models.py:11
+msgid "hum"
+msgstr "Humedad"
+
+#: api/models.py:12
+msgid "altBar"
+msgstr ""
+
+#: api/models.py:13
+msgid "pressure"
+msgstr "Presión"
+
+#: api/models.py:22
+msgid "observation"
+msgstr "Observación"
+
+#: api/models.py:23
+msgid "observations"
+msgstr "Observaciones"
+
+#: api/models.py:27
+msgid "name"
+msgstr "Nombre"
+
+#: api/models.py:28
+msgid "surname"
+msgstr "Apellidos"
+
+#: api/models.py:34
+msgid "user"
+msgstr "Usuario"
+
+#: api/models.py:35
+msgid "users"
+msgstr "Usuarios"
+
+#: diysatellite/settings.py:106
+msgid "English"
+msgstr ""
+
+#: diysatellite/settings.py:107
+msgid "Spanish"
+msgstr ""
+
+#: diysatellite/settings.py:127
+msgid "Administrator CANSAT"
+msgstr "Administrador CANSAT"
