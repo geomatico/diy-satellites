@@ -23,13 +23,3 @@ class Observation(models.Model):
         verbose_name_plural = _('observations')
 
 
-class User(models.Model):
-    name = models.CharField(_('name'), max_length=30)
-    surname = models.CharField(_('surname'), max_length=50)
-    dni = models.CharField(unique=True, max_length=9)
-    password = models.CharField(max_length=20)
-    mail = models.EmailField()
-
-    class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
