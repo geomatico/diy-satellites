@@ -1,4 +1,8 @@
+from unittest import skip
+
 from django.test import TestCase, Client
+from rest_framework.test import RequestsClient
+import os
 
 
 class TestApi(TestCase):
@@ -14,10 +18,10 @@ class TestApi(TestCase):
 
         observations = response.json()
 
-        self.assertEqual(observations['features'][0]['properties']['altGPS'], 1.0)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(observations['features'][0]['properties']['altitude_gps'], 1.0)
         self.assertEqual(observations['features'][29]['properties']['pressure'], 12.0)
         self.assertEqual(len(observations['features']), 30)
-        self.assertEqual(response.status_code, 200)
 
     def test_get_observations_filter_by_date(self):
 
@@ -25,12 +29,13 @@ class TestApi(TestCase):
 
         init_date = "2020-06-16T00:00:00Z"
         end_date = "2020-06-16T00:00:10Z"
-        url = '/api/v1/observations/?init_date={init_date}&end_date={end_date}'.format(init_date=init_date, end_date=end_date)
+        url = '/api/v1/observations/?init_date={init_date}&end_date={end_date}'.format(init_date=init_date,
+                                                                                       end_date=end_date)
 
         response = client.get(url)
         observations = response.json()
 
-        self.assertEqual(observations['features'][0]['properties']['altGPS'], 1.0)
+        self.assertEqual(observations['features'][0]['properties']['altitude_gps'], 1.0)
         self.assertEqual(len(observations['features']), 11)
         self.assertEqual(response.status_code, 200)
 
@@ -43,4 +48,25 @@ class TestApi(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(observations['features']), 2)
+
+    @skip
+    def test_upload_csv(self):
+
+        client = RequestsClient()
+
+        url = 'http://localhost:8000/api/v1/upload/'
+        file_path = './fixtures/api_obser.csv'
+
+        payload = {}
+        headers = {
+            'Content-Disposition': 'attachment; filename={filename}'.format(filename=os.path.basename(file_path)),
+        }
+        files = [
+            ('file', open(file_path, 'r'))
+        ]
+        response = client.post(url, headers=headers, data=payload, files=files)
+
+        self.assertEqual(response.status_code, 200)
+
+
 
