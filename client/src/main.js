@@ -116,9 +116,15 @@ function loadHandler(event) {
 }
 
 function processData(csv) {
+    
+    BASE_URL = 'http://0.0.0.0:8000/'
+    API_URL = 'api/v1/'
+    URL = 'observations/'
+
     init_date = "2020-06-16T00:00:00Z"
     end_date = "2020-06-16T00:00:10Z"
-    fetch('http://0.0.0.0:8000/api/v1/observations?init_date&end_date')
+    const get_url = `${BASE_URL}${API_URL}${URL}?init_date=${init_date}&end_date=${end_date}`
+    fetch(get_url)
         .then(function(response) {
             console.log(response);
         });
