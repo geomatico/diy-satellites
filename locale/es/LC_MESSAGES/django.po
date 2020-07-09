@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-25 13:34+0200\n"
+"POT-Creation-Date: 2020-07-09 11:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: api/models.py:7
-msgid "datetime"
+#, fuzzy
+#| msgid "datetime"
+msgid "date_time"
 msgstr "Fecha"
 
 #: api/models.py:8
@@ -27,20 +29,20 @@ msgid "geom"
 msgstr "Geometría"
 
 #: api/models.py:9
-msgid "altGPS"
-msgstr ""
+msgid "altitude_gps"
+msgstr "altitud_gps"
 
 #: api/models.py:10
-msgid "temp"
-msgstr "Temperatura"
+msgid "temperature"
+msgstr "temperatura"
 
 #: api/models.py:11
-msgid "hum"
-msgstr "Humedad"
+msgid "humidity"
+msgstr "humedad"
 
 #: api/models.py:12
-msgid "altBar"
-msgstr ""
+msgid "altitude_bar"
+msgstr "altitud_bar"
 
 #: api/models.py:13
 msgid "pressure"
@@ -54,30 +56,32 @@ msgstr "Observación"
 msgid "observations"
 msgstr "Observaciones"
 
-#: api/models.py:27
-msgid "name"
-msgstr "Nombre"
-
-#: api/models.py:28
-msgid "surname"
-msgstr "Apellidos"
-
-#: api/models.py:34
-msgid "user"
-msgstr "Usuario"
-
-#: api/models.py:35
-msgid "users"
-msgstr "Usuarios"
-
-#: diysatellite/settings.py:106
+#: diysatellite/settings.py:110
 msgid "English"
 msgstr ""
 
-#: diysatellite/settings.py:107
+#: diysatellite/settings.py:111
 msgid "Spanish"
 msgstr ""
 
-#: diysatellite/settings.py:127
+#: diysatellite/settings.py:131
 msgid "Administrator CANSAT"
 msgstr "Administrador CANSAT"
+
+#~ msgid "temp"
+#~ msgstr "Temperatura"
+
+#~ msgid "hum"
+#~ msgstr "Humedad"
+
+#~ msgid "name"
+#~ msgstr "Nombre"
+
+#~ msgid "surname"
+#~ msgstr "Apellidos"
+
+#~ msgid "user"
+#~ msgstr "Usuario"
+
+#~ msgid "users"
+#~ msgstr "Usuarios"
