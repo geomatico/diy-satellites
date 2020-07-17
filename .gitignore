@@ -17,3 +17,5 @@ password.py
 diysatellite/.env
 
 /Flask 
+
+client/node_modules
