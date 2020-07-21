@@ -61,8 +61,7 @@ const drawOutput = (lines) => {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
-        onEachFeature: popupTemperature
-    }).addTo(map);
+    }).addTo(map).on('click', createTable);
 };
 
 const getColor = (x) => {
@@ -83,10 +82,92 @@ const style = (feature) => {
     };
 };
 
+
 const popupTemperature = (feature, layer) => {
     if (feature.properties && feature.properties.temperature) {
-        layer.bindPopup("<div><h3>"+feature.properties.temperature+"</div>")
+        layer.bindPopup("<div><h3>" + feature.properties.temperature + "</div>")
     }
 };
 
+const createTable = (event) => {
+    document.getElementById('openSidebarMenu').checked = true;
+    body = document.getElementsByClassName('desc')[0];
+    let element = document.getElementById('table');
+    if (typeof (element) != 'undefined' && element != null) {
+        let parentEl = element.parentElement;
+        parentEl.removeChild(element);
+    }
+
+    let table = document.createElement('table');
+    table.setAttribute('id', 'table');
+    table.style.borderColor = '#5E063D';
+    let tblBody = document.createElement('tbody');
+
+    for (let index in event.layer.feature.properties) {
+        let row = document.createElement('tr');
+        let cell1 = document.createElement('td');
+        cell1.style.color = 'white';
+        let cell2 = document.createElement('td');
+        cell2.style.color = 'white';
+        if (index == 'date_time') {
+            let date = new Date(event.layer.feature.properties[index]);
+            dateFormat = getDateFormat(date);
+            let cell3Content = document.createTextNode('date');
+            let cell4Content = document.createTextNode(dateFormat);
+            cell1.appendChild(cell3Content);
+            cell2.appendChild(cell4Content);
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            tblBody.appendChild(row);
+            let row1 = document.createElement('tr');
+            hourFormat = getHourFormat(date);
+            let cell3 = document.createElement('td');
+            cell3.style.color = 'white';
+            let cell4 = document.createElement('td');
+            cell4.style.color = 'white';
+            let cell5Content = document.createTextNode('time');
+            let cell6Content = document.createTextNode(hourFormat);
+            cell3.appendChild(cell5Content);
+            cell4.appendChild(cell6Content);
+            row1.appendChild(cell3);
+            row1.appendChild(cell4);
+            tblBody.appendChild(row1);
+        } else {
+            console.log(index);
+            cell1Content = document.createTextNode(index);
+            cell2Content = document.createTextNode(event.layer.feature.properties[index]);
+            cell1.appendChild(cell1Content);
+            cell2.appendChild(cell2Content);
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            tblBody.appendChild(row);
+        }
+    }
+    table.appendChild(tblBody);
+    body.appendChild(table);
+    table.setAttribute('border', '2');
+}
+
+const getDateFormat = (date) => {
+    let pad = '00';
+    let d = date.getDate().toString();
+    d = pad.substr(0, pad.length - d.length) + d;
+    let m = date.getMonth() + 1;
+    m = m.toString();
+    m = pad.substr(0, pad.length - m.length) + m;
+    day = [d, m, date.getFullYear()].join('/');
+    return day;
+}
+
+const getHourFormat = (date) => {
+    let h = date.getHours().toString();
+    let m = date.getMinutes().toString();
+    let s = date.getSeconds().toString();
+    let pad = '00';
+    h = pad.substr(0, pad.length - h.length) + h;
+    m = pad.substr(0, pad.length - m.length) + m;
+    s = pad.substr(0, pad.length - s.length) + s;
+    let hour = [h, m, s].join(':');
+    return hour;
+}
 initmap();
