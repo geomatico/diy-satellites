@@ -1,7 +1,6 @@
 let map;
 
 const initmap = () => {
-    // create the tile layer with correct attribution
     var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
     osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
@@ -16,19 +15,28 @@ const initmap = () => {
     L.control.zoom({
         position: 'topright'
     }).addTo(map);
-
-    downloadData();
 };
 
 
-const downloadData = () => {
+document.getElementById('submit').onclick = function(event){
+    let init = document.getElementById('start').value;
+    let init_date = new Date(init);
+    init_date = init_date.toISOString();
+    let end = document.getElementById('end').value;
+    let end_date = new Date(end);
+    /*Add one day because server SQL end_range add time 00:00:00*/
+    end_date.setDate(end_date.getDate() + 1);
+    end_date = end_date.toISOString();
+    downloadData(init_date, end_date);
+}
 
+const downloadData = (init_date, end_date) => {
     BASE_URL = 'http://0.0.0.0:8000/';
     API_URL = 'api/v1/';
     URL = 'observations/';
 
-    init_date = "2020-06-16T00:00:00Z";
-    end_date = "2020-06-18T00:00:10Z";
+/*     init_date = "2020-06-16T00:00:00Z";
+    end_date = "2020-06-18T00:00:10Z"; */
     const get_url = `${BASE_URL}${API_URL}${URL}?init_date=${init_date}&end_date=${end_date}`;
 
     fetch(get_url)
@@ -48,15 +56,6 @@ const handleErrors = (response) => {
 
 
 const drawOutput = (lines) => {
-    /*     var lineCoordinate = [];
-        for (let i in lines.features) {
-            var pointJson = lines.features[i];
-            let coord = pointJson.geometry.coordinates;
-            lineCoordinate.push([coord[1], coord[0]]);
-        }
-        L.polyline(lineCoordinate, { style: style }).addTo(map); */
-
-
     L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
@@ -91,7 +90,7 @@ const popupTemperature = (feature, layer) => {
 
 const createTable = (event) => {
     document.getElementById('openSidebarMenu').checked = true;
-    body = document.getElementsByClassName('desc')[0];
+    body = document.getElementById('datepicker');
     let element = document.getElementById('table');
     if (typeof (element) != 'undefined' && element != null) {
         let parentEl = element.parentElement;
@@ -133,7 +132,6 @@ const createTable = (event) => {
             row1.appendChild(cell4);
             tblBody.appendChild(row1);
         } else {
-            console.log(index);
             cell1Content = document.createTextNode(index);
             cell2Content = document.createTextNode(event.layer.feature.properties[index]);
             cell1.appendChild(cell1Content);

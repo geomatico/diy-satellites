@@ -286,9 +286,16 @@
           </div>
           <button class="dismiss" onclick="document.getElementById('openSidebarMenu').checked = false;" data-i18n="accept">Aceptar</button>
         </div>
-        <div class='logos'>
+<!--         <div class='logos'>
           <a href='http://geomatico.es' target='_blank'><img class='logo' src='img/logo.svg'></a>
-        </div>
+        </div> -->
+        <form id="datepicker">
+            <label for='start' class="dismiss">Fecha inicio:</label>
+            <input type='date' id='start' class="dismiss" name='init_date'>
+            <label for='start' class="dismiss">Fecha fin:   </label>
+            <input type='date' id='end' class="dismiss" name='end_date'>
+            <input type="button" id="submit" value="Submit" class="dismiss">
+        </form>
     </div>
     <div id='center' class="main center">
         <div id="map"></div>
