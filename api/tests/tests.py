@@ -49,24 +49,24 @@ class TestApi(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(observations['features']), 2)
 
-    @skip
+    #@skip
     def test_upload_csv(self):
 
         client = RequestsClient()
 
         url = 'http://localhost:8000/api/v1/upload/'
-        file_path = './fixtures/api_obser.csv'
+        file_path = './fixtures/api_obser2.csv'
 
         payload = {}
         headers = {
-            'Content-Disposition': 'attachment; filename={filename}'.format(filename=os.path.basename(file_path)),
+            'Content-Disposition': 'attachment; filename={filename}'#.format(filename=os.path.basename(file_path)),
         }
         files = [
             ('file', open(file_path, 'r'))
         ]
         response = client.post(url, headers=headers, data=payload, files=files)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 204)
 
 
 
