@@ -19,3 +19,4 @@ diysatellite/.env
 /Flask 
 
 client/node_modules
+client/.env

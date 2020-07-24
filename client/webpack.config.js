@@ -30,6 +30,7 @@ module.exports = {
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},
           ]),
+        new Dotenv()
     ],
     module: {
         rules: [

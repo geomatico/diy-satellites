@@ -31,13 +31,8 @@ document.getElementById('submit').onclick = function(event){
 }
 
 const downloadData = (init_date, end_date) => {
-    BASE_URL = 'http://0.0.0.0:8000/';
-    API_URL = 'api/v1/';
-    URL = 'observations/';
-
-/*     init_date = "2020-06-16T00:00:00Z";
-    end_date = "2020-06-18T00:00:10Z"; */
-    const get_url = `${BASE_URL}${API_URL}${URL}?init_date=${init_date}&end_date=${end_date}`;
+    
+    const get_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}?init_date=${init_date}&end_date=${end_date}`;
 
     fetch(get_url)
         .then(handleErrors)
@@ -170,15 +165,12 @@ const getHourFormat = (date) => {
 }
 
 const input = document.getElementById('fileinput');
-
 const onSelectFile = () => upload(input.files[0]);
 input.addEventListener('change', onSelectFile, false);
-const upload = (file) => {
-    BASE_URL = 'http://0.0.0.0:8000/';
-    API_URL = 'api/v1/';
-    URL = 'upload/';
 
-    const get_url = `${BASE_URL}${API_URL}${URL}`;
+const upload = (file) => {
+    const get_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
+    
     fetch(get_url, {
         method: 'POST',
         headers: {
