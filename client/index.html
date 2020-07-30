@@ -81,7 +81,7 @@
         }
         #sidebarMenu {
             position: fixed;
-            width: 300px;
+            width: 350px;
             top: 60px;
             bottom: 0;
             left: 0;
@@ -216,6 +216,7 @@
             right: 35px;
             margin-top: 30px;
         }
+      
         .dismiss {
             font-family: 'Varela Round', sans-serif;
             display: inline;
@@ -232,10 +233,13 @@
             font-weight: bold;
             font-size: 16px;
         }
+
         .datepk {
             font-family: 'Varela Round', sans-serif;
-            display: inline;
-            margin-right: 0;
+            font-size: 12px;
+            font-weight: normal;
+            margin-right: 30px;
+            float: right;    
             margin-left: auto;
             border: 0;
             background: none;
@@ -245,9 +249,8 @@
             border-radius: 6px;
             padding: 8px 15px;
             color:  #fff;
-            font-weight: bold;
-            font-size: 16px;
-        }
+            font-weight: bold;   
+        } 
 
         ::-webkit-scrollbar {
             -webkit-appearance: none;
@@ -274,6 +277,65 @@
             height: 40px;
             float: right;
             padding: 10px;
+        }
+
+        .datepickerLabel {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        input[type=date] {
+           background-color:#6d0545;
+           color: #fff;
+           float: right;
+           border: 0;
+        }
+
+        input[type=file] {
+           background-color:#6d0545;
+           color: #fff;
+           size: 1;
+           /* float: right; */
+           margin-left: auto;
+           margin-right: 15;
+        }
+        
+        input[type=button]{
+            font-family: 'Varela Round', sans-serif;
+            color: #fff;
+            float: right;            
+            font-size: 12px;
+            font-weight: normal;
+            margin-right: 15;
+            margin-left: auto;
+            border: 0;
+            background: none;
+            box-shadow: none;
+            background-color: #5e063D;
+            border-radius: 6px;
+            padding: 8px 15px;
+            font-weight: bold;   
+        }
+
+        legend {
+            color: #fff;
+        }
+
+        .observation_table {
+            border: 1px solid #fff;
+            border-collapse: collapse;
+            float: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px 5px 0px 10px;
+        }
+
+        fieldset {
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -306,18 +368,21 @@
           <a href='http://geomatico.es' target='_blank'><img class='logo' src='img/logo.svg'></a>
         </div> -->
         <form id="datepicker">
-            <label for='start' class="datepk">Fecha inicio:</label>
-            <input type='date' id='start' class="datepk" name='init_date'><br><br>
-            <label for='start' class="datepk">Fecha fin:   </label>
-            <input type='date' class="datepk" id='end' name='end_date'></br><br>
-            <input type="button" id="submit" class="datepk" value="submit"><br><br>
-        </form>
+            <fieldset>
+                <legend>Seleccione Fechas</legend>
+                <label for='start' class="datepickerLabel">Fecha inicio:</label>
+                <input type='date' id='start'  name='init_date'><br><br>
+                <label for='start' class="datepickerLabel">Fecha fin:</label>
+                <input type='date' id='end' name='end_date'></br><br>
+                <input type="button" id="submit" value="submit"><br>
+            </fieldset>
+        </form><br>
         <form id="uploadfile">
-            <div>
-                <label class="datepk">Select File</label>
-                <input type="file" id="fileinput" class="datepk">
-            </div><br>
+            <fieldset class="upload">
+                <legend>Select File</legend>
+                <input type="file" id="fileinput"><br><br>
             <button type="submit" class="datepk">upload</button>
+            </fieldset>
         </form>
     </div>
     <div id='center' class="main center">

@@ -20,3 +20,4 @@ diysatellite/.env
 
 client/node_modules
 client/.env
+.history/

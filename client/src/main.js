@@ -15,10 +15,13 @@ const initmap = () => {
     L.control.zoom({
         position: 'topright'
     }).addTo(map);
+
+    downloadData();
 };
 
 
 document.getElementById('submit').onclick = function(event){
+    map.removeLayer(marker);
     let init = document.getElementById('start').value;
     let init_date = new Date(init);
     init_date = init_date.toISOString();
@@ -30,11 +33,12 @@ document.getElementById('submit').onclick = function(event){
     downloadData(init_date, end_date);
 }
 
-const downloadData = (init_date, end_date) => {
-    
-    const get_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}?init_date=${init_date}&end_date=${end_date}`;
-
-    fetch(get_url)
+const downloadData = (init_date, end_date) => {    
+    let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
+    if (init_date !== undefined && end_date !== undefined){
+        observations_url = `${observations_url}?init_date=${init_date}&end_date=${end_date}`
+    }
+    fetch(observations_url)
         .then(handleErrors)
         .then(res => res.json())
         .then(res => drawOutput(res))
@@ -49,9 +53,9 @@ const handleErrors = (response) => {
     return response;
 };
 
-
+var marker;
 const drawOutput = (lines) => {
-    L.geoJson(lines, {
+    marker = L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
@@ -94,7 +98,8 @@ const createTable = (event) => {
 
     let table = document.createElement('table');
     table.setAttribute('id', 'table');
-    table.style.borderColor = '#5E063D';
+    table.setAttribute('class', 'observation_table');
+    /*table.style.borderColor = '#5E063D';*/
     let tblBody = document.createElement('tbody');
 
     for (let index in event.layer.feature.properties) {
@@ -169,18 +174,21 @@ const onSelectFile = () => upload(input.files[0]);
 input.addEventListener('change', onSelectFile, false);
 
 const upload = (file) => {
-    const get_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
-    
-    fetch(get_url, {
+    const upload_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
+
+    const formdata = new FormData();
+    formdata.append("file", file, file.name);
+
+    const requestOptions = {
         method: 'POST',
-        headers: {
-            'Content-Type': 'multipart/form-data',
-            'Content-Disposition': 'attachment;filename={file}'
-        },
-        body: file
-    }).then(handleErrors)
-      .then(success => console.log(success))
-      .catch(err => console.log(err));
+        body: formdata,
+        redirect: 'follow'
+    }
+    
+    fetch(upload_url, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 }
 
 initmap();
