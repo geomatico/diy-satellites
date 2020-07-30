@@ -4,10 +4,10 @@
  sudo docker-compose up
  ```
  There will be errors the fist time beacause the database must be initialised, wait till there is no more scroling in the terminal. Then open http://localhost
- 
- 
+
+
  To shut down, pres `ctrl-c` and wait, it sometimes takes a while.
- ___
+___
 ## Debugign/Development
 You can know edit the app.py file and it will reload automaticaly, so you only need to refresh the page. 
 ### Flask
@@ -20,7 +20,7 @@ and then inside the new shell
 python app.py
 ```
 The logs will be printed in the same shell.
- 
+
 Go then to http://localhost:5000
 To get to specific directorys do like this: http://localhost:5000/api/getall/
 ## Viewing logs
@@ -63,3 +63,35 @@ point_id |          DateTime          |                    geo                  
 ```bash
 python manage.py dumpdata api.observation --indent 4 > fixtures/observations.json
 ```
+
+## Arrancar cliente con webpack
+
+Primero deberemos comprobar si tenemos instalado npm y node y las versiones. Para ello:
+
+```bash
+npm --version
+6.10.0
+
+node --version
+v12.7.0
+```
+Las versiones deben ser 6.x.x para npm y 12.x.x para node
+
+Una vez comprobado deberemos instalar las dependencias
+
+```bash
+npm install
+```
+en la carpeta raiz del cliente donde se encuentre el `package.json`
+
+Esto creará la carpeta `node_modules` donde se instalarán todas las dependencias del proyecto.
+
+Para arrancar el proyecto en modo desarrollo
+
+```bash
+npm run start
+```
+
+que nos arrancará la aplicación en [http://localhost:8080](http://localhost:8080)
+
+La aplicación se recargará de manera automática con cada cambio.

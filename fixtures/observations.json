@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "date_time": "2020-06-16T00:00:00",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6938668 40.4106902)",
         "altitude_gps": 1.0,
         "temperature": 1.0,
         "humidity": 1.0,
@@ -23,7 +23,7 @@
     "pk": 2,
     "fields": {
         "date_time": "2020-06-16T00:00:01",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6939682 40.4106918)",
         "altitude_gps": 2.0,
         "temperature": 2.0,
         "humidity": 2.0,
@@ -34,7 +34,7 @@
         "nh3": 2.0,
         "pm1_0": 2.0,
         "pm2_5": 2.0,
-        "pm10_0": 2.0
+        "pm10_0": 1.2
     }
 },
 {
@@ -42,7 +42,7 @@
     "pk": 3,
     "fields": {
         "date_time": "2020-06-16T00:00:02",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6940685 40.4106927)",
         "altitude_gps": 3.0,
         "temperature": 3.0,
         "humidity": 3.0,
@@ -53,7 +53,7 @@
         "nh3": 3.0,
         "pm1_0": 3.0,
         "pm2_5": 3.0,
-        "pm10_0": 3.0
+        "pm10_0": 2.2
     }
 },
 {
@@ -61,7 +61,7 @@
     "pk": 4,
     "fields": {
         "date_time": "2020-06-16T00:00:03",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6941703 40.4106948)",
         "altitude_gps": 1.1,
         "temperature": 1.1,
         "humidity": 1.1,
@@ -72,7 +72,7 @@
         "nh3": 1.1,
         "pm1_0": 1.1,
         "pm2_5": 1.1,
-        "pm10_0": 1.1
+        "pm10_0": 3.0
     }
 },
 {
@@ -80,7 +80,7 @@
     "pk": 5,
     "fields": {
         "date_time": "2020-06-16T00:00:04",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.694273 40.4106948)",
         "altitude_gps": 3.0,
         "temperature": 3.0,
         "humidity": 3.0,
@@ -91,7 +91,7 @@
         "nh3": 3.0,
         "pm1_0": 3.0,
         "pm2_5": 3.0,
-        "pm10_0": 3.0
+        "pm10_0": 3.5
     }
 },
 {
@@ -99,7 +99,7 @@
     "pk": 6,
     "fields": {
         "date_time": "2020-06-16T00:00:05",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.694373 40.4106888)",
         "altitude_gps": 4.0,
         "temperature": 4.0,
         "humidity": 4.0,
@@ -110,7 +110,7 @@
         "nh3": 4.0,
         "pm1_0": 4.0,
         "pm2_5": 4.0,
-        "pm10_0": 4.0
+        "pm10_0": 8.0
     }
 },
 {
@@ -118,7 +118,7 @@
     "pk": 7,
     "fields": {
         "date_time": "2020-06-16T00:00:06",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.694479 40.4106898)",
         "altitude_gps": 1.2,
         "temperature": 1.2,
         "humidity": 1.2,
@@ -129,7 +129,7 @@
         "nh3": 1.2,
         "pm1_0": 1.2,
         "pm2_5": 1.2,
-        "pm10_0": 1.2
+        "pm10_0": 15.0
     }
 },
 {
@@ -137,7 +137,7 @@
     "pk": 8,
     "fields": {
         "date_time": "2020-06-16T00:00:07",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.694581 40.4106905)",
         "altitude_gps": 4.0,
         "temperature": 4.0,
         "humidity": 4.0,
@@ -148,7 +148,7 @@
         "nh3": 4.0,
         "pm1_0": 4.0,
         "pm2_5": 4.0,
-        "pm10_0": 4.0
+        "pm10_0": 2.3
     }
 },
 {
@@ -156,7 +156,7 @@
     "pk": 9,
     "fields": {
         "date_time": "2020-06-16T00:00:08",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6946807 40.4106905)",
         "altitude_gps": 5.0,
         "temperature": 5.0,
         "humidity": 5.0,
@@ -167,7 +167,7 @@
         "nh3": 5.0,
         "pm1_0": 5.0,
         "pm2_5": 5.0,
-        "pm10_0": 5.0
+        "pm10_0": 157.0
     }
 },
 {
@@ -175,7 +175,7 @@
     "pk": 10,
     "fields": {
         "date_time": "2020-06-16T00:00:09",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6947815 40.4106912)",
         "altitude_gps": 1.3,
         "temperature": 1.3,
         "humidity": 1.3,
@@ -186,7 +186,7 @@
         "nh3": 1.3,
         "pm1_0": 1.3,
         "pm2_5": 1.3,
-        "pm10_0": 1.3
+        "pm10_0": 4.0
     }
 },
 {
@@ -194,7 +194,7 @@
     "pk": 11,
     "fields": {
         "date_time": "2020-06-16T00:00:10",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6948817 40.4106927)",
         "altitude_gps": 5.0,
         "temperature": 5.0,
         "humidity": 5.0,
@@ -213,7 +213,7 @@
     "pk": 12,
     "fields": {
         "date_time": "2020-06-16T00:00:11",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6949842 40.4106945)",
         "altitude_gps": 6.0,
         "temperature": 6.0,
         "humidity": 6.0,
@@ -232,7 +232,7 @@
     "pk": 13,
     "fields": {
         "date_time": "2020-06-16T00:00:12",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.695086 40.4106958)",
         "altitude_gps": 1.4,
         "temperature": 1.4,
         "humidity": 1.4,
@@ -243,7 +243,7 @@
         "nh3": 1.4,
         "pm1_0": 1.4,
         "pm2_5": 1.4,
-        "pm10_0": 1.4
+        "pm10_0": 8.0
     }
 },
 {
@@ -251,7 +251,7 @@
     "pk": 14,
     "fields": {
         "date_time": "2020-06-16T00:00:13",
-        "geom": "SRID=4326;POINT (0 0)",
+        "geom": "SRID=4326;POINT (-3.6951872 40.410697)",
         "altitude_gps": 6.0,
         "temperature": 6.0,
         "humidity": 6.0,
@@ -262,15 +262,15 @@
         "nh3": 6.0,
         "pm1_0": 6.0,
         "pm2_5": 6.0,
-        "pm10_0": 6.0
+        "pm10_0": 2.0
     }
 },
 {
     "model": "api.observation",
     "pk": 15,
     "fields": {
-        "date_time": "2020-06-16T00:00:14",
-        "geom": "SRID=4326;POINT (0 0)",
+        "date_time": "2020-06-16T23:59:59",
+        "geom": "SRID=4326;POINT (-3.6952897 40.410698)",
         "altitude_gps": 7.0,
         "temperature": 7.0,
         "humidity": 7.0,
@@ -281,15 +281,15 @@
         "nh3": 7.0,
         "pm1_0": 7.0,
         "pm2_5": 7.0,
-        "pm10_0": 7.0
+        "pm10_0": 5.0
     }
 },
 {
     "model": "api.observation",
     "pk": 16,
     "fields": {
-        "date_time": "2020-06-16T00:00:15",
-        "geom": "SRID=4326;POINT (0 0)",
+        "date_time": "2020-06-17T00:00:01",
+        "geom": "SRID=4326;POINT (-3.6953922 40.4106998)",
         "altitude_gps": 1.5,
         "temperature": 1.5,
         "humidity": 1.5,
@@ -300,15 +300,15 @@
         "nh3": 1.5,
         "pm1_0": 1.5,
         "pm2_5": 1.5,
-        "pm10_0": 1.5
+        "pm10_0": 5.0
     }
 },
 {
     "model": "api.observation",
     "pk": 17,
     "fields": {
-        "date_time": "2020-06-16T00:00:16",
-        "geom": "SRID=4326;POINT (0 0)",
+        "date_time": "2020-06-18T00:00:02",
+        "geom": "SRID=4326;POINT (-3.695496 40.4107015)",
         "altitude_gps": 7.0,
         "temperature": 7.0,
         "humidity": 7.0,
@@ -319,15 +319,15 @@
         "nh3": 7.0,
         "pm1_0": 7.0,
         "pm2_5": 7.0,
-        "pm10_0": 7.0
+        "pm10_0": 5.0
     }
 },
 {
     "model": "api.observation",
     "pk": 18,
     "fields": {
-        "date_time": "2020-06-16T00:00:17",
-        "geom": "SRID=4326;POINT (0 0)",
+        "date_time": "2020-06-19T00:00:03",
+        "geom": "SRID=4326;POINT (-3.695501 40.410703)",
         "altitude_gps": 8.0,
         "temperature": 8.0,
         "humidity": 8.0,
@@ -338,235 +338,7 @@
         "nh3": 8.0,
         "pm1_0": 8.0,
         "pm2_5": 8.0,
-        "pm10_0": 8.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 19,
-    "fields": {
-        "date_time": "2020-06-16T00:00:18",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 1.6,
-        "temperature": 1.6,
-        "humidity": 1.6,
-        "altitude_bar": 1.6,
-        "pressure": 1.6,
-        "no2": 1.6,
-        "co": 1.6,
-        "nh3": 1.6,
-        "pm1_0": 1.6,
-        "pm2_5": 1.6,
-        "pm10_0": 1.6
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 20,
-    "fields": {
-        "date_time": "2020-06-16T00:00:19",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 8.0,
-        "temperature": 8.0,
-        "humidity": 8.0,
-        "altitude_bar": 8.0,
-        "pressure": 8.0,
-        "no2": 8.0,
-        "co": 8.0,
-        "nh3": 8.0,
-        "pm1_0": 8.0,
-        "pm2_5": 8.0,
-        "pm10_0": 8.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 21,
-    "fields": {
-        "date_time": "2020-06-16T00:00:20",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 9.0,
-        "temperature": 9.0,
-        "humidity": 9.0,
-        "altitude_bar": 9.0,
-        "pressure": 9.0,
-        "no2": 9.0,
-        "co": 9.0,
-        "nh3": 9.0,
-        "pm1_0": 9.0,
-        "pm2_5": 9.0,
-        "pm10_0": 9.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 22,
-    "fields": {
-        "date_time": "2020-06-16T00:00:21",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 1.7,
-        "temperature": 1.7,
-        "humidity": 1.7,
-        "altitude_bar": 1.7,
-        "pressure": 1.7,
-        "no2": 1.7,
-        "co": 1.7,
-        "nh3": 1.7,
-        "pm1_0": 1.7,
-        "pm2_5": 1.7,
-        "pm10_0": 1.7
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 23,
-    "fields": {
-        "date_time": "2020-06-16T00:00:22",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 9.0,
-        "temperature": 9.0,
-        "humidity": 9.0,
-        "altitude_bar": 9.0,
-        "pressure": 9.0,
-        "no2": 9.0,
-        "co": 9.0,
-        "nh3": 9.0,
-        "pm1_0": 9.0,
-        "pm2_5": 9.0,
-        "pm10_0": 9.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 24,
-    "fields": {
-        "date_time": "2020-06-16T00:00:23",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 10.0,
-        "temperature": 10.0,
-        "humidity": 10.0,
-        "altitude_bar": 10.0,
-        "pressure": 10.0,
-        "no2": 10.0,
-        "co": 10.0,
-        "nh3": 10.0,
-        "pm1_0": 10.0,
-        "pm2_5": 10.0,
-        "pm10_0": 10.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 25,
-    "fields": {
-        "date_time": "2020-06-16T00:00:24",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 1.8,
-        "temperature": 1.8,
-        "humidity": 1.8,
-        "altitude_bar": 1.8,
-        "pressure": 1.8,
-        "no2": 1.8,
-        "co": 1.8,
-        "nh3": 1.8,
-        "pm1_0": 1.8,
-        "pm2_5": 1.8,
-        "pm10_0": 1.8
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 26,
-    "fields": {
-        "date_time": "2020-06-16T00:00:25",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 10.0,
-        "temperature": 10.0,
-        "humidity": 10.0,
-        "altitude_bar": 10.0,
-        "pressure": 10.0,
-        "no2": 10.0,
-        "co": 10.0,
-        "nh3": 10.0,
-        "pm1_0": 10.0,
-        "pm2_5": 10.0,
-        "pm10_0": 10.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 27,
-    "fields": {
-        "date_time": "2020-06-16T00:00:26",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 11.0,
-        "temperature": 11.0,
-        "humidity": 11.0,
-        "altitude_bar": 11.0,
-        "pressure": 11.0,
-        "no2": 11.0,
-        "co": 11.0,
-        "nh3": 11.0,
-        "pm1_0": 11.0,
-        "pm2_5": 11.0,
-        "pm10_0": 11.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 28,
-    "fields": {
-        "date_time": "2020-06-16T00:00:27",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 1.9,
-        "temperature": 1.9,
-        "humidity": 1.9,
-        "altitude_bar": 1.9,
-        "pressure": 1.9,
-        "no2": 1.9,
-        "co": 1.9,
-        "nh3": 1.9,
-        "pm1_0": 1.9,
-        "pm2_5": 1.9,
-        "pm10_0": 1.9
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 29,
-    "fields": {
-        "date_time": "2020-06-16T23:59:59",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 11.0,
-        "temperature": 11.0,
-        "humidity": 11.0,
-        "altitude_bar": 11.0,
-        "pressure": 11.0,
-        "no2": 11.0,
-        "co": 11.0,
-        "nh3": 11.0,
-        "pm1_0": 11.0,
-        "pm2_5": 11.0,
-        "pm10_0": 11.0
-    }
-},
-{
-    "model": "api.observation",
-    "pk": 30,
-    "fields": {
-        "date_time": "2020-06-17T00:00:28",
-        "geom": "SRID=4326;POINT (0 0)",
-        "altitude_gps": 12.0,
-        "temperature": 12.0,
-        "humidity": 12.0,
-        "altitude_bar": 12.0,
-        "pressure": 12.0,
-        "no2": 12.0,
-        "co": 12.0,
-        "nh3": 12.0,
-        "pm1_0": 12.0,
-        "pm2_5": 12.0,
-        "pm10_0": 12.0
+        "pm10_0": 1.0
     }
 }
 ]

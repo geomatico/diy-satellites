@@ -20,15 +20,15 @@ class TestApi(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(observations['features'][0]['properties']['altitude_gps'], 1.0)
-        self.assertEqual(observations['features'][29]['properties']['pressure'], 12.0)
-        self.assertEqual(len(observations['features']), 30)
+        self.assertEqual(observations['features'][17]['properties']['pressure'], 8.0)
+        self.assertEqual(len(observations['features']), 18)
 
     def test_get_observations_filter_by_date(self):
 
         client = Client()
 
-        init_date = "2020-06-16T00:00:00Z"
-        end_date = "2020-06-16T00:00:10Z"
+        init_date = "2020-06-16T00:00:00.000Z"
+        end_date = "2020-06-16T00:00:10.000Z"
         url = '/api/v1/observations/?init_date={init_date}&end_date={end_date}'.format(init_date=init_date,
                                                                                        end_date=end_date)
 
@@ -39,8 +39,8 @@ class TestApi(TestCase):
         self.assertEqual(len(observations['features']), 11)
         self.assertEqual(response.status_code, 200)
 
-        init_date = "2020-06-16T23:59:59Z"
-        end_date = "2020-06-17T00:00:29Z"
+        init_date = "2020-06-16T23:59:59.000Z"
+        end_date = "2020-06-17T00:00:29.000Z"
         url = '/api/v1/observations/?init_date={init_date}&end_date={end_date}'.format(init_date=init_date,
                                                                                        end_date=end_date)
         response = client.get(url)
@@ -49,24 +49,24 @@ class TestApi(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(observations['features']), 2)
 
-    @skip
+    #@skip
     def test_upload_csv(self):
 
         client = RequestsClient()
 
         url = 'http://localhost:8000/api/v1/upload/'
-        file_path = './fixtures/api_obser.csv'
+        file_path = './fixtures/api_obser2.csv'
 
         payload = {}
         headers = {
-            'Content-Disposition': 'attachment; filename={filename}'.format(filename=os.path.basename(file_path)),
+            'Content-Disposition': 'attachment; filename={filename}'#.format(filename=os.path.basename(file_path)),
         }
         files = [
             ('file', open(file_path, 'r'))
         ]
         response = client.post(url, headers=headers, data=payload, files=files)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 204)
 
 
 

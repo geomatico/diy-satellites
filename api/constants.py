@@ -12,5 +12,5 @@ DB_NH3 = 10
 DB_PM1_0 = 11
 DB_PM2_5 = 12
 DB_PM10_0 = 13
-FORMAT_DATE = "%Y-%m-%dT%H:%M:%SZ"
+FORMAT_DATE = "%Y-%m-%dT%H:%M:%S.%fZ"
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
