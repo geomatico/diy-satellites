@@ -3,6 +3,7 @@ from datetime import datetime
 from rest_framework import viewsets, views
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 from api.models import Observation
 from api.serializers import ObservationSerializer
@@ -30,6 +31,7 @@ class ObservationsViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class UploadCsv(views.APIView):
+    permission_classes = (IsAuthenticated,)
     parser_classes = [MultiPartParser, ]
 
     def post(self, request):
