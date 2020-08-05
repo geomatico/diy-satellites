@@ -45,6 +45,30 @@ const downloadData = (init_date, end_date) => {
         .catch(err => console.log(err));
 };
 
+const downloadToken = (user, pass) => {
+    let get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
+    let formdata = new FormData();
+    formdata.append('username', 'cansat');
+    formdata.append('password', 'mysecretpassword');
+
+    const requestOptions = {
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
+    };
+
+    fetch(get_token_url, requestOptions)
+        .then(res => res.json())
+        .then(res => getToken(res));
+
+}
+
+var token;
+const getToken = (res) => {
+    token = res.token
+    console.log(token);
+}
+
 
 const handleErrors = (response) => {
     if (!response.ok) {
@@ -62,6 +86,32 @@ const drawOutput = (lines) => {
     }).addTo(map).on('click', createTable);
 };
 
+const input = document.getElementById('fileinput');
+const onSelectFile = () => upload(input.files[0]);
+input.addEventListener('change', downloadToken, false);              /*'change',  onSelectFile, false); */
+
+const upload = (file) => {
+    const upload_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
+
+    const headers = new Headers();
+    headers.append('Authorization','Token dbb7b134aa9c3a20c70df341b53db3855b25c151');
+
+    const formdata = new FormData();
+    formdata.append("file", file, file.name);
+
+    const requestOptions = {
+        method: 'POST',
+        headers: headers,
+        body: formdata,
+        redirect: 'follow'
+    }
+    
+    fetch(upload_url, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
+
 const getColor = (x) => {
     return x > 7 ? '#c51b8a' :
         x > 4 ? '#fde0dd' :
@@ -78,13 +128,6 @@ const style = (feature) => {
         opacity: 1,
         fillOpacity: 0.8
     };
-};
-
-
-const popupTemperature = (feature, layer) => {
-    if (feature.properties && feature.properties.temperature) {
-        layer.bindPopup("<div><h3>" + feature.properties.temperature + "</div>")
-    }
 };
 
 const createTable = (event) => {
@@ -167,28 +210,6 @@ const getHourFormat = (date) => {
     s = pad.substr(0, pad.length - s.length) + s;
     let hour = [h, m, s].join(':');
     return hour;
-}
-
-const input = document.getElementById('fileinput');
-const onSelectFile = () => upload(input.files[0]);
-input.addEventListener('change', onSelectFile, false);
-
-const upload = (file) => {
-    const upload_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
-
-    const formdata = new FormData();
-    formdata.append("file", file, file.name);
-
-    const requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
-    }
-    
-    fetch(upload_url, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
 }
 
 initmap();
