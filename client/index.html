@@ -252,6 +252,23 @@
             font-weight: bold;   
         } 
 
+        .login {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            margin: 10px 10px;
+            float: right;    
+            margin-left: auto;
+            border: 0;
+            background: none;
+            box-shadow: none;
+            background-color: #5e063D;
+            border-radius: 6px;
+            padding: 8px 15px;
+            color:  #fff;
+            font-weight: bold;   
+        }
+
         ::-webkit-scrollbar {
             -webkit-appearance: none;
             width: 6px;
@@ -317,6 +334,22 @@
             font-weight: bold;   
         }
 
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none;
+            box-sizing: border-box;
+            background-color: #5E063D;
+            color: white;
+        }
+
+        ::placeholder {
+            color: white;
+            opacity: 0.8;
+        }
+
         legend {
             color: #fff;
         }
@@ -337,10 +370,66 @@
         fieldset {
             border-radius: 8px;
         }
+
+        .uploadfile{
+            display: none;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+/*             left: 110;
+            top: 110; */
+            width: 50%;
+            height: 50%;
+            padding-top: 60px;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #973572;
+            margin: 10px auto;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .btnlogin {
+            background-color: #5E063D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #5E063D;
+            color: white;
+            border: none;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="header">
+        <button type="submit" id="loginButton" class="login">Login</button>
         <img class='logo-header' src='img/markers.svg'>
         <ul class="sidebarMenuInner">
             <li><span data-i18n="title">DIY-SATELLITES</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
@@ -377,16 +466,32 @@
                 <input type="button" id="submit" value="submit"><br>
             </fieldset>
         </form><br>
-        <form id="uploadfile">
+        <form id="uploadfile" class="uploadfile">
             <fieldset class="upload">
                 <legend>Select File</legend>
                 <input type="file" id="fileinput"><br><br>
-            <button type="submit" class="datepk">upload</button>
+            <button type="submit" id="btnupload" class="datepk">upload</button>
             </fieldset>
         </form>
     </div>
+
     <div id='center' class="main center">
         <div id="map"></div>
+    </div>
+    <div class="modal" id="modalform">
+        <form class="modal-content">
+            <div class="container">
+                <label for="uname" class="datepickerLabel">Username</label><br>
+                <input type="text" placeholder="Enter Username" id="uname" name="uname" required><br><br>
+                <label for="psw" class="datepickerLabel">Password</label><br>
+                <input type="password" placeholder="Enter Password" id="psw" name="psw" required><br><br>
+                <button type="submit" class="btnlogin">Login</button>
+            </div>
+            <div class="container" style="background-color: #ac5189">
+                <button type="button" onclick="document.getElementById('modalform').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">¿Quieres <a href="#">registrarte?</span>
+            </div>
+        </form>
     </div>
     <div class="mdc-bottom-navigation">
         <nav class="mdc-bottom-navigation__list">
