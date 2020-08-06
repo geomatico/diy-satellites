@@ -20,7 +20,7 @@ const initmap = () => {
 };
 
 
-document.getElementById('submit').onclick = function(event){
+document.getElementById('submit').addEventListener('click', ()=>{
     map.removeLayer(marker);
     let init = document.getElementById('start').value;
     let init_date = new Date(init);
@@ -31,7 +31,7 @@ document.getElementById('submit').onclick = function(event){
     end_date.setDate(end_date.getDate() + 1);
     end_date = end_date.toISOString();
     downloadData(init_date, end_date);
-}
+});
 
 const downloadData = (init_date, end_date) => {    
     let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
@@ -45,38 +45,6 @@ const downloadData = (init_date, end_date) => {
         .catch(err => console.log(err));
 };
 
-const downloadToken = (user, pass) => {
-    let get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
-    let formdata = new FormData();
-    formdata.append('username', 'cansat');
-    formdata.append('password', 'mysecretpassword');
-
-    const requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
-    };
-
-    fetch(get_token_url, requestOptions)
-        .then(res => res.json())
-        .then(res => getToken(res));
-
-}
-
-var token;
-const getToken = (res) => {
-    token = res.token
-    console.log(token);
-}
-
-
-const handleErrors = (response) => {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
-};
-
 var marker;
 const drawOutput = (lines) => {
     marker = L.geoJson(lines, {
@@ -86,15 +54,57 @@ const drawOutput = (lines) => {
     }).addTo(map).on('click', createTable);
 };
 
-const input = document.getElementById('fileinput');
+document.getElementById('loginButton').addEventListener('click',()=>{
+    let modal =document.getElementById('modalform').style.display ="block";
+    
+});
+
+document.querySelector('.btnlogin').addEventListener('click',()=>{
+    let uname = document.getElementById('uname').value;
+    let psw = document.getElementById('psw').value;
+    downloadToken(uname, psw);
+});
+
+const downloadToken = (user, pass) => {
+    let get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
+    let formdata = new FormData();
+    formdata.append('username', user);
+    formdata.append('password', pass);
+
+    const requestOptions = {
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
+    };
+
+    fetch(get_token_url, requestOptions)
+        .then(handleErrors)
+        .then(res => res.json())
+        .then(res => getToken(res));
+
+}
+
+var token;
+const getToken = (res) => {
+    token = res.token;
+    document.getElementById('uploadfile').style.display = 'inline';
+    let modal =document.getElementById('modalform').style.display = 'none';
+}
+
+const handleErrors = (response) => {
+    if (!response.ok) throw Error(response.statusText);
+    return response;
+};
+
+const input = document.getElementById('btnupload');
 const onSelectFile = () => upload(input.files[0]);
-input.addEventListener('change', downloadToken, false);              /*'change',  onSelectFile, false); */
+input.addEventListener('click', onSelectFile, false);
 
 const upload = (file) => {
     const upload_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
 
     const headers = new Headers();
-    headers.append('Authorization','Token dbb7b134aa9c3a20c70df341b53db3855b25c151');
+    headers.append('Authorization', token);
 
     const formdata = new FormData();
     formdata.append("file", file, file.name);
@@ -113,17 +123,19 @@ const upload = (file) => {
 }
 
 const getColor = (x) => {
-    return x > 7 ? '#c51b8a' :
-        x > 4 ? '#fde0dd' :
-            x > 1 ? '#31a534' :
-                '#756bb1';
+    return  x > 25 ? '#bd0026' :
+            x > 20 ? '#e31a1c' :
+            x > 15 ? '#fc4e2a' :
+            x > 10 ? '#fed976' :
+            x >  5 ? '#41ae76' : 
+                     '#006d2c';
 };
 
 const style = (feature) => {
     return {
-        radius: 8,
+        radius: 7,
         color: '#ff7800',
-        fillColor: getColor(feature.properties.temperature),
+        fillColor: getColor(feature.properties.pm2_5),
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
