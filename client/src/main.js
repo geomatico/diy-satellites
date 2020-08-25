@@ -20,7 +20,7 @@ const initmap = () => {
 };
 
 
-document.getElementById('submit').addEventListener('click', ()=>{
+document.getElementById('submit').addEventListener('click', () => {
     map.removeLayer(marker);
     let init = document.getElementById('start').value;
     let init_date = new Date(init);
@@ -33,16 +33,16 @@ document.getElementById('submit').addEventListener('click', ()=>{
     downloadData(init_date, end_date);
 });
 
-const downloadData = (init_date, end_date) => {    
+const downloadData = (init_date, end_date) => {
     let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
-    if (init_date !== undefined && end_date !== undefined){
+    if (init_date !== undefined && end_date !== undefined) {
         observations_url = `${observations_url}?init_date=${init_date}&end_date=${end_date}`
     }
     fetch(observations_url)
         .then(handleErrors)
         .then(res => res.json())
         .then(res => drawOutput(res))
-        .catch(err => console.log(err));
+        .catch(err => console.log('error', err));
 };
 
 var marker;
@@ -54,12 +54,12 @@ const drawOutput = (lines) => {
     }).addTo(map).on('click', createTable);
 };
 
-document.getElementById('loginButton').addEventListener('click',()=>{
-    let modal =document.getElementById('modalform').style.display ="block";
-    
+document.getElementById('loginButton').addEventListener('click', () => {
+    let modal = document.getElementById('modalform').style.display = "block";
+
 });
 
-document.querySelector('.btnlogin').addEventListener('click',()=>{
+document.querySelector('.btnlogin').addEventListener('click', () => {
     let uname = document.getElementById('uname').value;
     let psw = document.getElementById('psw').value;
     downloadToken(uname, psw);
@@ -88,7 +88,7 @@ var token;
 const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
-    let modal =document.getElementById('modalform').style.display = 'none';
+    let modal = document.getElementById('modalform').style.display = 'none';
 }
 
 const handleErrors = (response) => {
@@ -115,7 +115,7 @@ const upload = (file) => {
         body: formdata,
         redirect: 'follow'
     }
-    
+
     fetch(upload_url, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
@@ -127,7 +127,7 @@ const getColor = (x) => {
             x > 20 ? '#e31a1c' :
             x > 15 ? '#fc4e2a' :
             x > 10 ? '#fed976' :
-            x >  5 ? '#41ae76' : 
+            x >  5 ? '#41ae76' :
                      '#006d2c';
 };
 
@@ -154,48 +154,50 @@ const createTable = (event) => {
     let table = document.createElement('table');
     table.setAttribute('id', 'table');
     table.setAttribute('class', 'observation_table');
-    /*table.style.borderColor = '#5E063D';*/
     let tblBody = document.createElement('tbody');
 
-    for (let index in event.layer.feature.properties) {
-        let row = document.createElement('tr');
-        let cell1 = document.createElement('td');
-        cell1.style.color = 'white';
-        let cell2 = document.createElement('td');
-        cell2.style.color = 'white';
-        if (index == 'date_time') {
-            let date = new Date(event.layer.feature.properties[index]);
-            dateFormat = getDateFormat(date);
-            let cell3Content = document.createTextNode('date');
-            let cell4Content = document.createTextNode(dateFormat);
-            cell1.appendChild(cell3Content);
-            cell2.appendChild(cell4Content);
-            row.appendChild(cell1);
-            row.appendChild(cell2);
-            tblBody.appendChild(row);
-            let row1 = document.createElement('tr');
-            hourFormat = getHourFormat(date);
-            let cell3 = document.createElement('td');
-            cell3.style.color = 'white';
-            let cell4 = document.createElement('td');
-            cell4.style.color = 'white';
-            let cell5Content = document.createTextNode('time');
-            let cell6Content = document.createTextNode(hourFormat);
-            cell3.appendChild(cell5Content);
-            cell4.appendChild(cell6Content);
-            row1.appendChild(cell3);
-            row1.appendChild(cell4);
-            tblBody.appendChild(row1);
-        } else {
-            cell1Content = document.createTextNode(index);
-            cell2Content = document.createTextNode(event.layer.feature.properties[index]);
-            cell1.appendChild(cell1Content);
-            cell2.appendChild(cell2Content);
-            row.appendChild(cell1);
-            row.appendChild(cell2);
-            tblBody.appendChild(row);
-        }
+    const date = new Date(event.layer.feature.properties['date_time']);
+    const day = getDateFormat(date);
+    const hour = getHourFormat(date);
+
+    const clonedProperties = { ...event.layer.feature.properties };
+    delete clonedProperties['date_time'];
+    clonedProperties['date'] = day;
+    clonedProperties['hour'] = hour;
+    
+    const propertyNames = ['date', 'hour', 'altitude_gps', 'temperature', 'humidity', 'altitude_bar', 'pressure',
+            'no2', 'co', 'nh3', 'pm1_0', 'pm2_5', 'pm10_0'];
+    const humanNames = {
+        'date': 'Fecha',
+        'hour': 'Hora',
+        'altitude_gps': 'Altitud',
+        'temperature': 'Temperatura',
+        'humidity': 'Humedad',
+        'altitude_bar': 'Altitud Bar',
+        'pressure': 'Presión',
+        'no2': 'NO2',
+        'co': 'CO',
+        'nh3': 'NH3',
+        'pm1_0': 'PM 1',
+        'pm2_5': 'PM 2.5',
+        'pm10_0': 'PM 10'
     }
+
+    propertyNames.map(property => {
+        let fila = document.createElement('tr');
+        let celda1 = document.createElement('td');
+        celda1.style.color = 'white';
+        let celda2 = document.createElement('td');
+        celda2.style.color = 'white';
+        let contenidoCelda1 = document.createTextNode(humanNames[property]);
+        let contenidoCelda2 = document.createTextNode(clonedProperties[property]);
+        celda1.appendChild(contenidoCelda1);
+        celda2.appendChild(contenidoCelda2);
+        fila.appendChild(celda1);
+        fila.appendChild(celda2);
+        tblBody.appendChild(fila);
+    })
+
     table.appendChild(tblBody);
     body.appendChild(table);
     table.setAttribute('border', '2');
