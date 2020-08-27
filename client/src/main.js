@@ -27,7 +27,7 @@ document.getElementById('submit').addEventListener('click', () => {
     init_date = init_date.toISOString();
     let end = document.getElementById('end').value;
     let end_date = new Date(end);
-    /*Add one day because server SQL end_range add time 00:00:00*/
+    /*Added one day to include the end date*/
     end_date.setDate(end_date.getDate() + 1);
     end_date = end_date.toISOString();
     downloadData(init_date, end_date);
@@ -42,6 +42,7 @@ const downloadData = (init_date, end_date) => {
         .then(handleErrors)
         .then(res => res.json())
         .then(res => drawOutput(res))
+        .then(res => removeTable())
         .catch(err => console.log('error', err));
 };
 
@@ -89,6 +90,7 @@ const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
     let modal = document.getElementById('modalform').style.display = 'none';
+    removeTable();
 }
 
 const handleErrors = (response) => {
@@ -144,12 +146,8 @@ const style = (feature) => {
 
 const createTable = (event) => {
     document.getElementById('openSidebarMenu').checked = true;
-    body = document.getElementById('datepicker');
-    let element = document.getElementById('table');
-    if (typeof (element) != 'undefined' && element != null) {
-        let parentEl = element.parentElement;
-        parentEl.removeChild(element);
-    }
+    body = document.getElementById('datepicker');    
+    removeTable();    
 
     let table = document.createElement('table');
     table.setAttribute('id', 'table');
@@ -201,6 +199,14 @@ const createTable = (event) => {
     table.appendChild(tblBody);
     body.appendChild(table);
     table.setAttribute('border', '2');
+}
+
+const removeTable = () => {
+    let element = document.getElementById('table');
+    if (typeof (element) != 'undefined' && element != null) {
+        let parentEl = element.parentElement;
+        parentEl.removeChild(element);
+    }
 }
 
 const getDateFormat = (date) => {

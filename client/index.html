@@ -5,7 +5,6 @@
     <title data-i18n="title">DIY-Satellite</title>
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="img/mdc-bottom-navigation.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin="" />
@@ -63,7 +62,7 @@
         .main {
             position: absolute;
             top: 60px;
-            bottom: 56px;
+            bottom: 1px;
             width: 100%;
         }
         .mainInner{
@@ -85,7 +84,7 @@
             top: 60px;
             bottom: 0;
             left: 0;
-            transform: translateX(-300px);
+            transform: translateX(-350px);
             transition: transform 250ms ease-in-out;
             background-color: #973572;
             z-index: 1000;
@@ -256,7 +255,7 @@
             font-family: 'Varela Round', sans-serif;
             font-size: 14px;
             font-weight: normal;
-            margin: 10px 10px;
+            margin: 15px 10px;
             float: right;    
             margin-left: auto;
             border: 0;
@@ -312,7 +311,6 @@
            background-color:#6d0545;
            color: #fff;
            size: 1;
-           /* float: right; */
            margin-left: auto;
            margin-right: 15;
         }
@@ -377,12 +375,10 @@
 
         .modal {
             display: none;
-            position: fixed;
+            position: absolute;
             z-index: 1001;
-/*             left: 110;
-            top: 110; */
-            width: 50%;
-            height: 50%;
+            width: 100%;
+            height: 100%;
             padding-top: 60px;
             background-color: rgb(0,0,0);
             background-color: rgba(0,0,0,0.4);
@@ -390,9 +386,9 @@
 
         .modal-content {
             background-color: #973572;
-            margin: 10px auto;
+            margin-top: 100px;
             border: 1px solid #888;
-            width: 80%;
+            width: 350px;
         }
 
         .container {
@@ -429,8 +425,8 @@
 </head>
 <body>
     <div class="header">
+        <a href='http://geomatico.es' target='_blank'><img class='logo-header' src='img/markers.svg'></a>
         <button type="submit" id="loginButton" class="login">Login</button>
-        <img class='logo-header' src='img/markers.svg'>
         <ul class="sidebarMenuInner">
             <li><span data-i18n="title">DIY-SATELLITES</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
         </ul>
@@ -451,11 +447,7 @@
             <span> | </span>
             <a data-i18n="private" href="http://geomati.co/privacidad_1km.html" target="_blank">política de privacidad</a>
           </div>
-          <button class="dismiss" onclick="document.getElementById('openSidebarMenu').checked = false;" data-i18n="accept">Aceptar</button>
         </div>
-<!--         <div class='logos'>
-          <a href='http://geomatico.es' target='_blank'><img class='logo' src='img/logo.svg'></a>
-        </div> -->
         <form id="datepicker">
             <fieldset>
                 <legend>Seleccione Fechas</legend>
@@ -468,7 +460,7 @@
         </form><br>
         <form id="uploadfile" class="uploadfile">
             <fieldset class="upload">
-                <legend>Select File</legend>
+                <legend>Seleccione Archivo</legend>
                 <input type="file" id="fileinput"><br><br>
             <button type="submit" id="btnupload" class="datepk">upload</button>
             </fieldset>
@@ -492,32 +484,6 @@
                 <span class="psw">¿Quieres <a href="#">registrarte?</span>
             </div>
         </form>
-    </div>
-    <div class="mdc-bottom-navigation">
-        <nav class="mdc-bottom-navigation__list">
-          <span class="mdc-bottom-navigation__list-item" data-id="km">
-            <span class="material-icons mdc-bottom-navigation__list-item__icon">
-                <svg style="width:24px;height:24px" viewBox="0 0 1000 1000">
-                  <path d="M500,10C232.1,10,10,232.1,10,500c0,267.9,222.1,490,490,490c267.9,0,490-222.1,490-490C990,232.1,767.9,10,500,10z M500,892c-215.6,0-392-176.4-392-392c0-215.6,176.4-392,392-392c215.6,0,392,176.4,392,392C892,715.6,715.6,892,500,892z" />
-                  <path d="m 500,374.29322 c 69.13151,0 125.70678,56.57527 125.70678,125.70678 0,69.13151 -56.57527,125.70678 -125.70678,125.70678 -69.13151,0 -125.70678,-56.57527 -125.70678,-125.70678 0,-69.13151 56.57527,-125.70678 125.70678,-125.70678 z" />
-                </svg>
-            </span>
-            <span data-i18n="1km" class="mdc-bottom-navigation__list-item__text">1km</span>
-          </span>
-          <span class="mdc-bottom-navigation__list-item" data-id="municipio">
-            <span class="material-icons mdc-bottom-navigation__list-item__icon">
-                <svg style="width:24px;height:24px" viewBox="0 0 400 400">
-                    <path d="M222.859,330.9V188.398c0-4.487-3.642-8.129-8.129-8.129c-4.487,0-8.129,3.642-8.129,8.129V330.9   c0,4.487,3.642,8.129,8.129,8.129C219.226,339.028,222.859,335.387,222.859,330.9z" />
-                    <path d="M271.273,330.9V188.398c0-4.487-3.642-8.129-8.129-8.129s-8.129,3.642-8.129,8.129V330.9   c0,4.487,3.642,8.129,8.129,8.129S271.273,335.387,271.273,330.9z" />
-                    <path d="M362.931,371.542V330.9c0-4.487-3.642-8.129-8.129-8.129h-36.107V172.059   c0-4.487-3.642-8.129-8.129-8.129c-4.487,0-8.129,3.642-8.129,8.129V330.9c0,4.487,3.642,8.129,8.129,8.129h36.107v24.386H35.39   v-24.386h36.091c4.487,0,8.129-3.642,8.129-8.129v-158.84c0-4.487-3.642-8.129-8.129-8.129c-4.487,0-8.129,3.642-8.129,8.129   v150.712H27.261c-4.487,0-8.129,3.642-8.129,8.129v40.643c0,4.487,3.642,8.129,8.129,8.129h327.541   C359.297,379.671,362.931,376.029,362.931,371.542z" />
-                    <path d="M127.04,330.9V188.398c0-4.487-3.642-8.129-8.129-8.129c-4.487,0-8.129,3.642-8.129,8.129V330.9   c0,4.487,3.642,8.129,8.129,8.129C123.398,339.028,127.04,335.387,127.04,330.9z" />
-                    <path d="M175.445,330.9V188.398c0-4.487-3.642-8.129-8.129-8.129c-4.487,0-8.129,3.642-8.129,8.129V330.9   c0,4.487,3.642,8.129,8.129,8.129C171.804,339.028,175.445,335.387,175.445,330.9z" />
-                    <path d="M0.38,142.081c1.065,3.382,4.202,5.682,7.755,5.682h365.794c3.536,0,6.665-2.284,7.747-5.657   c1.073-3.373-0.154-7.047-3.04-9.096L196.937,3.895c-2.804-2-6.56-2.008-9.372-0.033L3.461,132.969   C0.559,135.009-0.693,138.691,0.38,142.081z M192.198,20.469l156.264,111.028H33.886L192.198,20.469z" />
-                </svg>
-            </span>
-            <span data-i18n="municipality" class="mdc-bottom-navigation__list-item__text">Municipio</span>
-          </span>
-        </nav>
     </div>
 </body>
 </html>
