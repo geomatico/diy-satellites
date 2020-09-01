@@ -98,15 +98,18 @@ const handleErrors = (response) => {
     return response;
 };
 
-const input = document.getElementById('btnupload');
-const onSelectFile = () => upload(input.files[0]);
-input.addEventListener('click', onSelectFile, false);
+const input = document.getElementById('fileinput');
+const onSelectFile = () => {
+    console.log(input.files);
+    upload(input.files[0])
+};
+document.getElementById('btnupload').addEventListener('click', onSelectFile, false);
 
 const upload = (file) => {
     const upload_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
 
     const headers = new Headers();
-    headers.append('Authorization', token);
+    headers.append('Authorization', `Token ${token}`);
 
     const formdata = new FormData();
     formdata.append("file", file, file.name);
