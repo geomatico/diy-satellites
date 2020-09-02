@@ -5,8 +5,8 @@ from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from api.models import Observation
-from api.serializers import ObservationSerializer
+from api.models import Observation, ObservationByGrid
+from api.serializers import ObservationSerializer, ObservationByGridSerializer
 from api import constants
 import csv
 import io
@@ -27,6 +27,22 @@ class ObservationsViewSet(viewsets.ReadOnlyModelViewSet):
             end_date = datetime.strptime(request.query_params['end_date'], constants.FORMAT_DATE)
             observations = Observation.objects.filter(date_time__range=(init_date, end_date))
         serializer = ObservationSerializer(observations, many=True)
+        return Response(serializer.data)
+
+
+class ObservationByGridViewSet(viewsets.ReadOnlyModelViewSet):
+
+    queryset = ObservationByGrid.objects.all()
+    serializer_class = ObservationByGridSerializer
+
+    def list(self, request, *args, **kwargs):
+
+        observations_by_grid = self.queryset
+        if request.query_params:
+            init_date = datetime.strptime(request.query_params['init_date'], constants.FORMAT_DATE)
+            end_date = datetime.strptime(request.query_params['end_date'], constants.FORMAT_DATE)
+            observations_by_grid = ObservationByGrid.objects.filter(date_time__range=(init_date, end_date))
+        serializer = ObservationByGridSerializer(observations_by_grid, many=True)
         return Response(serializer.data)
 
 
