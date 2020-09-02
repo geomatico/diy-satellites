@@ -23,3 +23,19 @@ class Observation(models.Model):
         verbose_name_plural = _('observations')
 
 
+class ObservationByGrid(models.Model):
+    id = models.IntegerField(primary_key=True)
+    geom = models.PolygonField(_('geom'))
+    temperature = models.FloatField(_('temperature'), default=0.0)
+    humidity = models.FloatField(_('humidity'), default=0.0)
+    no2 = models.FloatField(default=0.0)
+    co = models.FloatField(default=0.0)
+    nh3 = models.FloatField(default=0.0)
+    pm1_0 = models.FloatField(default=0.0)
+    pm2_5 = models.FloatField(default=0.0)
+    pm10_0 = models.FloatField(default=0.0)
+
+    class Meta:
+        managed = False
+        db_table = 'api_observation_by_grid'
+
