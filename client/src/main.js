@@ -16,7 +16,8 @@ const initmap = () => {
         position: 'topright'
     }).addTo(map);
 
-    downloadData();
+    /* downloadData(); */
+    downloadGrid();
 };
 
 
@@ -46,6 +47,15 @@ const downloadData = (init_date, end_date) => {
         .catch(err => console.log('error', err));
 };
 
+const downloadGrid = () => {
+    let grid_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GRID_URL}`;
+    fetch(grid_url)
+        .then(handleErrors)
+        .then(res => res.json())
+        .then(res => drawGrid(res))
+        .catch(err => console.log(err));
+    
+}
 var marker;
 const drawOutput = (lines) => {
     marker = L.geoJson(lines, {
@@ -54,6 +64,18 @@ const drawOutput = (lines) => {
         },
     }).addTo(map).on('click', createTable);
 };
+
+var myStyle = {
+    "color": '#bd0026',
+    "weight": 5,
+    "opacity": 0.65
+};
+
+const drawGrid = (lines) => {
+    mark = L.geoJson(lines, {
+        style: myStyle
+    }).addTo(map);
+}
 
 document.getElementById('loginButton').addEventListener('click', () => {
     let modal = document.getElementById('modalform').style.display = "block";
@@ -122,8 +144,8 @@ const upload = (file) => {
     }
 
     fetch(upload_url, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(handleErrors)
+        .then(downloadData)
         .catch(error => console.log('error', error));
 }
 
