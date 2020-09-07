@@ -16,7 +16,7 @@ const initmap = () => {
         position: 'topright'
     }).addTo(map);
 
-    /* downloadData(); */
+    downloadData();
     downloadGrid();
 };
 
@@ -62,19 +62,22 @@ const drawOutput = (lines) => {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
-    }).addTo(map).on('click', createTable);
+    }).addTo(map).on('click', observationsTable);
 };
 
-var myStyle = {
-    "color": '#bd0026',
-    "weight": 5,
-    "opacity": 0.65
+var styleGrid = (feature) => {
+    return {
+        color: getColor(feature.properties.pm2_5),
+/*         fillcolor: '#973572',        
+ */        weight: 5,
+        opacity: 0.65
+    }
 };
 
 const drawGrid = (lines) => {
     mark = L.geoJson(lines, {
-        style: myStyle
-    }).addTo(map);
+        style: styleGrid
+    }).addTo(map).on('click', gridTable);
 }
 
 document.getElementById('loginButton').addEventListener('click', () => {
@@ -169,16 +172,7 @@ const style = (feature) => {
     };
 };
 
-const createTable = (event) => {
-    document.getElementById('openSidebarMenu').checked = true;
-    body = document.getElementById('datepicker');    
-    removeTable();    
-
-    let table = document.createElement('table');
-    table.setAttribute('id', 'table');
-    table.setAttribute('class', 'observation_table');
-    let tblBody = document.createElement('tbody');
-
+const observationsTable = (event) => {
     const date = new Date(event.layer.feature.properties['date_time']);
     const day = getDateFormat(date);
     const hour = getHourFormat(date);
@@ -205,6 +199,34 @@ const createTable = (event) => {
         'pm2_5': 'PM 2.5',
         'pm10_0': 'PM 10'
     }
+    createTable(clonedProperties, propertyNames, humanNames);
+}
+
+const gridTable = (event) => {
+    const clonedGridProperties = { ...event.layer.feature.properties };
+    const propertyGridNames = ['temperature', 'humidity', 'no2', 'co', 'nh3', 'pm1_0', 'pm2_5', 'pm10_0'];
+    const humanGridNames = {
+        'temperature': 'Temperatura',
+        'humidity': 'Humedad',
+        'no2': 'NO2',
+        'co': 'C0',
+        'nh3': 'NH3',
+        'pm1_0': 'PM 1',
+        'pm2_5': 'PM 2.5',
+        'pm10_0': 'PM 10'
+    }
+    createTable(clonedGridProperties, propertyGridNames, humanGridNames);
+}
+
+const createTable = (clonedProperties, propertyNames, humanNames) => {
+    document.getElementById('openSidebarMenu').checked = true;
+    body = document.getElementById('datepicker');    
+    removeTable();    
+
+    let table = document.createElement('table');
+    table.setAttribute('id', 'table');
+    table.setAttribute('class', 'observation_table');
+    let tblBody = document.createElement('tbody');
 
     propertyNames.map(property => {
         let fila = document.createElement('tr');

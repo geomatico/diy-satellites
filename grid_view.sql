@@ -22,4 +22,4 @@ where
 	o.id is not null
 group by
 	g.id,
-	g.ge
+	g.geom;
