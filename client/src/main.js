@@ -17,6 +17,7 @@ const initmap = () => {
     }).addTo(map);
 
     downloadData();
+    downloadGrid();
 };
 
 
@@ -46,14 +47,38 @@ const downloadData = (init_date, end_date) => {
         .catch(err => console.log('error', err));
 };
 
+const downloadGrid = () => {
+    let grid_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GRID_URL}`;
+    fetch(grid_url)
+        .then(handleErrors)
+        .then(res => res.json())
+        .then(res => drawGrid(res))
+        .catch(err => console.log(err));
+    
+}
 var marker;
 const drawOutput = (lines) => {
     marker = L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
-    }).addTo(map).on('click', createTable);
+    }).addTo(map).on('click', observationsTable);
 };
+
+var styleGrid = (feature) => {
+    return {
+        color: getColor(feature.properties.pm2_5),
+/*         fillcolor: '#973572',        
+ */        weight: 5,
+        opacity: 0.65
+    }
+};
+
+const drawGrid = (lines) => {
+    mark = L.geoJson(lines, {
+        style: styleGrid
+    }).addTo(map).on('click', gridTable);
+}
 
 document.getElementById('loginButton').addEventListener('click', () => {
     let modal = document.getElementById('modalform').style.display = "block";
@@ -122,8 +147,8 @@ const upload = (file) => {
     }
 
     fetch(upload_url, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(handleErrors)
+        .then(downloadData)
         .catch(error => console.log('error', error));
 }
 
@@ -147,16 +172,7 @@ const style = (feature) => {
     };
 };
 
-const createTable = (event) => {
-    document.getElementById('openSidebarMenu').checked = true;
-    body = document.getElementById('datepicker');    
-    removeTable();    
-
-    let table = document.createElement('table');
-    table.setAttribute('id', 'table');
-    table.setAttribute('class', 'observation_table');
-    let tblBody = document.createElement('tbody');
-
+const observationsTable = (event) => {
     const date = new Date(event.layer.feature.properties['date_time']);
     const day = getDateFormat(date);
     const hour = getHourFormat(date);
@@ -183,6 +199,34 @@ const createTable = (event) => {
         'pm2_5': 'PM 2.5',
         'pm10_0': 'PM 10'
     }
+    createTable(clonedProperties, propertyNames, humanNames);
+}
+
+const gridTable = (event) => {
+    const clonedGridProperties = { ...event.layer.feature.properties };
+    const propertyGridNames = ['temperature', 'humidity', 'no2', 'co', 'nh3', 'pm1_0', 'pm2_5', 'pm10_0'];
+    const humanGridNames = {
+        'temperature': 'Temperatura',
+        'humidity': 'Humedad',
+        'no2': 'NO2',
+        'co': 'C0',
+        'nh3': 'NH3',
+        'pm1_0': 'PM 1',
+        'pm2_5': 'PM 2.5',
+        'pm10_0': 'PM 10'
+    }
+    createTable(clonedGridProperties, propertyGridNames, humanGridNames);
+}
+
+const createTable = (clonedProperties, propertyNames, humanNames) => {
+    document.getElementById('openSidebarMenu').checked = true;
+    body = document.getElementById('datepicker');    
+    removeTable();    
+
+    let table = document.createElement('table');
+    table.setAttribute('id', 'table');
+    table.setAttribute('class', 'observation_table');
+    let tblBody = document.createElement('tbody');
 
     propertyNames.map(property => {
         let fila = document.createElement('tr');
