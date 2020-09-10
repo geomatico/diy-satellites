@@ -1,9 +1,10 @@
 let map;
+let layerControl;
 
 const initmap = () => {
-    var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osmAttrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
-    osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
+    const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const osmAttrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
+    const osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
 
     map = L.map('map', {
         center: [40.412612, -3.686111],
@@ -15,7 +16,11 @@ const initmap = () => {
         position: 'bottomright'
     }).addTo(map);
 
-    layerControl = L.control.layers().addTo(map);
+    const baseMaps = {
+        "OSM": osm
+    }
+
+    layerControl = L.control.layers(baseMaps).addTo(map);
 
     downloadData();
     downloadGrid();
@@ -59,14 +64,13 @@ const downloadGrid = () => {
 }
 
 const drawOutput = (lines) => {
-    observations = L.geoJson(lines, {
+    const observations = L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
-    }).addTo(map).on('click', observationsTable);
+    });
+    observations.addTo(map).on('click', observationsTable);
     layerControl.addOverlay(observations, 'Observaciones');
-/*     let observationsLayerGroup = L.layerGroup().addLayer(observations).addTo(map);
-    layerControl.addOverlay(observationsLayerGroup, 'Observaciones'); */
 };
 
 var styleGrid = (feature) => {
