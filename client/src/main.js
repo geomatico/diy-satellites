@@ -11,10 +11,11 @@ const initmap = () => {
         layers: [osm],
         zoomControl: false
     });
-
     L.control.zoom({
-        position: 'topright'
+        position: 'bottomright'
     }).addTo(map);
+
+    layerControl = L.control.layers().addTo(map);
 
     downloadData();
     downloadGrid();
@@ -22,7 +23,7 @@ const initmap = () => {
 
 
 document.getElementById('submit').addEventListener('click', () => {
-    map.removeLayer(marker);
+    map.removeLayer(observations);
     let init = document.getElementById('start').value;
     let init_date = new Date(init);
     init_date = init_date.toISOString();
@@ -56,13 +57,16 @@ const downloadGrid = () => {
         .catch(err => console.log(err));
     
 }
-var marker;
+
 const drawOutput = (lines) => {
-    marker = L.geoJson(lines, {
+    observations = L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
     }).addTo(map).on('click', observationsTable);
+    layerControl.addOverlay(observations, 'Observaciones');
+/*     let observationsLayerGroup = L.layerGroup().addLayer(observations).addTo(map);
+    layerControl.addOverlay(observationsLayerGroup, 'Observaciones'); */
 };
 
 var styleGrid = (feature) => {
@@ -75,9 +79,11 @@ var styleGrid = (feature) => {
 };
 
 const drawGrid = (lines) => {
-    mark = L.geoJson(lines, {
+    grid = L.geoJson(lines, {
         style: styleGrid
     }).addTo(map).on('click', gridTable);
+    /* let gridLayersGroup = L.layerGroup().addLayer(grid).addTo(map); */
+    layerControl.addOverlay(grid, 'Rejilla');
 }
 
 document.getElementById('loginButton').addEventListener('click', () => {
