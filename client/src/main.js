@@ -1,5 +1,6 @@
 let map;
 let layerControl;
+let observations;
 
 const initmap = () => {
     const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -64,7 +65,7 @@ const downloadGrid = () => {
 }
 
 const drawOutput = (lines) => {
-    const observations = L.geoJson(lines, {
+    observations = L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
@@ -76,8 +77,7 @@ const drawOutput = (lines) => {
 var styleGrid = (feature) => {
     return {
         color: getColor(feature.properties.pm2_5),
-/*         fillcolor: '#973572',        
- */        weight: 5,
+        weight: 5,
         opacity: 0.65
     }
 };
@@ -86,7 +86,6 @@ const drawGrid = (lines) => {
     grid = L.geoJson(lines, {
         style: styleGrid
     }).addTo(map).on('click', gridTable);
-    /* let gridLayersGroup = L.layerGroup().addLayer(grid).addTo(map); */
     layerControl.addOverlay(grid, 'Rejilla');
 }
 
@@ -117,7 +116,6 @@ const downloadToken = (user, pass) => {
         .then(handleErrors)
         .then(res => res.json())
         .then(res => getToken(res));
-
 }
 
 var token;
@@ -174,7 +172,7 @@ const getColor = (x) => {
 const style = (feature) => {
     return {
         radius: 7,
-        color: '#ff7800',
+        color: 'black',
         fillColor: getColor(feature.properties.pm2_5),
         weight: 1,
         opacity: 1,
@@ -245,7 +243,10 @@ const createTable = (clonedProperties, propertyNames, humanNames) => {
         let celda2 = document.createElement('td');
         celda2.style.color = 'white';
         let contenidoCelda1 = document.createTextNode(humanNames[property]);
-        let contenidoCelda2 = document.createTextNode(clonedProperties[property]);
+        let contenidoCelda2;
+        (isNaN(clonedProperties[property]))?
+            contenidoCelda2 = document.createTextNode(clonedProperties[property]):
+            contenidoCelda2 = document.createTextNode(clonedProperties[property].toFixed(2));
         celda1.appendChild(contenidoCelda1);
         celda2.appendChild(contenidoCelda2);
         fila.appendChild(celda1);
