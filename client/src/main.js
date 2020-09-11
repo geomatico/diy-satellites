@@ -1,9 +1,11 @@
 let map;
+let layerControl;
+let observations;
 
 const initmap = () => {
-    var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osmAttrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
-    osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
+    const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const osmAttrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
+    const osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
 
     map = L.map('map', {
         center: [40.412612, -3.686111],
@@ -11,10 +13,15 @@ const initmap = () => {
         layers: [osm],
         zoomControl: false
     });
-
     L.control.zoom({
-        position: 'topright'
+        position: 'bottomright'
     }).addTo(map);
+
+    const baseMaps = {
+        "OSM": osm
+    }
+
+    layerControl = L.control.layers(baseMaps).addTo(map);
 
     downloadData();
     downloadGrid();
@@ -22,7 +29,7 @@ const initmap = () => {
 
 
 document.getElementById('submit').addEventListener('click', () => {
-    map.removeLayer(marker);
+    map.removeLayer(observations);
     let init = document.getElementById('start').value;
     let init_date = new Date(init);
     init_date = init_date.toISOString();
@@ -56,28 +63,30 @@ const downloadGrid = () => {
         .catch(err => console.log(err));
     
 }
-var marker;
+
 const drawOutput = (lines) => {
-    marker = L.geoJson(lines, {
+    observations = L.geoJson(lines, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, style(feature));
         },
-    }).addTo(map).on('click', observationsTable);
+    });
+    observations.addTo(map).on('click', observationsTable);
+    layerControl.addOverlay(observations, 'Observaciones');
 };
 
 var styleGrid = (feature) => {
     return {
         color: getColor(feature.properties.pm2_5),
-/*         fillcolor: '#973572',        
- */        weight: 5,
+        weight: 5,
         opacity: 0.65
     }
 };
 
 const drawGrid = (lines) => {
-    mark = L.geoJson(lines, {
+    grid = L.geoJson(lines, {
         style: styleGrid
     }).addTo(map).on('click', gridTable);
+    layerControl.addOverlay(grid, 'Rejilla');
 }
 
 document.getElementById('loginButton').addEventListener('click', () => {
@@ -107,7 +116,6 @@ const downloadToken = (user, pass) => {
         .then(handleErrors)
         .then(res => res.json())
         .then(res => getToken(res));
-
 }
 
 var token;
@@ -164,7 +172,7 @@ const getColor = (x) => {
 const style = (feature) => {
     return {
         radius: 7,
-        color: '#ff7800',
+        color: 'black',
         fillColor: getColor(feature.properties.pm2_5),
         weight: 1,
         opacity: 1,
@@ -235,7 +243,10 @@ const createTable = (clonedProperties, propertyNames, humanNames) => {
         let celda2 = document.createElement('td');
         celda2.style.color = 'white';
         let contenidoCelda1 = document.createTextNode(humanNames[property]);
-        let contenidoCelda2 = document.createTextNode(clonedProperties[property]);
+        let contenidoCelda2;
+        (isNaN(clonedProperties[property]))?
+            contenidoCelda2 = document.createTextNode(clonedProperties[property]):
+            contenidoCelda2 = document.createTextNode(clonedProperties[property].toFixed(2));
         celda1.appendChild(contenidoCelda1);
         celda2.appendChild(contenidoCelda2);
         fila.appendChild(celda1);
