@@ -3,342 +3,3380 @@
     "model": "api.observation",
     "pk": 1,
     "fields": {
-        "date_time": "2020-06-16T00:00:00",
-        "geom": "SRID=4326;POINT (-3.6938668 40.4106902)",
-        "altitude_gps": 1.0,
-        "temperature": 1.0,
-        "humidity": 1.0,
-        "altitude_bar": 1.0,
-        "pressure": 1.0,
-        "no2": 1.0,
-        "co": 1.0,
-        "nh3": 1.0,
-        "pm1_0": 1.0,
-        "pm2_5": 1.0,
-        "pm10_0": 1.0
+        "pm1_0": 18.0,
+        "pm2_5": 23.0,
+        "pm10_0": 24.0,
+        "date": "2020-09-11",
+        "time": "13:54:00",
+        "geom": "SRID=4326;POINT (-3.701403 40.3991183)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 2,
     "fields": {
-        "date_time": "2020-06-16T00:00:01",
-        "geom": "SRID=4326;POINT (-3.6939682 40.4106918)",
-        "altitude_gps": 2.0,
-        "temperature": 2.0,
-        "humidity": 2.0,
-        "altitude_bar": 2.0,
-        "pressure": 2.0,
-        "no2": 2.0,
-        "co": 2.0,
-        "nh3": 2.0,
-        "pm1_0": 2.0,
-        "pm2_5": 2.0,
-        "pm10_0": 1.2
+        "pm1_0": 21.0,
+        "pm2_5": 29.0,
+        "pm10_0": 29.0,
+        "date": "2020-09-11",
+        "time": "13:54:00",
+        "geom": "SRID=4326;POINT (-3.7014333 40.3991082)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 3,
     "fields": {
-        "date_time": "2020-06-16T00:00:02",
-        "geom": "SRID=4326;POINT (-3.6940685 40.4106927)",
-        "altitude_gps": 3.0,
-        "temperature": 3.0,
-        "humidity": 3.0,
-        "altitude_bar": 3.0,
-        "pressure": 3.0,
-        "no2": 3.0,
-        "co": 3.0,
-        "nh3": 3.0,
-        "pm1_0": 3.0,
-        "pm2_5": 3.0,
-        "pm10_0": 2.2
+        "pm1_0": 32.0,
+        "pm2_5": 49.0,
+        "pm10_0": 60.0,
+        "date": "2020-09-11",
+        "time": "13:54:00",
+        "geom": "SRID=4326;POINT (-3.701492 40.3990788)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 4,
     "fields": {
-        "date_time": "2020-06-16T00:00:03",
-        "geom": "SRID=4326;POINT (-3.6941703 40.4106948)",
-        "altitude_gps": 1.1,
-        "temperature": 1.1,
-        "humidity": 1.1,
-        "altitude_bar": 1.1,
-        "pressure": 1.1,
-        "no2": 1.1,
-        "co": 1.1,
-        "nh3": 1.1,
-        "pm1_0": 1.1,
-        "pm2_5": 1.1,
-        "pm10_0": 3.0
+        "pm1_0": 32.0,
+        "pm2_5": 49.0,
+        "pm10_0": 60.0,
+        "date": "2020-09-11",
+        "time": "13:54:00",
+        "geom": "SRID=4326;POINT (-3.7015155 40.3990925)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 5,
     "fields": {
-        "date_time": "2020-06-16T00:00:04",
-        "geom": "SRID=4326;POINT (-3.694273 40.4106948)",
-        "altitude_gps": 3.0,
-        "temperature": 3.0,
-        "humidity": 3.0,
-        "altitude_bar": 3.0,
-        "pressure": 3.0,
-        "no2": 3.0,
-        "co": 3.0,
-        "nh3": 3.0,
-        "pm1_0": 3.0,
-        "pm2_5": 3.0,
-        "pm10_0": 3.5
+        "pm1_0": 33.0,
+        "pm2_5": 52.0,
+        "pm10_0": 63.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7015678 40.399109)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 6,
     "fields": {
-        "date_time": "2020-06-16T00:00:05",
-        "geom": "SRID=4326;POINT (-3.694373 40.4106888)",
-        "altitude_gps": 4.0,
-        "temperature": 4.0,
-        "humidity": 4.0,
-        "altitude_bar": 4.0,
-        "pressure": 4.0,
-        "no2": 4.0,
-        "co": 4.0,
-        "nh3": 4.0,
-        "pm1_0": 4.0,
-        "pm2_5": 4.0,
-        "pm10_0": 8.0
+        "pm1_0": 24.0,
+        "pm2_5": 40.0,
+        "pm10_0": 48.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7016027 40.3991437)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 7,
     "fields": {
-        "date_time": "2020-06-16T00:00:06",
-        "geom": "SRID=4326;POINT (-3.694479 40.4106898)",
-        "altitude_gps": 1.2,
-        "temperature": 1.2,
-        "humidity": 1.2,
-        "altitude_bar": 1.2,
-        "pressure": 1.2,
-        "no2": 1.2,
-        "co": 1.2,
-        "nh3": 1.2,
-        "pm1_0": 1.2,
-        "pm2_5": 1.2,
-        "pm10_0": 15.0
+        "pm1_0": 21.0,
+        "pm2_5": 36.0,
+        "pm10_0": 42.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7015503 40.3991808)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 8,
     "fields": {
-        "date_time": "2020-06-16T00:00:07",
-        "geom": "SRID=4326;POINT (-3.694581 40.4106905)",
-        "altitude_gps": 4.0,
-        "temperature": 4.0,
-        "humidity": 4.0,
-        "altitude_bar": 4.0,
-        "pressure": 4.0,
-        "no2": 4.0,
-        "co": 4.0,
-        "nh3": 4.0,
-        "pm1_0": 4.0,
-        "pm2_5": 4.0,
-        "pm10_0": 2.3
+        "pm1_0": 19.0,
+        "pm2_5": 36.0,
+        "pm10_0": 42.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7015578 40.3991978)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 9,
     "fields": {
-        "date_time": "2020-06-16T00:00:08",
-        "geom": "SRID=4326;POINT (-3.6946807 40.4106905)",
-        "altitude_gps": 5.0,
-        "temperature": 5.0,
-        "humidity": 5.0,
-        "altitude_bar": 5.0,
-        "pressure": 5.0,
-        "no2": 5.0,
-        "co": 5.0,
-        "nh3": 5.0,
-        "pm1_0": 5.0,
-        "pm2_5": 5.0,
-        "pm10_0": 157.0
+        "pm1_0": 15.0,
+        "pm2_5": 26.0,
+        "pm10_0": 26.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.701583 40.3992703)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 10,
     "fields": {
-        "date_time": "2020-06-16T00:00:09",
-        "geom": "SRID=4326;POINT (-3.6947815 40.4106912)",
-        "altitude_gps": 1.3,
-        "temperature": 1.3,
-        "humidity": 1.3,
-        "altitude_bar": 1.3,
-        "pressure": 1.3,
-        "no2": 1.3,
-        "co": 1.3,
-        "nh3": 1.3,
-        "pm1_0": 1.3,
-        "pm2_5": 1.3,
-        "pm10_0": 4.0
+        "pm1_0": 11.0,
+        "pm2_5": 22.0,
+        "pm10_0": 22.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7015952 40.3993197)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 11,
     "fields": {
-        "date_time": "2020-06-16T00:00:10",
-        "geom": "SRID=4326;POINT (-3.6948817 40.4106927)",
-        "altitude_gps": 5.0,
-        "temperature": 5.0,
-        "humidity": 5.0,
-        "altitude_bar": 5.0,
-        "pressure": 5.0,
-        "no2": 5.0,
-        "co": 5.0,
-        "nh3": 5.0,
-        "pm1_0": 5.0,
-        "pm2_5": 5.0,
-        "pm10_0": 5.0
+        "pm1_0": 11.0,
+        "pm2_5": 18.0,
+        "pm10_0": 18.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.701603 40.3993275)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 12,
     "fields": {
-        "date_time": "2020-06-16T00:00:11",
-        "geom": "SRID=4326;POINT (-3.6949842 40.4106945)",
-        "altitude_gps": 6.0,
-        "temperature": 6.0,
-        "humidity": 6.0,
-        "altitude_bar": 6.0,
-        "pressure": 6.0,
-        "no2": 6.0,
-        "co": 6.0,
-        "nh3": 6.0,
-        "pm1_0": 6.0,
-        "pm2_5": 6.0,
-        "pm10_0": 6.0
+        "pm1_0": 10.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7016235 40.3993937)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 13,
     "fields": {
-        "date_time": "2020-06-16T00:00:12",
-        "geom": "SRID=4326;POINT (-3.695086 40.4106958)",
-        "altitude_gps": 1.4,
-        "temperature": 1.4,
-        "humidity": 1.4,
-        "altitude_bar": 1.4,
-        "pressure": 1.4,
-        "no2": 1.4,
-        "co": 1.4,
-        "nh3": 1.4,
-        "pm1_0": 1.4,
-        "pm2_5": 1.4,
-        "pm10_0": 8.0
+        "pm1_0": 10.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.701622 40.3994187)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 14,
     "fields": {
-        "date_time": "2020-06-16T00:00:13",
-        "geom": "SRID=4326;POINT (-3.6951872 40.410697)",
-        "altitude_gps": 6.0,
-        "temperature": 6.0,
-        "humidity": 6.0,
-        "altitude_bar": 6.0,
-        "pressure": 6.0,
-        "no2": 6.0,
-        "co": 6.0,
-        "nh3": 6.0,
-        "pm1_0": 6.0,
-        "pm2_5": 6.0,
-        "pm10_0": 2.0
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7016608 40.3994503)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 15,
     "fields": {
-        "date_time": "2020-06-16T23:59:59",
-        "geom": "SRID=4326;POINT (-3.6952897 40.410698)",
-        "altitude_gps": 7.0,
-        "temperature": 7.0,
-        "humidity": 7.0,
-        "altitude_bar": 7.0,
-        "pressure": 7.0,
-        "no2": 7.0,
-        "co": 7.0,
-        "nh3": 7.0,
-        "pm1_0": 7.0,
-        "pm2_5": 7.0,
-        "pm10_0": 5.0
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7016678 40.3994892)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 16,
     "fields": {
-        "date_time": "2020-06-17T00:00:01",
-        "geom": "SRID=4326;POINT (-3.6953922 40.4106998)",
-        "altitude_gps": 1.5,
-        "temperature": 1.5,
-        "humidity": 1.5,
-        "altitude_bar": 1.5,
-        "pressure": 1.5,
-        "no2": 1.5,
-        "co": 1.5,
-        "nh3": 1.5,
-        "pm1_0": 1.5,
-        "pm2_5": 1.5,
-        "pm10_0": 5.0
+        "pm1_0": 3328.0,
+        "pm2_5": 2560.0,
+        "pm10_0": 3328.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7017373 40.3995817)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 17,
     "fields": {
-        "date_time": "2020-06-18T00:00:02",
-        "geom": "SRID=4326;POINT (-3.695496 40.4107015)",
-        "altitude_gps": 7.0,
-        "temperature": 7.0,
-        "humidity": 7.0,
-        "altitude_bar": 7.0,
-        "pressure": 7.0,
-        "no2": 7.0,
-        "co": 7.0,
-        "nh3": 7.0,
-        "pm1_0": 7.0,
-        "pm2_5": 7.0,
-        "pm10_0": 5.0
+        "pm1_0": 10.0,
+        "pm2_5": 2560.0,
+        "pm10_0": 3328.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.701788 40.3996035)",
+        "username": "cansat"
     }
 },
 {
     "model": "api.observation",
     "pk": 18,
     "fields": {
-        "date_time": "2020-06-19T00:00:03",
-        "geom": "SRID=4326;POINT (-3.695501 40.410703)",
-        "altitude_gps": 8.0,
-        "temperature": 8.0,
-        "humidity": 8.0,
-        "altitude_bar": 8.0,
-        "pressure": 8.0,
-        "no2": 8.0,
-        "co": 8.0,
-        "nh3": 8.0,
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.701813 40.3996122)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 19,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7018295 40.3996395)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 20,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7018232 40.3996747)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 21,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7018268 40.3996868)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 22,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 15.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7017333 40.3998867)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 23,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7017475 40.3999197)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 24,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7017483 40.3999355)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 25,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7017295 40.4000177)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 26,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.7017183 40.4000257)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 27,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:55:00",
+        "geom": "SRID=4326;POINT (-3.701711 40.4000677)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 28,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7017168 40.4000917)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 29,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.70166 40.4001262)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 30,
+    "fields": {
         "pm1_0": 8.0,
-        "pm2_5": 8.0,
-        "pm10_0": 1.0
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7016422 40.400115)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 31,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7016232 40.4001252)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 32,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7016298 40.400159)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 33,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7016573 40.400174)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 34,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7017605 40.400235)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 35,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7018207 40.4002685)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 36,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7019053 40.4003077)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 37,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7019372 40.4003275)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 38,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7019562 40.4003472)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 39,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7019618 40.400351)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 40,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7019838 40.4003645)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 41,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7019907 40.4003695)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 42,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7021022 40.4004115)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 43,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.702148 40.400449)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 44,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7021652 40.4004708)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 45,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7021847 40.400491)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 46,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7022405 40.4005262)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 47,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.702278 40.400526)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 48,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7022823 40.4005375)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 49,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7022865 40.4005395)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 50,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7023568 40.4005632)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 51,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7023505 40.4005717)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 52,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.702342 40.4005838)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 53,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:56:00",
+        "geom": "SRID=4326;POINT (-3.7023372 40.4005872)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 54,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7023462 40.4006637)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 55,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7023418 40.4006818)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 56,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7023397 40.4006907)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 57,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7023437 40.4007102)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 58,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7024475 40.4007538)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 59,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7024513 40.4007575)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 60,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025243 40.400823)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 61,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.702514 40.40084)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 62,
+    "fields": {
+        "pm1_0": 7.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025275 40.4008497)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 63,
+    "fields": {
+        "pm1_0": 7.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025115 40.4008667)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 64,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025403 40.4008865)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 65,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025298 40.400892)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 66,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025443 40.4009068)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 67,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.702579 40.4009278)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 68,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025925 40.4009492)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 69,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025975 40.4009593)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 70,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.702599 40.4009727)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 71,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7026177 40.4010197)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 72,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7026022 40.4009958)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 73,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7026035 40.401003)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 74,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025977 40.4010083)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 75,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7025653 40.4009933)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 76,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7026108 40.4010027)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 77,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.7026075 40.4009955)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 78,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:57:00",
+        "geom": "SRID=4326;POINT (-3.702602 40.4009753)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 79,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7026013 40.4009683)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 80,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7025632 40.4009405)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 81,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7025513 40.4009393)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 82,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.702538 40.40094)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 83,
+    "fields": {
+        "pm1_0": 151.0,
+        "pm2_5": 2.0,
+        "pm10_0": 42818.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7024965 40.4009427)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 84,
+    "fields": {
+        "pm1_0": 151.0,
+        "pm2_5": 2.0,
+        "pm10_0": 42818.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7024702 40.400945)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 85,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7024603 40.4009582)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 86,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7024147 40.4009522)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 87,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.702398 40.400983)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 88,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023908 40.4009968)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 89,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023782 40.4010178)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 90,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023693 40.401035)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 91,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023695 40.4010397)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 92,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023668 40.4010283)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 93,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.702369 40.4010248)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 94,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023687 40.4010285)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 95,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023928 40.4010507)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 96,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:58:00",
+        "geom": "SRID=4326;POINT (-3.7023762 40.4010567)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 97,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7023642 40.4011212)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 98,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7023393 40.4010993)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 99,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.702302 40.4011155)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 100,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7022637 40.40114)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 101,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7022417 40.4011598)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 102,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7022157 40.401144)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 103,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021997 40.4011428)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 104,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021605 40.4011378)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 105,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021538 40.4011372)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 106,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.702113 40.4011715)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 107,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021065 40.4011922)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 108,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021475 40.4012087)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 109,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021448 40.4012013)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 110,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021693 40.4011947)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 111,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021757 40.4011903)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 112,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "13:59:00",
+        "geom": "SRID=4326;POINT (-3.7021805 40.401188)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 113,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021872 40.4011742)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 114,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021992 40.4011615)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 115,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7022032 40.40116)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 116,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7022083 40.4011587)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 117,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7022093 40.4011553)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 118,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 15.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7022155 40.4011397)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 119,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7022122 40.4011387)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 120,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021977 40.4011402)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 121,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 15.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021892 40.4011392)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 122,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 14.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021915 40.4011458)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 123,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021918 40.4011532)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 124,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021657 40.4011427)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 125,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021447 40.4010577)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 126,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021178 40.4009752)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 127,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7021065 40.4009807)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 128,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7020933 40.4009788)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 129,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7020872 40.4009993)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 130,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7020602 40.4010067)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 131,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.702084 40.4011218)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 132,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 16.0,
+        "pm10_0": 16.0,
+        "date": "2020-09-11",
+        "time": "14:00:00",
+        "geom": "SRID=4326;POINT (-3.7020693 40.4011215)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 133,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7020453 40.4011258)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 134,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7021083 40.4013127)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 135,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7020957 40.401309)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 136,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7019712 40.4012722)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 137,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7019227 40.4012448)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 138,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7017957 40.401312)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 139,
+    "fields": {
+        "pm1_0": 7.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7017358 40.4012898)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 140,
+    "fields": {
+        "pm1_0": 7.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7016722 40.4012707)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 141,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7016618 40.4012843)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 142,
+    "fields": {
+        "pm1_0": 7.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7015998 40.4012997)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 143,
+    "fields": {
+        "pm1_0": 7.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7015913 40.4013408)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 144,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7016012 40.4013798)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 145,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7015095 40.4012968)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 146,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7014643 40.4012427)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 147,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:01:00",
+        "geom": "SRID=4326;POINT (-3.7014255 40.4012168)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 148,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7013208 40.401181)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 149,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7013105 40.4011812)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 150,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.701277 40.4011762)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 151,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.701217 40.4011343)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 152,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7010975 40.4010852)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 153,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7010777 40.4011597)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 154,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7010915 40.401197)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 155,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7010492 40.4012097)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 156,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7009835 40.4012232)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 157,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7008915 40.4012027)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 158,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7008923 40.40121)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 159,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7008737 40.4012137)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 160,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7008322 40.4011827)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 161,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.700803 40.401167)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 162,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7007808 40.401172)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 163,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.7007122 40.4011952)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 164,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 12.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:02:00",
+        "geom": "SRID=4326;POINT (-3.700607 40.401222)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 165,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7004138 40.4011057)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 166,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7002268 40.4010592)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 167,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7002297 40.4010692)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 168,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7002262 40.4010758)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 169,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7002045 40.4010868)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 170,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.700109 40.4011472)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 171,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7000537 40.4011685)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 172,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.700051 40.4011857)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 173,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.7000135 40.4011958)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 174,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.6999468 40.4011805)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 175,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.699806 40.4011473)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 176,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.699695 40.4011937)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 177,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.6996792 40.401191)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 178,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.6996513 40.401203)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 179,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.6996167 40.4012012)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 180,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.6995975 40.401211)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 181,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.6995788 40.401215)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 182,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.699551 40.401228)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 183,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.699514 40.4012563)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 184,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:03:00",
+        "geom": "SRID=4326;POINT (-3.699473 40.401274)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 185,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6994457 40.4012975)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 186,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.699427 40.4013112)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 187,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6994132 40.4013018)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 188,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6993658 40.4012673)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 189,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6992747 40.401255)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 190,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6991773 40.4012743)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 191,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6991632 40.4012803)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 192,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.699132 40.4012902)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 193,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6990953 40.4013032)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 194,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (0 0)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 195,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6990172 40.4013557)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 196,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6990223 40.40138)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 197,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6989988 40.4014017)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 198,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6989887 40.4014367)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 199,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6989067 40.4014578)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 200,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6988498 40.4014527)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 201,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6988605 40.4014673)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 202,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6986635 40.4013947)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 203,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 9.0,
+        "pm10_0": 9.0,
+        "date": "2020-09-11",
+        "time": "14:04:00",
+        "geom": "SRID=4326;POINT (-3.6986038 40.4013992)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 204,
+    "fields": {
+        "pm1_0": 8.0,
+        "pm2_5": 10.0,
+        "pm10_0": 10.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6985772 40.401393)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 205,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6985207 40.40147)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 206,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6984522 40.4015898)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 207,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983655 40.4016612)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 208,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983398 40.4017602)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 209,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983115 40.4018442)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 210,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983378 40.4020348)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 211,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983383 40.4020547)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 212,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983273 40.4021087)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 213,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.69831 40.4021342)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 214,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6983075 40.4021473)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 215,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6982797 40.4021637)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 216,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6982623 40.4021913)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 217,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 15.0,
+        "pm10_0": 15.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.6982143 40.4022025)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 218,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.698166 40.4022167)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 219,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.698139 40.4022298)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 220,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:05:00",
+        "geom": "SRID=4326;POINT (-3.698072 40.4022548)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 221,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6980362 40.4022772)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 222,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6980022 40.4022877)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 223,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.698035 40.4024152)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 224,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6979602 40.4025148)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 225,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6978205 40.4025533)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 226,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6978102 40.402552)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 227,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6977743 40.4025655)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 228,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6977522 40.402609)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 229,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6977048 40.402661)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 230,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.697679 40.4027157)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 231,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6976192 40.4027893)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 232,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6976127 40.4027978)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 233,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6976027 40.4027775)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 234,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6975987 40.4027862)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 235,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6975302 40.4027902)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 236,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6974793 40.402773)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 237,
+    "fields": {
+        "pm1_0": 9.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:06:00",
+        "geom": "SRID=4326;POINT (-3.6974503 40.4027293)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 238,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974495 40.4027207)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 239,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 11.0,
+        "pm10_0": 11.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974527 40.4027168)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 240,
+    "fields": {
+        "pm1_0": 10.0,
+        "pm2_5": 12.0,
+        "pm10_0": 12.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974538 40.4027198)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 241,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974345 40.4027117)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 242,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974172 40.4027253)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 243,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974158 40.402718)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 244,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 13.0,
+        "pm10_0": 13.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974105 40.402724)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 245,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974132 40.402725)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 246,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.697428 40.4027507)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 247,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974375 40.4027592)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 248,
+    "fields": {
+        "pm1_0": 11.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974417 40.4028293)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 249,
+    "fields": {
+        "pm1_0": 12.0,
+        "pm2_5": 14.0,
+        "pm10_0": 14.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6974267 40.4028353)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 250,
+    "fields": {
+        "pm1_0": 28.0,
+        "pm2_5": 42.0,
+        "pm10_0": 49.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6976178 40.402991)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 251,
+    "fields": {
+        "pm1_0": 30.0,
+        "pm2_5": 46.0,
+        "pm10_0": 56.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6978022 40.4029337)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 252,
+    "fields": {
+        "pm1_0": 31.0,
+        "pm2_5": 48.0,
+        "pm10_0": 58.0,
+        "date": "2020-09-11",
+        "time": "14:07:00",
+        "geom": "SRID=4326;POINT (-3.6979057 40.4028205)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 253,
+    "fields": {
+        "pm1_0": 30.0,
+        "pm2_5": 46.0,
+        "pm10_0": 56.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.6986618 40.4027427)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 254,
+    "fields": {
+        "pm1_0": 29.0,
+        "pm2_5": 45.0,
+        "pm10_0": 55.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.6986278 40.4028505)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 255,
+    "fields": {
+        "pm1_0": 22.0,
+        "pm2_5": 34.0,
+        "pm10_0": 37.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.6983577 40.4031655)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 256,
+    "fields": {
+        "pm1_0": 17.0,
+        "pm2_5": 28.0,
+        "pm10_0": 28.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.6980348 40.4015938)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 257,
+    "fields": {
+        "pm1_0": 16.0,
+        "pm2_5": 26.0,
+        "pm10_0": 27.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.6978968 40.4012675)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 258,
+    "fields": {
+        "pm1_0": 17.0,
+        "pm2_5": 28.0,
+        "pm10_0": 28.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.6975753 40.401169)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 259,
+    "fields": {
+        "pm1_0": 18.0,
+        "pm2_5": 28.0,
+        "pm10_0": 28.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.697804 40.4016793)",
+        "username": "cansat"
+    }
+},
+{
+    "model": "api.observation",
+    "pk": 260,
+    "fields": {
+        "pm1_0": 18.0,
+        "pm2_5": 27.0,
+        "pm10_0": 28.0,
+        "date": "2020-09-11",
+        "time": "14:08:00",
+        "geom": "SRID=4326;POINT (-3.695647 40.403509)",
+        "username": "cansat"
     }
 }
 ]
