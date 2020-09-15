@@ -38,10 +38,6 @@ class ObservationByGridViewSet(viewsets.ReadOnlyModelViewSet):
     def list(self, request, *args, **kwargs):
 
         observations_by_grid = self.queryset
-        if request.query_params:
-            init_date = datetime.strptime(request.query_params['init_date'], constants.FORMAT_DATE)
-            end_date = datetime.strptime(request.query_params['end_date'], constants.FORMAT_DATE)
-            observations_by_grid = ObservationByGrid.objects.filter(date_time__range=(init_date, end_date))
         serializer = ObservationByGridSerializer(observations_by_grid, many=True)
         return Response(serializer.data)
 
@@ -52,14 +48,15 @@ class UploadCsv(views.APIView):
 
     def post(self, request):
 
+        username = request.user
         csv_file = request.data['file']
         file_data = csv_file.read().decode("utf-8")
         io_string = io.StringIO(file_data)
         next(io_string)
 
-        for observation_from_csv in csv.reader(io_string, delimiter=',', quotechar='|'):
+        for observation_from_csv in csv.reader(io_string, delimiter=';', quotechar='|'):
             try:
-                inserted = insert_observation_into_database(observation_from_csv)
+                inserted = insert_observation_into_database(observation_from_csv, username)
             except Exception as err:
                 print(err)
 
