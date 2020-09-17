@@ -25,7 +25,7 @@ class ObservationsViewSet(viewsets.ReadOnlyModelViewSet):
         if request.query_params:
             init_date = datetime.strptime(request.query_params['init_date'], constants.FORMAT_DATE)
             end_date = datetime.strptime(request.query_params['end_date'], constants.FORMAT_DATE)
-            observations = Observation.objects.filter(date_time__range=(init_date, end_date))
+            observations = Observation.objects.filter(date__range=(init_date, end_date))
         serializer = ObservationSerializer(observations, many=True)
         return Response(serializer.data)
 
