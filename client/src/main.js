@@ -1,3 +1,4 @@
+import DiyConstants from './constants'
 let map;
 let layerControl;
 let observations;
@@ -14,7 +15,7 @@ const initmap = () => {
         zoomControl: false
     });
     L.control.zoom({
-        position: 'bottomright'
+        position: 'topright'
     }).addTo(map);
 
     const baseMaps = {
@@ -25,8 +26,25 @@ const initmap = () => {
 
     downloadData();
     downloadGrid();
+    createLegend();
 };
 
+const createLegend = () => {
+    let legend = L.control({position: 'bottomright'});
+    legend.onAdd = (map) => {
+        const div = L.DomUtil.create('div', 'leg')
+        const grades = [0, 5, 10, 15, 20, 25]
+        const labels = [];
+        div.innerHTML = `PM2.5 ${DiyConstants.UNITS} ${DiyConstants.BREAKLINE} `
+        for (let i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                grades[i] + (grades[i + 1] ? '&ndash;' + (grades[i + 1]- 1) + '<br>' : '+');
+        } 
+        return div; 
+    };
+    legend.addTo(map);
+}
 
 document.getElementById('submit').addEventListener('click', () => {
     map.removeLayer(observations);
@@ -55,7 +73,7 @@ const downloadData = (init_date, end_date) => {
 };
 
 const downloadGrid = () => {
-    let grid_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GRID_URL}`;
+    const grid_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GRID_URL}`;
     fetch(grid_url)
         .then(handleErrors)
         .then(res => res.json())
@@ -72,36 +90,39 @@ const drawOutput = (lines) => {
     });
     observations.addTo(map).on('click', observationsTable);
     layerControl.addOverlay(observations, 'Observaciones');
+    map.flyTo([lines.features[0].geometry.coordinates[1], lines.features[0].geometry.coordinates[0]], 
+        16, {animate: false, duration: 0.1});
 };
 
 var styleGrid = (feature) => {
     return {
-        color: getColor(feature.properties.pm2_5),
-        weight: 5,
-        opacity: 0.65
+        color: 'black',
+        weight: 2,
+        fillOpacity: 0.65,
+        fillColor: getColor(feature.properties.pm2_5)
     }
 };
 
 const drawGrid = (lines) => {
-    grid = L.geoJson(lines, {
+    const grid = L.geoJson(lines, {
         style: styleGrid
     }).addTo(map).on('click', gridTable);
     layerControl.addOverlay(grid, 'Rejilla');
 }
 
 document.getElementById('loginButton').addEventListener('click', () => {
-    let modal = document.getElementById('modalform').style.display = "block";
+    const modal = document.getElementById('modalform').style.display = "block";
 
 });
 
 document.querySelector('.btnlogin').addEventListener('click', () => {
-    let uname = document.getElementById('uname').value;
-    let psw = document.getElementById('psw').value;
+    const uname = document.getElementById('uname').value;
+    const psw = document.getElementById('psw').value;
     downloadToken(uname, psw);
 });
 
 const downloadToken = (user, pass) => {
-    let get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
+    const get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
     let formdata = new FormData();
     formdata.append('username', user);
     formdata.append('password', pass);
@@ -122,7 +143,7 @@ var token;
 const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
-    let modal = document.getElementById('modalform').style.display = 'none';
+    const modal = document.getElementById('modalform').style.display = 'none';
     removeTable();
 }
 
@@ -162,9 +183,9 @@ const upload = (file) => {
 
 const getColor = (x) => {
     return  x > 25 ? '#bd0026' :
-            x > 20 ? '#e31a1c' :
-            x > 15 ? '#fc4e2a' :
-            x > 10 ? '#fed976' :
+            x > 19 ? '#e31a1c' :
+            x > 14 ? '#fc4e2a' :
+            x >  9 ? '#fed976' :
             x >  5 ? '#41ae76' :
                      '#006d2c';
 };
@@ -174,61 +195,44 @@ const style = (feature) => {
         radius: 7,
         color: 'black',
         fillColor: getColor(feature.properties.pm2_5),
-        weight: 1,
-        opacity: 1,
+        weight: 2,
+        opacity: 0.8,
         fillOpacity: 0.8
     };
 };
 
 const observationsTable = (event) => {
-    const date = new Date(event.layer.feature.properties['date_time']);
+    const date = new Date(event.layer.feature.properties['date']);
     const day = getDateFormat(date);
-    const hour = getHourFormat(date);
-
     const clonedProperties = { ...event.layer.feature.properties };
-    delete clonedProperties['date_time'];
     clonedProperties['date'] = day;
-    clonedProperties['hour'] = hour;
     
-    const propertyNames = ['date', 'hour', 'altitude_gps', 'temperature', 'humidity', 'altitude_bar', 'pressure',
-            'no2', 'co', 'nh3', 'pm1_0', 'pm2_5', 'pm10_0'];
+    const propertyNames = ['date', 'time', 'pm1_0', 'pm2_5', 'pm10_0'];
     const humanNames = {
         'date': 'Fecha',
-        'hour': 'Hora',
-        'altitude_gps': 'Altitud',
-        'temperature': 'Temperatura',
-        'humidity': 'Humedad',
-        'altitude_bar': 'Altitud Bar',
-        'pressure': 'Presión',
-        'no2': 'NO2',
-        'co': 'CO',
-        'nh3': 'NH3',
-        'pm1_0': 'PM 1',
-        'pm2_5': 'PM 2.5',
-        'pm10_0': 'PM 10'
+        'time': 'Hora',
+        'pm1_0': `PM 1 ${DiyConstants.UNITS}`,  
+        'pm2_5': `PM 2.5 ${DiyConstants.UNITS}`,
+        'pm10_0': `PM 10 ${DiyConstants.UNITS}`
     }
     createTable(clonedProperties, propertyNames, humanNames);
 }
 
 const gridTable = (event) => {
     const clonedGridProperties = { ...event.layer.feature.properties };
-    const propertyGridNames = ['temperature', 'humidity', 'no2', 'co', 'nh3', 'pm1_0', 'pm2_5', 'pm10_0'];
+    const propertyGridNames = ['username', 'pm1_0', 'pm2_5', 'pm10_0'];
     const humanGridNames = {
-        'temperature': 'Temperatura',
-        'humidity': 'Humedad',
-        'no2': 'NO2',
-        'co': 'C0',
-        'nh3': 'NH3',
-        'pm1_0': 'PM 1',
-        'pm2_5': 'PM 2.5',
-        'pm10_0': 'PM 10'
+        'username': 'Usuario + activo',
+        'pm1_0': `PM 1 ${DiyConstants.UNITS}`,
+        'pm2_5': `PM 2.5 ${DiyConstants.UNITS}`,
+        'pm10_0': `PM 10 ${DiyConstants.UNITS}`        
     }
     createTable(clonedGridProperties, propertyGridNames, humanGridNames);
 }
 
 const createTable = (clonedProperties, propertyNames, humanNames) => {
     document.getElementById('openSidebarMenu').checked = true;
-    body = document.getElementById('datepicker');    
+    const body = document.getElementById('datepicker');    
     removeTable();    
 
     let table = document.createElement('table');
@@ -244,9 +248,7 @@ const createTable = (clonedProperties, propertyNames, humanNames) => {
         celda2.style.color = 'white';
         let contenidoCelda1 = document.createTextNode(humanNames[property]);
         let contenidoCelda2;
-        (isNaN(clonedProperties[property]))?
-            contenidoCelda2 = document.createTextNode(clonedProperties[property]):
-            contenidoCelda2 = document.createTextNode(clonedProperties[property].toFixed(2));
+        contenidoCelda2 = document.createTextNode(clonedProperties[property]);
         celda1.appendChild(contenidoCelda1);
         celda2.appendChild(contenidoCelda2);
         fila.appendChild(celda1);
@@ -260,7 +262,7 @@ const createTable = (clonedProperties, propertyNames, humanNames) => {
 }
 
 const removeTable = () => {
-    let element = document.getElementById('table');
+    const element = document.getElementById('table');
     if (typeof (element) != 'undefined' && element != null) {
         let parentEl = element.parentElement;
         parentEl.removeChild(element);
@@ -274,7 +276,7 @@ const getDateFormat = (date) => {
     let m = date.getMonth() + 1;
     m = m.toString();
     m = pad.substr(0, pad.length - m.length) + m;
-    day = [d, m, date.getFullYear()].join('/');
+    const day = [d, m, date.getFullYear()].join('/');
     return day;
 }
 
