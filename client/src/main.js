@@ -90,7 +90,8 @@ const drawOutput = (lines) => {
     });
     observations.addTo(map).on('click', observationsTable);
     layerControl.addOverlay(observations, 'Observaciones');
-    map.flyTo([lines.features[0].geometry.coordinates[1], lines.features[0].geometry.coordinates[0]], 
+    let end_observation = lines.features.length - 1;
+    map.flyTo([lines.features[end_observation].geometry.coordinates[1], lines.features[end_observation].geometry.coordinates[0]], 
         16, {animate: false, duration: 0.1});
 };
 
@@ -238,14 +239,16 @@ const createTable = (clonedProperties, propertyNames, humanNames) => {
     let table = document.createElement('table');
     table.setAttribute('id', 'table');
     table.setAttribute('class', 'observation_table');
+    table.setAttribute('border', '1');
+    table.setAttribute('border-color', 'black');
     let tblBody = document.createElement('tbody');
 
     propertyNames.map(property => {
         let fila = document.createElement('tr');
         let celda1 = document.createElement('td');
-        celda1.style.color = 'white';
+        celda1.style.color = 'black';
         let celda2 = document.createElement('td');
-        celda2.style.color = 'white';
+        celda2.style.color = 'black';
         let contenidoCelda1 = document.createTextNode(humanNames[property]);
         let contenidoCelda2;
         contenidoCelda2 = document.createTextNode(clonedProperties[property]);
@@ -258,7 +261,7 @@ const createTable = (clonedProperties, propertyNames, humanNames) => {
 
     table.appendChild(tblBody);
     body.appendChild(table);
-    table.setAttribute('border', '2');
+    
 }
 
 const removeTable = () => {
