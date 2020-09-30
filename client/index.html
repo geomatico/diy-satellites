@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title data-i18n="title">DIY-Satellite</title>
+    <title data-i18n="title">Respiramos con Madrid</title>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -112,7 +112,7 @@
             color: #000;
             text-transform: uppercase;
             font-weight: bold;
-            padding: 13px 20px 13px 55px;
+            padding: 13px 20px 13px 100px;
             cursor: pointer;
             border-bottom: 1px solid rgba(255, 255, 255, 0.10);
         }
@@ -212,18 +212,12 @@
             font-size: 13px;
         }
         .logo {
-            height: 80px;
+            height: 50px;
             position: absolute;
             left: 30px;
+            padding-top: 5px;
 
-        }
-        .logoMB {
-            width: 125px;
-            position: absolute;
-            right: 35px;
-            margin-top: 30px;
-        }
-      
+        }      
         .dismiss {
             font-family: 'Chivo', sans-serif;
             display: inline;
@@ -453,8 +447,16 @@
     <div class="header">
         <a href='http://geomatico.es' target='_blank'><img class='logo-header' src='img/markers.svg'></a>
         <button type="submit" id="loginButton" class="login">LOGIN</button>
+        <button type="submit" class="login" onclick="location.href='referencias.html'">REFERENCIAS</BUTTON>
+        <button type="submit" class="login" onclick="location.href='faq.html'">FAQ</BUTTON>
+        <button type="submit" class="login" onclick="location.href='colaboradores.html'">COLABORADORES</BUTTON>
+        <button type="submit" class="login" onclick="location.href='mapa.html'">MAPA</BUTTON>
+        <button type="submit" class="login" onclick="location.href='medimos.html'">QUÉ MEDIMOS</BUTTON>
+        <button type="submit" class="login" onclick="location.href='medidores.html'">MEDIDORES</BUTTON>
+        <button type="submit" class="login" onclick="location.href='proyecto.html'">PROYECTO</BUTTON>
+        <img src="img/logo.png" class="logo">
         <ul class="sidebarMenuInner">
-            <li><span data-i18n="title">DIY-SATELLITES</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
+            <li><span data-i18n="title">RESPIRAMOS CON MADRID</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
         </ul>
     </div>
     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" checked>
@@ -466,8 +468,8 @@
     <div id="sidebarMenu">
         <div class="desc">
           <p data-i18n="desc1">Haz click sobre las observaciones para visualizar las concentraciones en cada punto</p>
-          <p data-i18n="desc2">La aplicación diy-satellite ha sido desarrollada por <a href='http://geomatico.es' target='_blank'>geomatico</a> y <a href='https://www.medialab-prado.es/' target='_blank'>Medialab Prado</a></p>
-          <p data-i18n="desc3" class="cookie-notification">No recopilamos tu información personal, ni tu posición. Sólo usamos cookies técnicas. diy-satellite es <a href='https://github.com/PeteRey/diy-satellites' target='_blank'>código libre</a>.</p>
+          <p data-i18n="desc2">La aplicación Respiramos con Madrid ha sido desarrollada por <a href='http://geomatico.es' target='_blank'>geomatico</a> y <a href='https://www.medialab-prado.es/' target='_blank'>Medialab Prado</a></p>
+          <p data-i18n="desc3" class="cookie-notification">No recopilamos tu información personal, ni tu posición. Sólo usamos cookies técnicas. Respiramos con Madrid es <a href='https://github.com/RespiramosConMadrids' target='_blank'>código libre</a>.</p>
           <div class="legal">
             <a data-i18n="cookies" href="https://www.medialab-prado.es/politica-de-cookies" target="_blank">Política de cookies</a>
             <span> | </span>
@@ -507,7 +509,7 @@
             </div>
             <div class="container" style="background-color: #fff">
                 <button type="button" onclick="document.getElementById('modalform').style.display='none'" class="cancelbtn">CANCEL</button>
-                <span class="psw">¿Quieres <a href="#">registrarte?</span>
+                <span class="psw">¿Quieres <a href="registro.html">registrarte?</span>
             </div>
         </form>
     </div>
