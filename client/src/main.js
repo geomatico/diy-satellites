@@ -182,6 +182,7 @@ const upload = (file) => {
     fetch(upload_url, requestOptions)
         .then(handleErrors)
         .then(downloadData)
+        .then(downloadGrid)
         .catch(error => console.log('error', error));
 }
 
