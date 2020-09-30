@@ -29,6 +29,7 @@ module.exports = {
         new CopyPlugin([
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},
+            { from: 'nav', to:'.'}
           ]),
         new Dotenv()
     ],

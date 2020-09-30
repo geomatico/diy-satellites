@@ -5,13 +5,15 @@ let observations;
 
 const initmap = () => {
     const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const geomaticoUrl = 'https://tileserver.geomatico.es/styles/klokantech-basic/{z}/{x}/{y}.png';
     const osmAttrib = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
     const osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
+    const geomatico = new L.TileLayer(geomaticoUrl, { minZoom: 0, maxZoom: 19, attribution: osmAttrib });
 
     map = L.map('map', {
         center: [40.412612, -3.686111],
         zoom: 13,
-        layers: [osm],
+        layers: [geomatico],
         zoomControl: false
     });
     L.control.zoom({
@@ -19,6 +21,7 @@ const initmap = () => {
     }).addTo(map);
 
     const baseMaps = {
+        "Basic": geomatico,
         "OSM": osm
     }
 
