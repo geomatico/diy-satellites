@@ -28,7 +28,7 @@ const initmap = () => {
     layerControl = L.control.layers(baseMaps).addTo(map);
 
     downloadData();
-    downloadGrid();
+    
     createLegend();
 };
 
@@ -71,8 +71,9 @@ const downloadData = (init_date, end_date) => {
         .then(handleErrors)
         .then(res => res.json())
         .then(res => drawOutput(res))
-        .then(res => removeTable())
+        .then(removeTable())
         .catch(err => console.log('error', err));
+    downloadGrid();
 };
 
 const downloadGrid = () => {
@@ -96,6 +97,7 @@ const drawOutput = (lines) => {
     let end_observation = lines.features.length - 1;
     map.flyTo([lines.features[end_observation].geometry.coordinates[1], lines.features[end_observation].geometry.coordinates[0]], 
         16, {animate: false, duration: 0.1});
+    return true;
 };
 
 var styleGrid = (feature) => {
@@ -181,8 +183,7 @@ const upload = (file) => {
 
     fetch(upload_url, requestOptions)
         .then(handleErrors)
-        .then(downloadData)
-        .then(downloadGrid)
+        .then(downloadData())
         .catch(error => console.log('error', error));
 }
 
