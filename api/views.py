@@ -50,14 +50,15 @@ class UploadCsv(views.APIView):
 
         username = request.user
         csv_file = request.data['file']
-        file_data = csv_file.read().decode("utf-8")
+        file_data = csv_file.read().decode("utf-8").replace('\r', '\n')
         io_string = io.StringIO(file_data)
-        next(io_string)
+        headers = next(io_string)
 
         for observation_from_csv in csv.reader(io_string, delimiter=';', quotechar='|'):
             try:
                 inserted = insert_observation_into_database(observation_from_csv, username)
             except Exception as err:
+                controlar el error
                 print(err)
 
         return Response(status=204)
