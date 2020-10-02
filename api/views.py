@@ -21,7 +21,7 @@ class ObservationsViewSet(viewsets.ReadOnlyModelViewSet):
 
     def list(self, request, *args, **kwargs):
 
-        observations = self.queryset
+        observations = Observation.objects.all()
         if request.query_params:
             init_date = datetime.strptime(request.query_params['init_date'], constants.FORMAT_DATE)
             end_date = datetime.strptime(request.query_params['end_date'], constants.FORMAT_DATE)
@@ -37,7 +37,7 @@ class ObservationByGridViewSet(viewsets.ReadOnlyModelViewSet):
 
     def list(self, request, *args, **kwargs):
 
-        observations_by_grid = self.queryset
+        observations_by_grid = ObservationByGrid.objects.all()
         serializer = ObservationByGridSerializer(observations_by_grid, many=True)
         return Response(serializer.data)
 
