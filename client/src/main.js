@@ -26,9 +26,8 @@ const initmap = () => {
     }
 
     layerControl = L.control.layers(baseMaps).addTo(map);
-
+    downloadGrid();
     downloadData();
-    
     createLegend();
 };
 
@@ -73,7 +72,6 @@ const downloadData = (init_date, end_date) => {
         .then(res => drawOutput(res))
         .then(removeTable())
         .catch(err => console.log('error', err));
-    downloadGrid();
 };
 
 const downloadGrid = () => {
@@ -83,7 +81,6 @@ const downloadGrid = () => {
         .then(res => res.json())
         .then(res => drawGrid(res))
         .catch(err => console.log(err));
-    
 }
 
 const drawOutput = (lines) => {
@@ -93,6 +90,7 @@ const drawOutput = (lines) => {
         },
     });
     observations.addTo(map).on('click', observationsTable);
+    layerControl.removeLayer(observations);
     layerControl.addOverlay(observations, 'Observaciones');
     let end_observation = lines.features.length - 1;
     map.flyTo([lines.features[end_observation].geometry.coordinates[1], lines.features[end_observation].geometry.coordinates[0]], 
@@ -113,6 +111,7 @@ const drawGrid = (lines) => {
     const grid = L.geoJson(lines, {
         style: styleGrid
     }).addTo(map).on('click', gridTable);
+    layerControl.removeLayer(grid);
     layerControl.addOverlay(grid, 'Rejilla');
 }
 
@@ -182,9 +181,11 @@ const upload = (file) => {
     }
 
     fetch(upload_url, requestOptions)
-        .then(handleErrors)
-        .then(downloadData())
-        .catch(error => console.log('error', error));
+        .then(res => {
+            downloadGrid();
+            downloadData();
+        })
+        .catch(error => alert('CSV mal formado'));
 }
 
 const getColor = (x) => {

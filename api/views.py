@@ -58,7 +58,7 @@ class UploadCsv(views.APIView):
             try:
                 inserted = insert_observation_into_database(observation_from_csv, username)
             except Exception as err:
-                # controlar el error
                 print(err)
+                return Response(status=500)
 
         return Response(status=204)
