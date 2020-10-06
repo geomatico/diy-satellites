@@ -67,17 +67,17 @@ const downloadData = (init_date, end_date) => {
         observations_url = `${observations_url}?init_date=${init_date}&end_date=${end_date}`
     }
     fetch(observations_url)
-        .then(handleErrors)
+        .then(res => handleErrors(res))
         .then(res => res.json())
         .then(res => drawOutput(res))
-        .then(removeTable())
+        .then(() => removeTable())
         .catch(err => console.log('error', err));
 };
 
 const downloadGrid = () => {
     const grid_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GRID_URL}`;
     fetch(grid_url)
-        .then(handleErrors)
+        .then(res => handleErrors(res))
         .then(res => res.json())
         .then(res => drawGrid(res))
         .catch(err => console.log(err));
@@ -139,7 +139,7 @@ const downloadToken = (user, pass) => {
     };
 
     fetch(get_token_url, requestOptions)
-        .then(handleErrors)
+        .then(res => handleErrors(res))
         .then(res => res.json())
         .then(res => getToken(res));
 }
@@ -148,7 +148,7 @@ var token;
 const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
-    const modal = document.getElementById('modalform').style.display = 'none';
+    document.getElementById('modalform').style.display = 'none';
     removeTable();
 }
 
@@ -159,7 +159,6 @@ const handleErrors = (response) => {
 
 const input = document.getElementById('fileinput');
 const onSelectFile = () => {
-    console.log(input.files);
     upload(input.files[0])
 };
 document.getElementById('btnupload').addEventListener('click', onSelectFile, false);
