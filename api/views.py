@@ -55,6 +55,8 @@ class UploadCsv(views.APIView):
         next(io_string)
 
         for observation_from_csv in csv.reader(io_string, delimiter=';', quotechar='|'):
+            if not observation_from_csv:
+                continue
             try:
                 inserted = insert_observation_into_database(observation_from_csv, username)
             except Exception as err:
