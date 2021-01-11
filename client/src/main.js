@@ -1,4 +1,5 @@
 import DiyConstants from './constants'
+import css from './style.css'
 let map;
 let layerControl;
 let observations;
