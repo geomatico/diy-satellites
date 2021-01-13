@@ -41,6 +41,10 @@ class ObservationByGridViewSet(viewsets.ReadOnlyModelViewSet):
         serializer = ObservationByGridSerializer(observations_by_grid, many=True)
         return Response(serializer.data)
 
+def blank_line_exits(row):
+    if not row:
+        return True
+    return False
 
 class UploadCsv(views.APIView):
     permission_classes = (IsAuthenticated,)
@@ -55,7 +59,7 @@ class UploadCsv(views.APIView):
         next(io_string)
 
         for observation_from_csv in csv.reader(io_string, delimiter=';', quotechar='|'):
-            if not observation_from_csv:
+            if blank_line_exits(observation_from_csv):
                 continue
             try:
                 inserted = insert_observation_into_database(observation_from_csv, username)

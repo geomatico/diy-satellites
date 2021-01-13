@@ -74,5 +74,7 @@ class TestApi(TestCase):
 
         self.assertEqual(response.status_code, 204)
 
-
-
+    def test_blank_line_exits(self):
+        ## Abrir el archivo CSV
+        ## Pasarselo al blank_lines
+        ## comprobar que la última linea es 999999
