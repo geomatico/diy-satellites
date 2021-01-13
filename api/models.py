@@ -1,12 +1,11 @@
 from django.contrib.gis.db import models
 from django.utils.translation import gettext_lazy as _
-from api import constants
 
 
 class Observation(models.Model):
-    pm1_0 = models.FloatField(default=0.0)
-    pm2_5 = models.FloatField(default=0.0)
-    pm10_0 = models.FloatField(default=0.0)
+    pm1_0 = models.FloatField(_('pm1_0'), default=0.0)
+    pm2_5 = models.FloatField(_('pm2_5'), default=0.0)
+    pm10_0 = models.FloatField(_('pm10_0'), default=0.0)
     date = models.DateField(_('date'))
     time = models.TimeField(_('time'))
     geom = models.PointField(_('geom'))
@@ -28,4 +27,3 @@ class ObservationByGrid(models.Model):
     class Meta:
         managed = False
         db_table = 'api_observation_by_grid'
-
