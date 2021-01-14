@@ -1,7 +1,10 @@
+import csv
 from unittest import skip
 
 from django.test import TestCase, Client
 from rest_framework.test import RequestsClient
+from api.views import blank_line_exist
+from diysatellite import settings
 import os
 
 
@@ -53,8 +56,6 @@ class TestApi(TestCase):
         self.assertEqual(observations['features'][0]['properties']['pm2_5'], 28.0)
         self.assertEqual(observations['features'][0]['properties']['pm10_0'], 28.0)
 
-
-
     @skip
     def test_upload_csv(self):
 
@@ -74,7 +75,20 @@ class TestApi(TestCase):
 
         self.assertEqual(response.status_code, 204)
 
-    def test_blank_line_exits(self):
-        ## Abrir el archivo CSV
-        ## Pasarselo al blank_lines
-        ## comprobar que la última linea es 999999
+    def test_blank_line_exist(self):
+        file_fixtures = os.path.join(os.path.join(settings.BASE_DIR, 'fixtures/'), 'lines.csv')
+        csv_file = open(file_fixtures, 'r')
+        observation = []
+        for observation_from_csv in csv.reader(csv_file, delimiter=';', quotechar='|'):
+            if blank_line_exist(observation_from_csv):
+                continue
+            observation.extend(observation_from_csv)
+
+        self.assertEqual(len(observation), 7)
+        self.assertMultiLineEqual(observation[0], '000')
+        self.assertEqual(observation[1], '1')
+        self.assertMultiLineEqual(observation[2], '22')
+        self.assertMultiLineEqual(observation[3], '333')
+        self.assertMultiLineEqual(observation[4], '4444')
+        self.assertMultiLineEqual(observation[5], '55555')
+        self.assertMultiLineEqual(observation[6], '666666')

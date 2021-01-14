@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.contrib.gis.geos import fromstr
-from rest_framework.authtoken.models import Token
 
 from api import constants
 from api.models import Observation
