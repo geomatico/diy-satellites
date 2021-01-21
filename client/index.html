@@ -2,20 +2,21 @@
 <html>
 
 <head>
-    <meta charset="utf-8"/>
     <title data-i18n="title">Respiramos con Madrid</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin="" />
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <link rel="shortcut icon" href="img/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content=""/>
+    <meta name="description" content="" />
     <meta name="theme-color" content="#973572" />
-    <meta property="og:title" content="¿Cuánto es 1km?" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="1200" />
@@ -30,52 +31,221 @@
     <meta name="twitter:card" content="summary" />
 
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-            crossorigin=""></script>  
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
 </head>
 
 <body>
+    <div class="d-flex" id="wrapper">
 
-    <div class="header">
-        <a href='http://geomatico.es' target='_blank'><img class='logo-header' src='img/markers.svg'></a>
-        <button type="submit" id="loginButton" class="login">LOGIN</button>
-        <button type="submit" class="login" onclick="location.href='referencias.html'">REFERENCIAS</BUTTON>
-        <button type="submit" class="login" onclick="location.href='faq.html'">FAQ</BUTTON>
-        <button type="submit" class="login" onclick="location.href='colaboradores.html'">COLABORADORES</BUTTON>
-        <button type="submit" class="login" onclick="location.href='medimos.html'">QUÉ MEDIMOS</BUTTON>
-        <button type="submit" class="login" onclick="location.href='medidores.html'">MEDIDORES</BUTTON>
-        <button type="submit" class="login" onclick="location.href='proyecto.html'">PROYECTO</BUTTON>
-        <button type="submit" class="login" onclick="location.href='index.html'">MAPA</BUTTON>
-        <img src="img/logo.png" class="logo">
-        <ul class="sidebarMenuInner">
-            <li><span data-i18n="title">RESPIRAMOS CON MADRID</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
-        </ul>
-    </div>
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
 
-    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" checked>
-    <label for="openSidebarMenu" class="sidebarIconToggle">
-        <div class="spinner diagonal part-1"></div>
-        <div class="spinner horizontal"></div>
-        <div class="spinner diagonal part-2"></div>
-    </label>
+            <div class="list-group list-group-flush">
+                <p id="sidebar-p">Haz click sobre las observaciones para visualizar las concentraciones en cada punto</p>
+
+                <p id="sidebar-a">La aplicación Respiramos con Madrid ha sido desarrollada por
+                    <a href='http://geomatico.es' target='_blank'>geomatico</a> y <a href='https://www.medialab-prado.es/'
+                        target='_blank'>Medialab Prado</a></p>
+
+                <p id="sidebar-a">No recopilamos tu información personal, ni tu posición. Sólo usamos cookies técnicas. 
+                    Respiramos con Madrid es <a href='https://github.com/RespiramosConMadrids'
+                        target='_blank'>código libre</a>.</p>
+                        
+                <div class="legal">
+                    <a data-i18n="cookies" href="https://www.medialab-prado.es/politica-de-cookies" target="_blank">Política
+                        de cookies</a>
+                    <span> | </span>
+                    <a data-i18n="private" href="https://www.medialab-prado.es/aviso-legal" target="_blank">Aviso legal</a>
+            </div>
+
+
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Seleccione Fechas</legend>
+                    <label for='start' class="datepickerLabel">Fecha inicio:</label>
+                    <input type='date' id='start' name='init_date'><br><br>
+                    <label for='start' class="datepickerLabel">Fecha fin:</label>
+                    <input type='date' id='end' name='end_date'></br><br>
+                    <input type="button" id="submit" class="btnsidebar" value="SUBMIT"><br>
+                </fieldset><br>
+
+                <form id="uploadfile" class="uploadfile">
+                    <fieldset class="upload">
+                        <legend>Seleccione Archivo</legend>
+                        <input type="file" id="fileinput"><br><br>
+                        <button type="button" id="btnupload" class="btnsidebar">UPLOAD</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+    
+          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+              
+            <button class="btn btn-primary" id="menu-toggle" style="width: 50px; background-color: white; border-color: black;">
+                <img src="img/toogle.svg"></button>
+
+            <a class="navbar-brand">
+                <span><img src="img/logo.png" width="50px"></span>
+                <span id="header-text">Respiramos con Madrid</span>
+                
+            </a>
+
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">MAPA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proyecto.html">PROYECTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="medidores.html">MEDIDORES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="medimos.html">QUÉ MEDIMOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="colaboradores.html">COLABORADORES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="referencias.html">REFERENCIAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="referencias.html">LOGIN</a>
+                </li>
+              </ul>
+              <a class="nav-link" href="http://geomatico.es"><img src="img/markers.svg"
+                style="width:40px; float: right;"></a>
+            </div>
+            
+          </nav>
+    
+          <div class="container-fluid">
+            <div id='center' class="main center">
+                <div id="map"></div>
+            </div>
+          </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    
+      </div>
+
+
+    
+ <!--    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+            
+        <a class="navbar-brand">
+            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" checked>
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </label>
+  
+           <img src="img/logo.png" alt="Logo" width="50px" left="300px">       
+            
+       
+            <div class="sidebarMenuInner">
+                <li><span data-i18n="title">RESPIRAMOS CON MADRID</span><span class="subtitle" data-i18n="subtitle">Clica en
+                        observación</span></li>
+            </div>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">MAPA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyecto.html">PROYECTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="medidores.html">MEDIDORES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="medimos.html">QUÉ MEDIMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="colaboradores.html">COLABORADORES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="referencias.html">REFERENCIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="referencias.html">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="nav-link" href="http://geomatico.es"><img src="img/markers.svg"
+                style="width:40px; float: right;"></a>
+            </div>
+    </nav> -->
+        
+
+  
+   
+
+
+    <!--         <div class="header">
+            <a href='http://geomatico.es' target='_blank'><img class='logo-header' src='img/markers.svg'></a>
+            <button type="submit" id="loginButton" class="login">LOGIN</button>
+            <button type="submit" class="login" onclick="location.href='referencias.html'">REFERENCIAS</BUTTON>
+            <button type="submit" class="login" onclick="location.href='faq.html'">FAQ</BUTTON>
+            <button type="submit" class="login" onclick="location.href='colaboradores.html'">COLABORADORES</BUTTON>
+            <button type="submit" class="login" onclick="location.href='medimos.html'">QUÉ MEDIMOS</BUTTON>
+            <button type="submit" class="login" onclick="location.href='medidores.html'">MEDIDORES</BUTTON>
+            <button type="submit" class="login" onclick="location.href='proyecto.html'">PROYECTO</BUTTON>
+            <button type="submit" class="login" onclick="location.href='index.html'">MAPA</BUTTON>
+            <img src="img/logo.png" class="logo">
+            <ul class="sidebarMenuInner">
+                <li><span data-i18n="title">RESPIRAMOS CON MADRID</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
+            </ul>
+        </div> -->
+
+<!-- 
 
     <div id="sidebarMenu">
         <div class="desc">
-          <p data-i18n="desc1">Haz click sobre las observaciones para visualizar las concentraciones en cada punto</p>
-          <p data-i18n="desc2">La aplicación Respiramos con Madrid ha sido desarrollada por <a href='http://geomatico.es' target='_blank'>geomatico</a> y <a href='https://www.medialab-prado.es/' target='_blank'>Medialab Prado</a></p>
-          <p data-i18n="desc3" class="cookie-notification">No recopilamos tu información personal, ni tu posición. Sólo usamos cookies técnicas. Respiramos con Madrid es <a href='https://github.com/RespiramosConMadrids' target='_blank'>código libre</a>.</p>
-          <div class="legal">
-            <a data-i18n="cookies" href="https://www.medialab-prado.es/politica-de-cookies" target="_blank">Política de cookies</a>
-            <span> | </span>
-            <a data-i18n="private" href="https://www.medialab-prado.es/aviso-legal" target="_blank">Aviso legal</a>
-          </div>
+            <p data-i18n="desc1">Haz click sobre las observaciones para visualizar las concentraciones en cada punto</p>
+            <p data-i18n="desc2">La aplicación Respiramos con Madrid ha sido desarrollada por <a
+                    href='http://geomatico.es' target='_blank'>geomatico</a> y <a href='https://www.medialab-prado.es/'
+                    target='_blank'>Medialab Prado</a></p>
+            <p data-i18n="desc3" class="cookie-notification">No recopilamos tu información personal, ni tu posición.
+                Sólo usamos cookies técnicas. Respiramos con Madrid es <a href='https://github.com/RespiramosConMadrids'
+                    target='_blank'>código libre</a>.</p>
+            <div class="legal">
+                <a data-i18n="cookies" href="https://www.medialab-prado.es/politica-de-cookies" target="_blank">Política
+                    de cookies</a>
+                <span> | </span>
+                <a data-i18n="private" href="https://www.medialab-prado.es/aviso-legal" target="_blank">Aviso legal</a>
+            </div>
         </div>
-        
+
         <form id="datepicker">
             <fieldset>
                 <legend>Seleccione Fechas</legend>
                 <label for='start' class="datepickerLabel">Fecha inicio:</label>
-                <input type='date' id='start'  name='init_date'><br><br>
+                <input type='date' id='start' name='init_date'><br><br>
                 <label for='start' class="datepickerLabel">Fecha fin:</label>
                 <input type='date' id='end' name='end_date'></br><br>
                 <input type="button" id="submit" value="SUBMIT"><br>
@@ -90,11 +260,11 @@
             </fieldset>
         </form>
     </div>
-
-    <div id='center' class="main center">
-        <div id="map"></div>
+    <div class="container-xl">
+        <div id='center' class="main center">
+            <div id="map"></div>
+        </div>
     </div>
-    
     <div class="modal" id="modalform">
         <form class="modal-content">
             <div class="container">
@@ -105,15 +275,17 @@
                 <button type="button" class="btnlogin">LOGIN</button>
             </div>
             <div class="container" style="background-color: #fff">
-                <button type="button" onclick="document.getElementById('modalform').style.display='none'" class="cancelbtn">CANCEL</button>
+                <button type="button" onclick="document.getElementById('modalform').style.display='none'"
+                    class="cancelbtn">CANCEL</button>
                 <span class="psw">¿Quieres <a href="registro.html">registrarte?</span>
             </div>
         </form>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    </div> -->
+    <!--  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
         integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" 
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> -->
 </body>
+
 </html>

@@ -49,19 +49,24 @@ const createLegend = () => {
     legend.addTo(map);
 }
 
-document.getElementById('submit').addEventListener('click', () => {
-    map.removeLayer(observations);
-    let init = document.getElementById('start').value;
-    let init_date = new Date(init);
-    init_date = init_date.toISOString();
-    let end = document.getElementById('end').value;
-    let end_date = new Date(end);
-    /*Added one day to include the end date*/
-    end_date.setDate(end_date.getDate() + 1);
-    end_date = end_date.toISOString();
-    downloadData(init_date, end_date);
-});
+// document.getElementById('submit').addEventListener('click', () => {
+//     map.removeLayer(observations);
+//     let init = document.getElementById('start').value;
+//     let init_date = new Date(init);
+//     init_date = init_date.toISOString();
+//     let end = document.getElementById('end').value;
+//     let end_date = new Date(end);
+//     /*Added one day to include the end date*/
+//     end_date.setDate(end_date.getDate() + 1);
+//     end_date = end_date.toISOString();
+//     downloadData(init_date, end_date);
+// });
 
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  
 const downloadData = (init_date, end_date) => {
     let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
     if (init_date !== undefined && end_date !== undefined) {
@@ -115,17 +120,17 @@ const drawGrid = (lines) => {
     layerControl.removeLayer(grid);
     layerControl.addOverlay(grid, 'Rejilla');
 }
-
+/* 
 document.getElementById('loginButton').addEventListener('click', () => {
     const modal = document.getElementById('modalform').style.display = "block";
 
-});
+}); */
 
-document.querySelector('.btnlogin').addEventListener('click', () => {
-    const uname = document.getElementById('uname').value;
-    const psw = document.getElementById('psw').value;
-    downloadToken(uname, psw);
-});
+    /* document.querySelector('.btnlogin').addEventListener('click', () => {
+        const uname = document.getElementById('uname').value;
+        const psw = document.getElementById('psw').value;
+        downloadToken(uname, psw);
+    }); */
 
 const downloadToken = (user, pass) => {
     const get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
