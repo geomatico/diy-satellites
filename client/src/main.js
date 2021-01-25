@@ -120,11 +120,11 @@ const drawGrid = (lines) => {
     layerControl.removeLayer(grid);
     layerControl.addOverlay(grid, 'Rejilla');
 }
-/* 
+
 document.getElementById('loginButton').addEventListener('click', () => {
     const modal = document.getElementById('modalform').style.display = "block";
 
-}); */
+});
 
     /* document.querySelector('.btnlogin').addEventListener('click', () => {
         const uname = document.getElementById('uname').value;
