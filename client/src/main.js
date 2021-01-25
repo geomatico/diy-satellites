@@ -18,7 +18,7 @@ const initmap = () => {
         zoomControl: false
     });
     L.control.zoom({
-        position: 'topright'
+        position: 'topleft'
     }).addTo(map);
 
     const baseMaps = {
@@ -26,14 +26,14 @@ const initmap = () => {
         "OSM": osm
     }
 
-    layerControl = L.control.layers(baseMaps).addTo(map);
+    layerControl = L.control.layers(null, baseMaps, {position: 'topleft'}).addTo(map);
     downloadGrid();
     downloadData();
     createLegend();
 };
 
 const createLegend = () => {
-    let legend = L.control({position: 'bottomright'});
+    let legend = L.control({position: 'bottomleft'});
     legend.onAdd = (map) => {
         const div = L.DomUtil.create('div', 'leg')
         const grades = [0, 5, 10, 15, 20, 25]
