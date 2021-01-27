@@ -59,23 +59,24 @@
                     <a data-i18n="private" href="https://www.medialab-prado.es/aviso-legal" target="_blank">Aviso legal</a>
             </div>
 
+                <form id="datepicker">
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Seleccione Fechas</legend>
+                        <label for='start' class="datepickerLabel">Fecha inicio:</label>
+                        <input type='date' id='start' name='init_date'><br><br>
+                        <label for='start' class="datepickerLabel">Fecha fin:</label>
+                        <input type='date' id='end' name='end_date'></br><br>
+                        <input type="button" id="submit" class="btnsidebar" value="SUBMIT"><br>
+                    </fieldset><br>
+                </form>
 
-                <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">Seleccione Fechas</legend>
-                    <label for='start' class="datepickerLabel">Fecha inicio:</label>
-                    <input type='date' id='start' name='init_date'><br><br>
-                    <label for='start' class="datepickerLabel">Fecha fin:</label>
-                    <input type='date' id='end' name='end_date'></br><br>
-                    <input type="button" id="submit" class="btnsidebar" value="SUBMIT"><br>
-                </fieldset><br>
-
-                <fieldset class="scheduler-border">
+                <fieldset class="scheduler-border" id="uploadfile">
                     <legend class="scheduler-border">Seleccione Archivo</legend>
-                <div class="custom-file" id="customFile">
-                    <input type="file" class="custom-file-input" id="inputFile">
-                    <label class="custom-file-label" for="inputFile">Seleccionar</label><br><br>
-                    <button type="button" id="btnupload" class="datepk">UPLOAD</button><br>
-                </div>
+                    <div class="custom-file" id="customFile">
+                        <input type="file" class="custom-file-input" id="inputFile">
+                        <label class="custom-file-label" for="inputFile">Seleccionar</label><br><br>
+                        <button type="button" id="btnupload" class="datepk">UPLOAD</button><br>
+                    </div>
                 </fieldset>
             </div>
         </div>
@@ -132,7 +133,7 @@
                 </div>
             </nav>
 
-            <div class="modal fade" id="modalform" tabindex="-1" role="dialog"
+            <div class="modal" id="modalform" tabindex="-1" role="dialog"
                     aria-labelledby="modalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -146,8 +147,8 @@
                         </div>
                     
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-light mr-auto" id="cancelbtn">CANCEL</button>
-                            <span class="psw">¿Quieres <a href="registro.html">registrarte?</span>
+                            <button type="button" class="btn btn-light mr-auto" data-dismiss="modal">CANCEL</button>
+                           <!--  <span class="psw">¿Quieres <a href="registro.html">registrarte?</span> -->
                         </div>
 
                     </div>

@@ -49,18 +49,18 @@ const createLegend = () => {
     legend.addTo(map);
 }
 
-// document.getElementById('submit').addEventListener('click', () => {
-//     map.removeLayer(observations);
-//     let init = document.getElementById('start').value;
-//     let init_date = new Date(init);
-//     init_date = init_date.toISOString();
-//     let end = document.getElementById('end').value;
-//     let end_date = new Date(end);
-//     /*Added one day to include the end date*/
-//     end_date.setDate(end_date.getDate() + 1);
-//     end_date = end_date.toISOString();
-//     downloadData(init_date, end_date);
-// });
+document.getElementById('submit').addEventListener('click', () => {
+    map.removeLayer(observations);
+    let init = document.getElementById('start').value;
+    let init_date = new Date(init);
+    init_date = init_date.toISOString();
+    let end = document.getElementById('end').value;
+    let end_date = new Date(end);
+    /*Added one day to include the end date*/
+    end_date.setDate(end_date.getDate() + 1);
+    end_date = end_date.toISOString();
+    downloadData(init_date, end_date);
+});
 
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
@@ -126,11 +126,14 @@ document.getElementById('loginButton').addEventListener('click', () => {
 
 });
 
-    /* document.querySelector('.btnlogin').addEventListener('click', () => {
-        const uname = document.getElementById('uname').value;
-        const psw = document.getElementById('psw').value;
-        downloadToken(uname, psw);
-    }); */
+document.getElementById('btnlogin').addEventListener('click', () => {
+    const uname = document.getElementById('uname').value;
+    const psw = document.getElementById('psw').value;
+    $("#modalform").modal("hide");
+    /* $('body').removeClass('modal-open'); */
+    $('.modalform-backdrop').remove;
+    downloadToken(uname, psw);
+});
 
 const downloadToken = (user, pass) => {
     const get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
@@ -154,7 +157,8 @@ var token;
 const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
-    document.getElementById('modalform').style.display = 'none';
+    
+    // document.getElementById('modalform').modal({show:false});
     removeTable();
 }
 
@@ -163,7 +167,7 @@ const handleErrors = (response) => {
     return response;
 };
 
-const input = document.getElementById('fileinput');
+const input = document.getElementById('inputFile');
 const onSelectFile = () => {
     upload(input.files[0])
 };
@@ -243,7 +247,7 @@ const gridTable = (event) => {
 }
 
 const createTable = (clonedProperties, propertyNames, humanNames) => {
-    document.getElementById('openSidebarMenu').checked = true;
+    $('#navbarSupportedContent').collapse({toggle: true});
     const body = document.getElementById('datepicker');    
     removeTable();    
 

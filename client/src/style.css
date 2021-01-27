@@ -125,9 +125,9 @@ fieldset.scheduler-border {
         border-bottom:none;
     }
 
-/*     .uploadfile{
+    #uploadfile{
         display: none;
-    } */
+    }
 
     input[type=file] {
         background-color:#fff;
@@ -179,6 +179,15 @@ fieldset.scheduler-border {
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+}
+
+.observation_table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 /* .modal {
@@ -648,14 +657,7 @@ input[type=text], input[type=password] {
     opacity: 0.8;
 }
 
-.observation_table {
-    border: 2px solid #000;
-    border-collapse: collapse;
-    float: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
+
 
 th, td {
     padding: 10px 5px 0px 10px;
