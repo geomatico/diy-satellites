@@ -26,6 +26,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'colaboradores.html',
+            template: './nav/colaboradores.html'
+        }),
         new CopyPlugin([
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},
