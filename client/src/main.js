@@ -130,8 +130,6 @@ document.getElementById('btnlogin').addEventListener('click', () => {
     const uname = document.getElementById('uname').value;
     const psw = document.getElementById('psw').value;
     $("#modalform").modal("hide");
-    /* $('body').removeClass('modal-open'); */
-    $('.modalform-backdrop').remove;
     downloadToken(uname, psw);
 });
 
@@ -157,8 +155,6 @@ var token;
 const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
-    
-    // document.getElementById('modalform').modal({show:false});
     removeTable();
 }
 
@@ -247,7 +243,13 @@ const gridTable = (event) => {
 }
 
 const createTable = (clonedProperties, propertyNames, humanNames) => {
-    $('#navbarSupportedContent').collapse({toggle: true});
+    $('#wrapper').collapse('show');
+/*     if (window.getComputedStyle(x).display === 'none') {
+        $("#wrapper"). toggleClass("toggled");
+    }
+    if ($("#wrapper").is(':visible')) {
+        $("#wrapper"). toggleClass("toggled");
+    } */
     const body = document.getElementById('datepicker');    
     removeTable();    
 

@@ -68,23 +68,6 @@ body {
     font-size: 14px;
 }
 
-.datepk {
-    font-family: 'Chivo', sans-serif;
-    font-size: 14px;
-    font-weight: bold;  
-    margin-right: 30px;
-    float: right;    
-    margin-left: auto;
-    border: 0;
-    background: none;
-    box-shadow: none;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 8px 15px;
-    color: #000;
-     
-} 
-
 .btnsidebar {
     font-family: 'Chivo', sans-serif;
     font-size: 14px;
@@ -166,6 +149,19 @@ input[type=file] {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px 5px 0px 10px;
+}
+
+.desc {
+    columns: #333333;
+    padding: 20px;
+    text-align: justify;
+    font-size: 13px;
+    background-color: blueviolet;
 }
 
 .leaflet-control-layers-selector {
