@@ -46,11 +46,19 @@ module.exports = {
             filename: 'proyecto.html',
             template: './nav/proyecto.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'referencias.html',
+            template: './nav/referencias.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registro.html',
+            template: './nav/registro.html'
+        }),
         new CopyPlugin([
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},
             { from: 'nav', to:'.'}
-          ]),
+        ]),
         new Dotenv()
     ],
     module: {
