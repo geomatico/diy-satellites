@@ -42,6 +42,10 @@ module.exports = {
             filename: 'medimos.html',
             template: './nav/medimos.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'proyecto.html',
+            template: './nav/proyecto.html'
+        }),
         new CopyPlugin([
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},

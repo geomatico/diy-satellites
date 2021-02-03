@@ -169,6 +169,16 @@ th, td {
     width: 60%;
 }
 
+.mapa {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 10px;
+    width:20%;
+    height: 20%;
+}
+
 .leaflet-control-layers-selector {
     display: inline!important;
 }
