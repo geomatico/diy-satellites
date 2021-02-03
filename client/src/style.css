@@ -1,11 +1,10 @@
 body {
     font-family: 'Chivo', sans-serif;
     background: #fff;
-    overflow: hidden;
 }
 
 #wrapper {
-    overflow: none;
+    overflow: auto;
  }
 
 #sidebar-wrapper {
@@ -157,9 +156,10 @@ th, td {
 
 .desc {
     columns: #333333;
-    padding: 20px;
+    padding: 10px;
     text-align: justify;
     font-size: 13px;
+    overflow: auto;
 }
 
 .leaflet-control-layers-selector {
@@ -167,18 +167,22 @@ th, td {
 }
 
 @media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
+    body {
+        overflow: hidden;
+    }
+    
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
 
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
 
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
 }
 @media (max-width: 420px) {
     #header-text{
