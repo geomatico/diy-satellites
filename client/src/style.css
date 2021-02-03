@@ -162,6 +162,13 @@ th, td {
     overflow: auto;
 }
 
+.medidores {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
 .leaflet-control-layers-selector {
     display: inline!important;
 }

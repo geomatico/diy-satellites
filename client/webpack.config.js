@@ -34,6 +34,10 @@ module.exports = {
             filename: 'faq.html',
             template: './nav/faq.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'medidores.html',
+            template: './nav/medidores.html'
+        }),
         new CopyPlugin([
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},
