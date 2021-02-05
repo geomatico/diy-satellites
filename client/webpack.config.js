@@ -26,11 +26,39 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'colaboradores.html',
+            template: './nav/colaboradores.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'faq.html',
+            template: './nav/faq.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'medidores.html',
+            template: './nav/medidores.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'medimos.html',
+            template: './nav/medimos.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proyecto.html',
+            template: './nav/proyecto.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'referencias.html',
+            template: './nav/referencias.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registro.html',
+            template: './nav/registro.html'
+        }),
         new CopyPlugin([
             { from: 'img', to: 'img/' },
             { from: 'CNAME', to: 'CNAME', toType: 'file'},
             { from: 'nav', to:'.'}
-          ]),
+        ]),
         new Dotenv()
     ],
     module: {

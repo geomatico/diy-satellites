@@ -1,0 +1,216 @@
+body {
+    font-family: 'Chivo', sans-serif;
+    background: #fff;
+}
+
+#wrapper {
+    overflow: auto;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 10px;
+}
+
+#map {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    border-top: 2px #000 solid;
+}
+
+#sidebar-p {
+    padding: 20px 5px 0px 10px;
+    columns: #333333;
+    text-align: justify;
+    font-size: 13px;
+}
+
+#sidebar-a {
+    padding: 0px 5px 0px 10px;
+    columns: #333333;
+    text-align: justify;
+    font-size: 13px;
+}
+
+.legal {
+    font-size: 10px;
+    right: 0;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.legal a {
+    color: #000;
+}
+
+.datepickerLabel {
+    color: #000;
+    font-size: 14px;
+}
+
+.btnsidebar {
+    font-family: 'Chivo', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 30px;
+    float: right;    
+    margin-left: auto;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 8px 15px;
+    color: #000;   
+} 
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    border-radius: 8px;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 1.5 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+
+#uploadfile{
+    display: none;
+}
+
+input[type=file] {
+    background-color:#fff;
+    color: #000;
+    size: 1;
+    margin-left: auto;
+    margin-right: 15;
+}
+
+#header-text {
+    font-family: 'Chivo', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+
+.leg {
+    line-height: 18px;
+    margin-bottom: 50px !important;
+    color: #555;
+    background: white; 
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.leg i {
+    width: 18px;
+    height: 18px;
+    font: 14px/16px Chivo, Helvetica, sans-serif;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.observation_table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px 5px 0px 10px;
+}
+
+.desc {
+    columns: #333333;
+    padding: 10px;
+    text-align: justify;
+    font-size: 15px;
+    overflow: auto;
+}
+
+.medidores {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.mapa {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 10px;
+    width:20%;
+    height: 20%;
+}
+
+.logo {
+    height: 100px;
+    position: center;
+    left: 30px;
+    padding-top: 5px;
+
+} 
+
+.leaflet-control-layers-selector {
+    display: inline!important;
+}
+
+@media (min-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+    
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+@media (max-width: 420px) {
+    #header-text{
+        display: none;
+    }
+}

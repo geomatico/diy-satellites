@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8"/>
     <title data-i18n="title">Respiramos con Madrid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <link rel="shortcut icon" href="img/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>     
-        @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap');
-        body {
-            background: #fff;
-            padding: 0;
-            margin: 0;
-            font-family: 'Chivo', sans-serif;
-        }
-        .logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 20%;
-        }
-        .desc {
-            columns: #333333;
-            padding: 20px 200px 20px 200px;
-            text-align: justify;
-            font-size: 18px;
-        }
-    </style>
+    
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#973572" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:card" content="summary" />
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
 </head>
 <body>
-    <img src="img/SBxBAN.png" class="logo">
-    <div class="desc">
-        <p>El registro sirve para que puedas volcar las mediciones de tus rutas. Si no tienes un Oxógono,
-             puedes tomar uno prestado en Medialab-Prado o fabricarte el tuyo propio con las instrucciones que encontrarás
-              en el <a href="https://github.com/RespiramosConMadrid" target="_blank">Github</a> del proyecto.
-        </p>
+    
+    <div class="container">
+        <div class="desc">
+            <img src="img/SBxBAN.png" class="logo"><br>
+            <p>El registro sirve para que puedas volcar las mediciones de tus rutas. Si no tienes un Oxógono,
+                puedes tomar uno prestado en Medialab-Prado o fabricarte el tuyo propio con las instrucciones que encontrarás
+                en el <a href="https://github.com/RespiramosConMadrid" target="_blank">Github</a> del proyecto.
+            </p>
+        </div>
     </div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 import DiyConstants from './constants'
+import css from './style.css'
 let map;
 let layerControl;
 let observations;
@@ -17,7 +18,7 @@ const initmap = () => {
         zoomControl: false
     });
     L.control.zoom({
-        position: 'topright'
+        position: 'topleft'
     }).addTo(map);
 
     const baseMaps = {
@@ -25,14 +26,14 @@ const initmap = () => {
         "OSM": osm
     }
 
-    layerControl = L.control.layers(baseMaps).addTo(map);
+    layerControl = L.control.layers(null, baseMaps, {position: 'topleft'}).addTo(map);
     downloadGrid();
     downloadData();
     createLegend();
 };
 
 const createLegend = () => {
-    let legend = L.control({position: 'bottomright'});
+    let legend = L.control({position: 'bottomleft'});
     legend.onAdd = (map) => {
         const div = L.DomUtil.create('div', 'leg')
         const grades = [0, 5, 10, 15, 20, 25]
@@ -61,6 +62,11 @@ document.getElementById('submit').addEventListener('click', () => {
     downloadData(init_date, end_date);
 });
 
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  
 const downloadData = (init_date, end_date) => {
     let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
     if (init_date !== undefined && end_date !== undefined) {
@@ -120,9 +126,10 @@ document.getElementById('loginButton').addEventListener('click', () => {
 
 });
 
-document.querySelector('.btnlogin').addEventListener('click', () => {
+document.getElementById('btnlogin').addEventListener('click', () => {
     const uname = document.getElementById('uname').value;
     const psw = document.getElementById('psw').value;
+    $("#modalform").modal("hide");
     downloadToken(uname, psw);
 });
 
@@ -148,7 +155,6 @@ var token;
 const getToken = (res) => {
     token = res.token;
     document.getElementById('uploadfile').style.display = 'inline';
-    document.getElementById('modalform').style.display = 'none';
     removeTable();
 }
 
@@ -157,7 +163,7 @@ const handleErrors = (response) => {
     return response;
 };
 
-const input = document.getElementById('fileinput');
+const input = document.getElementById('inputFile');
 const onSelectFile = () => {
     upload(input.files[0])
 };
@@ -237,7 +243,12 @@ const gridTable = (event) => {
 }
 
 const createTable = (clonedProperties, propertyNames, humanNames) => {
-    document.getElementById('openSidebarMenu').checked = true;
+    const sideBar = document.getElementById('sidebar-wrapper').offsetLeft;
+    if (sideBar < 0) {
+        console.log('menor', sideBar);
+        $("#wrapper").toggleClass("toggled");
+    }
+    console.log('menor', sideBar);
     const body = document.getElementById('datepicker');    
     removeTable();    
 
