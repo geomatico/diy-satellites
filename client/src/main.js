@@ -243,13 +243,12 @@ const gridTable = (event) => {
 }
 
 const createTable = (clonedProperties, propertyNames, humanNames) => {
-    $('#wrapper').collapse('show');
-/*     if (window.getComputedStyle(x).display === 'none') {
-        $("#wrapper"). toggleClass("toggled");
+    const sideBar = document.getElementById('sidebar-wrapper').offsetLeft;
+    if (sideBar < 0) {
+        console.log('menor', sideBar);
+        $("#wrapper").toggleClass("toggled");
     }
-    if ($("#wrapper").is(':visible')) {
-        $("#wrapper"). toggleClass("toggled");
-    } */
+    console.log('menor', sideBar);
     const body = document.getElementById('datepicker');    
     removeTable();    
 
