@@ -112,6 +112,10 @@ input[type=file] {
     margin-right: 15;
 }
 
+.custom-file-input ~ .custom-file-label::after {
+    content: "Buscar";
+}
+
 #header-text {
     font-family: 'Chivo', sans-serif;
     text-transform: uppercase;
@@ -120,6 +124,9 @@ input[type=file] {
 
 }
 
+.alert {
+    display: none;
+}
 
 .leg {
     line-height: 18px;
