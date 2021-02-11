@@ -74,7 +74,7 @@
                     <legend class="scheduler-border">Seleccione Archivo</legend>
                     <div class="custom-file" id="customFile">
                         <input type="file" class="custom-file-input" id="inputFile">
-                        <label class="custom-file-label" for="inputFile">Seleccionar</label><br><br>
+                        <label class="custom-file-label" for="inputFile"></label><br><br>
                         <button type="button" id="btnupload" class="btnsidebar">UPLOAD</button><br>
                     </div>
                 </fieldset>
@@ -156,6 +156,10 @@
             </div>
 
             <div class="container-fluid">
+                <div class="alert alert-success alert-dismissible" id="alert">
+                    <button type="button" class="close" id="close">&times;</button>
+                    <p></p>
+                </div>
                 
                 <div id='center' class="main center">
                     <div id="map"></div>

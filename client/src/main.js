@@ -3,6 +3,7 @@ import css from './style.css'
 let map;
 let layerControl;
 let observations;
+let grid;
 
 const initmap = () => {
     const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -27,8 +28,7 @@ const initmap = () => {
     }
 
     layerControl = L.control.layers(null, baseMaps, {position: 'topleft'}).addTo(map);
-    downloadGrid();
-    downloadData();
+    downloadGrid();    
     createLegend();
 };
 
@@ -51,6 +51,8 @@ const createLegend = () => {
 
 document.getElementById('submit').addEventListener('click', () => {
     map.removeLayer(observations);
+    map.removeLayer(grid);
+    removeTable();
     let init = document.getElementById('start').value;
     let init_date = new Date(init);
     init_date = init_date.toISOString();
@@ -59,6 +61,7 @@ document.getElementById('submit').addEventListener('click', () => {
     /*Added one day to include the end date*/
     end_date.setDate(end_date.getDate() + 1);
     end_date = end_date.toISOString();
+    hideSidebar();
     downloadData(init_date, end_date);
 });
 
@@ -66,6 +69,12 @@ $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
   });
+
+document.querySelector('.custom-file-input').addEventListener('change', (e) => {
+    let filename = document.getElementById('inputFile').files[0].name;
+    let nextSibling = e.target.nextElementSibling;
+    nextSibling.innerText = filename;
+});
   
 const downloadData = (init_date, end_date) => {
     let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
@@ -77,7 +86,7 @@ const downloadData = (init_date, end_date) => {
         .then(res => res.json())
         .then(res => drawOutput(res))
         .then(() => removeTable())
-        .catch(err => console.log('error', err));
+        .catch(err => showAlert('No existen observaciones en las fechas solicitadas'));
 };
 
 const downloadGrid = () => {
@@ -90,18 +99,22 @@ const downloadGrid = () => {
 }
 
 const drawOutput = (lines) => {
-    observations = L.geoJson(lines, {
-        pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, style(feature));
-        },
-    });
-    observations.addTo(map).on('click', observationsTable);
-    layerControl.removeLayer(observations);
-    layerControl.addOverlay(observations, 'Observaciones');
-    let end_observation = lines.features.length - 1;
-    map.flyTo([lines.features[end_observation].geometry.coordinates[1], lines.features[end_observation].geometry.coordinates[0]], 
-        16, {animate: false, duration: 0.1});
-    return true;
+        observations = L.geoJson(lines, {
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, style(feature));
+            },
+        });
+        if (lines.features.length == 0) {
+            throw console.error();
+        } else {
+        observations.addTo(map).on('click', observationsTable);
+        layerControl.removeLayer(observations);
+        layerControl.addOverlay(observations, 'Observaciones');
+        let end_observation = lines.features.length - 1;
+        map.flyTo([lines.features[end_observation].geometry.coordinates[1], lines.features[end_observation].geometry.coordinates[0]], 
+            16, {animate: false, duration: 0.1});
+        return true;
+    }
 };
 
 var styleGrid = (feature) => {
@@ -114,11 +127,12 @@ var styleGrid = (feature) => {
 };
 
 const drawGrid = (lines) => {
-    const grid = L.geoJson(lines, {
+    grid = L.geoJson(lines, {
         style: styleGrid
     }).addTo(map).on('click', gridTable);
     layerControl.removeLayer(grid);
     layerControl.addOverlay(grid, 'Rejilla');
+    downloadData();
 }
 
 document.getElementById('loginButton').addEventListener('click', () => {
@@ -130,6 +144,7 @@ document.getElementById('btnlogin').addEventListener('click', () => {
     const uname = document.getElementById('uname').value;
     const psw = document.getElementById('psw').value;
     $("#modalform").modal("hide");
+    $(".navbar-toggler").click();
     downloadToken(uname, psw);
 });
 
@@ -148,18 +163,24 @@ const downloadToken = (user, pass) => {
     fetch(get_token_url, requestOptions)
         .then(res => handleErrors(res))
         .then(res => res.json())
-        .then(res => getToken(res));
+        .then(res => getToken(res))
+        .catch(res => {
+            showAlert('Usuario no registrado');
+            document.getElementById('uname').value = '';
+            document.getElementById('psw').value = '';
+        });
 }
 
 var token;
 const getToken = (res) => {
     token = res.token;
+    showSidebar();
     document.getElementById('uploadfile').style.display = 'inline';
     removeTable();
 }
 
 const handleErrors = (response) => {
-    if (!response.ok) throw Error(response.statusText);
+    if (!response.ok) throw Error(response);
     return response;
 };
 
@@ -167,6 +188,7 @@ const input = document.getElementById('inputFile');
 const onSelectFile = () => {
     upload(input.files[0])
 };
+
 document.getElementById('btnupload').addEventListener('click', onSelectFile, false);
 
 const upload = (file) => {
@@ -186,11 +208,15 @@ const upload = (file) => {
     }
 
     fetch(upload_url, requestOptions)
+        .then(res => handleErrors(res))
         .then(res => {
             downloadGrid();
             downloadData();
+            hideSidebar();
         })
-        .catch(error => alert('CSV mal formado'));
+        .catch(res => {
+            hideSidebar();
+            showAlert('CSV mal formado')});
 }
 
 const getColor = (x) => {
@@ -242,13 +268,22 @@ const gridTable = (event) => {
     createTable(clonedGridProperties, propertyGridNames, humanGridNames);
 }
 
-const createTable = (clonedProperties, propertyNames, humanNames) => {
+const hideSidebar = () => {
     const sideBar = document.getElementById('sidebar-wrapper').offsetLeft;
-    if (sideBar < 0) {
-        console.log('menor', sideBar);
+    if ((window.screen.width <= 420) & (sideBar > 0)) {
         $("#wrapper").toggleClass("toggled");
     }
-    console.log('menor', sideBar);
+}
+
+const showSidebar = () => {
+    const sideBar = document.getElementById('sidebar-wrapper').offsetLeft;
+    if (sideBar < 0) {
+        $("#wrapper").toggleClass("toggled");
+    }
+}
+
+const createTable = (clonedProperties, propertyNames, humanNames) => {
+    showSidebar();
     const body = document.getElementById('datepicker');    
     removeTable();    
 
@@ -298,6 +333,18 @@ const getDateFormat = (date) => {
     const day = [d, m, date.getFullYear()].join('/');
     return day;
 }
+
+const showAlert = (message) => {
+    $('#alert p').text(message);
+    $('#alert').fadeTo(1000, 500).slideUp(500, function() {
+        $('#alert').slideUp(500);
+    })
+}
+
+document.getElementById('close').addEventListener('click', () => {
+    $('#alert p').text('');
+    $('#alert').hide();
+})
 
 const getHourFormat = (date) => {
     let h = date.getHours().toString();
