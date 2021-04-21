@@ -77,7 +77,7 @@ document.querySelector('.custom-file-input').addEventListener('change', (e) => {
 });
   
 const downloadData = (init_date, end_date) => {
-    let observations_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.OBSERVATIONS_URL}`;
+    let observations_url = `${process.env.BASE_URL}${process.env.API_URL}observations/`;
     if (init_date !== undefined && end_date !== undefined) {
         observations_url = `${observations_url}?init_date=${init_date}&end_date=${end_date}`
     }
@@ -90,7 +90,7 @@ const downloadData = (init_date, end_date) => {
 };
 
 const downloadGrid = () => {
-    const grid_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GRID_URL}`;
+    const grid_url = `${process.env.BASE_URL}${process.env.API_URL}grid/`;
     fetch(grid_url)
         .then(res => handleErrors(res))
         .then(res => res.json())
@@ -149,7 +149,7 @@ document.getElementById('btnlogin').addEventListener('click', () => {
 });
 
 const downloadToken = (user, pass) => {
-    const get_token_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.GET_TOKEN_URL}`;
+    const get_token_url = `${process.env.BASE_URL}${process.env.API_URL}api-token-auth/`;
     let formdata = new FormData();
     formdata.append('username', user);
     formdata.append('password', pass);
@@ -192,7 +192,7 @@ const onSelectFile = () => {
 document.getElementById('btnupload').addEventListener('click', onSelectFile, false);
 
 const upload = (file) => {
-    const upload_url = `${process.env.BASE_URL}${process.env.API_URL}${process.env.UPLOAD_URL}`;
+    const upload_url = `${process.env.BASE_URL}${process.env.API_URL}upload/`;
 
     const headers = new Headers();
     headers.append('Authorization', `Token ${token}`);
