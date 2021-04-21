@@ -169,6 +169,11 @@ th, td {
     overflow: auto;
 }
 
+.responsive {
+  width: 60%;
+  height: auto;
+}
+
 .medidores {
     display: block;
     margin-left: auto;
@@ -200,7 +205,6 @@ th, td {
 
 @media (min-width: 768px) {
     body {
-        overflow: hidden;
     }
     
     #sidebar-wrapper {
