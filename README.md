@@ -86,3 +86,40 @@ point_id |          DateTime          |                    geo                  
 ----------+----------------------------+--------------------------------------------+------------+------------+--------+---------+-------+----------+----------+--------+--------+-----+-------+-------+--------
         1 | 2019-09-18 16:58:20.140323 | 01010000007D76C075C58C0DC0BB3775D487344440 | 40.4103952 |  -3.693736 |      0 |   26.58 |    32 |    618.9 |   941.09 |  34.99 |   2.97 |   0 |     0 |     0 |      2
         2 | 2019-09-18 16:58:20.169652 | 0101000000DDC6B0D4C48C0DC073710AE187344440 | 40.4103967 | -3.6937348 |      0 |   26.56 | 31.99 |   619.28 |   941.05 |  34.99 |   3.04 |   0 |     2 |     2 |      4
+
+
+# Devops
+
+## Generar la imagen con el backend
+
+`docker build -t geomatico/diysatellites:latest -f devops/Dockerfile .`
+
+## Transferir al servidor
+
+1. Transferimos la imagen del backend: `docker save geomatico/diysatellites | bzip2 | pv | ssh aire@respiramos.medialab-prado.es -p 7008 'bunzip2 | docker load'`
+2. Transferir el compose  
+
+## Arrancar con docker-compose
+
+`docker-compose up`
+
+## Instalar maestros y superusuario (sólo en primer deploy)
+
+Entramos en el contenedor del backend:
+
+`docker exec -ti <nombre_contenedor> /bin/sh`
+
+Restauramos backup:
+
+`pg_restore -U cansat -h postgis-diy -d cansat maestros.backup`
+
+y creamos superusuario de django:
+
+`./manage.py createsuperuser`
+
+
+
+
+
+
+

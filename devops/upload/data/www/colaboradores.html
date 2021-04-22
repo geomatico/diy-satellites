@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title data-i18n="title">Respiramos con Madrid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content=""/>
+    <meta name="theme-color" content="#973572" />
+    <meta property="og:title" content="¿Cuánto es 1km?" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:card" content="summary" />
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+
+    <style>     
+        @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap');
+        html, body {
+            overflow-x: hidden;
+            height: 100%;
+        }
+        body {
+            background: #fff;
+            padding: 0;
+            margin: 0;
+            font-family: 'Chivo', sans-serif;
+        }
+        .header {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            box-shadow: none;
+            background-color: #fff;
+            position: fixed;
+            height: 60px!important;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .main {
+            position: absolute;
+            top: 60px;
+            bottom: 1px;
+            width: 100%;
+        }
+        .mainInner{
+            display: table;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        .mainInner div{
+            display:table-cell;
+            vertical-align: middle;
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 1.25px;
+        }
+        #sidebarMenu {
+            position: fixed;
+            width: 350px;
+            top: 60px;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-350px);
+            transition: transform 250ms ease-in-out;
+            background-color: #fff;
+            z-index: 1000;
+            overflow: auto;
+            border-top: 2px solid #000;
+            border-right: 2px solid #000;
+        }
+        .sidebarMenuInner{
+            margin:0;
+            padding:0;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+        }
+        .sidebarMenuInner li{
+            list-style: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 20px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+        }
+        .header li{
+            list-style: none;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 13px 20px 13px 100px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+        }
+        .header li .subtitle {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.50);
+        }
+        .sidebarMenuInner li .subtitle{
+            display: block;
+            font-size: 10px;
+            color:#000;
+        }
+        .sidebarMenuInner li a{
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        input[type="checkbox"]:checked ~ #sidebarMenu {
+            transform: translateX(0);
+        }
+
+        input[type=checkbox] {
+            transition: all 0.3s;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        .leaflet-control-layers-selector {
+            display: inline!important;
+        }
+
+        .sidebarIconToggle {
+            transition: all 0.3s;
+            box-sizing: border-box;
+            cursor: pointer;
+            position: absolute;
+            z-index: 99;
+            height: 100%;
+            width: 100%;
+            top: 22px;
+            left: 15px;
+            height: 22px;
+            width: 22px;
+        }
+        .desc {
+            columns: #333333;
+            margin: 200px;
+            text-align: justify;
+            font-size: 16px;
+        }
+        .logo {
+            height: 50px;
+            position: absolute;
+            left: 30px;
+            padding-top: 5px;
+
+        } 
+        .login {
+            font-family: 'Chivo', sans-serif;
+            font-size: 18px;
+            font-weight: normal;
+            margin: 15px 10px;
+            float: right;    
+            margin-left: auto;
+            border: 0;
+            background: none;
+            box-shadow: none;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 8px 15px;
+            color: #000;
+            font-weight: bold;   
+        }
+
+        ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background-color: #fff;
+        }
+        .desc a {
+            color: #333333;
+        }
+        .logo-header {
+            height: 40px;
+            float: right;
+            padding: 10px;
+            color: #000;
+        }
+        
+        input[type=button]{
+            font-family: 'Chivo', sans-serif;
+            color: #000;
+            float: right;            
+            font-size: 14px;
+            font-weight: normal;
+            margin-right: 15;
+            margin-left: auto;
+            border: 0;
+            background: none;
+            box-shadow: none;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 8px 15px;
+            font-weight: bold;   
+        }
+        ::placeholder {
+            color: white;
+            opacity: 0.8;
+        }
+        th, td {
+            padding: 10px 5px 0px 10px;
+        }
+        fieldset {
+            border-radius: 8px;
+        }
+        .container {
+            background-color: #ffffff;
+            margin: auto;
+            border: 1px solid #888;
+            width: 35%;
+            height: 35%;
+            padding: 16px;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {width: 75%;}
+        }
+        button:hover {
+            opacity: 0.8;
+        }  
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+            color: #000;
+        }
+
+     
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href='http://geomatico.es' target='_blank'><img class='logo-header' src='img/markers.svg'></a>
+        <button type="submit" class="login" onclick="location.href='referencias.html'">REFERENCIAS</BUTTON>
+        <button type="submit" class="login" onclick="location.href='faq.html'">FAQ</BUTTON>
+        <button type="submit" class="login" onclick="location.href='colaboradores.html'">COLABORADORES</BUTTON>
+        <button type="submit" class="login" onclick="location.href='medimos.html'">QUÉ MEDIMOS</BUTTON>
+        <button type="submit" class="login" onclick="location.href='medidores.html'">MEDIDORES</BUTTON>
+        <button type="submit" class="login" onclick="location.href='proyecto.html'">PROYECTO</BUTTON>
+        <button type="submit" class="login" onclick="location.href='index.html'">MAPA</BUTTON>
+        <img src="img/logo.png" class="logo">
+        <ul class="sidebarMenuInner">
+            <li><span data-i18n="title">RESPIRAMOS CON MADRID</span><span class="subtitle" data-i18n="subtitle">Clica en observación</span></a></li>
+        </ul>
+    </div>
+    <div class="desc">
+        <p>Proyecto desarrollado en Medialab-Prado, C/Alameda 15, 28014, Madrid</p>
+
+        <p><a href='http://geomatico.es' target='_blank'>Geomático</a></p>
+        <p><a href="http://umbral.archi" target="_blank">Umbral</a></p>
+        <p>Grupo de Trabajo Satélites DIY</p>
+        <p style="padding-left: 30px;">IES Gómez Moreno</p>
+        <p style="padding-left: 30px;">IES Cervantes</p>
+        <p style="padding-left: 30px;">IES Joaquín Rodrigo</p>
+    </div>
+</body>
+</html>
