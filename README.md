@@ -97,7 +97,7 @@ point_id |          DateTime          |                    geo                  
 ## Transferir al servidor
 
 1. Transferimos la imagen del backend: `docker save geomatico/diysatellites | bzip2 | pv | ssh aire@respiramos.medialab-prado.es -p 7008 'bunzip2 | docker load'`
-2. Transferir el compose  
+2. Transferir los ficheros necesarios: `scp -r -P 7008 devops/upload aire@serreria.medialab-prado.es:/opt/respiramos/`
 
 ## Arrancar con docker-compose
 
@@ -107,11 +107,11 @@ point_id |          DateTime          |                    geo                  
 
 Entramos en el contenedor del backend:
 
-`docker exec -ti <nombre_contenedor> /bin/sh`
+`docker exec -ti respiramos_django_1 /bin/sh`
 
 Restauramos backup:
 
-`pg_restore -U cansat -h postgis-diy -d cansat maestros.backup`
+`psql -U cansat -h postgis-diy -d cansat < cansat.sql`
 
 y creamos superusuario de django:
 
