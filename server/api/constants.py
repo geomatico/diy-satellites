@@ -1,0 +1,11 @@
+DB_PM1_0 = 0
+DB_PM2_5 = 1
+DB_PM10_0 = 2
+DB_DATE = 3
+DB_TIME = 4
+DB_LATITUDE = 5
+DB_LONGITUDE = 6
+DB_USERNAME = 7
+FORMAT_DATE = "%Y-%m-%dT%H:%M:%S.%fZ"
+FORMAT_TIME = "%H:%M"
+DATE_FORMAT = "%d/%m/%y"

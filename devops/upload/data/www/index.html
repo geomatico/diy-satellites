@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title data-i18n="title">Respiramos con Madrid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#973572" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:card" content="summary" />
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+
+            <div class="list-group list-group-flush">
+                <p id="sidebar-p">Haz click sobre las observaciones para visualizar las concentraciones en cada punto</p>
+
+                <p id="sidebar-a">La aplicación Respiramos con Madrid ha sido desarrollada por
+                    <a href='http://geomatico.es' target='_blank'>geomatico</a> y <a href='https://www.medialab-prado.es/'
+                        target='_blank'>Medialab Prado</a></p>
+
+                <p id="sidebar-a">No recopilamos tu información personal, ni tu posición. Sólo usamos cookies técnicas. 
+                    Respiramos con Madrid es <a href='https://github.com/RespiramosConMadrids'
+                        target='_blank'>código libre</a>.</p>
+                        
+                <div class="legal">
+                    <a data-i18n="cookies" href="https://www.medialab-prado.es/politica-de-cookies" target="_blank">Política
+                        de cookies</a>
+                    <span> | </span>
+                    <a data-i18n="private" href="https://www.medialab-prado.es/aviso-legal" target="_blank">Aviso legal</a>
+                </div>
+
+                <form id="datepicker">
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Seleccione Fechas</legend>
+                        <label for='start' class="datepickerLabel">Fecha inicio:</label>
+                        <input type='date' id='start' name='init_date'><br><br>
+                        <label for='start' class="datepickerLabel">Fecha fin:</label>
+                        <input type='date' id='end' name='end_date'></br><br>
+                        <input type="button" id="submit" class="btnsidebar" value="SUBMIT"><br>
+                    </fieldset><br>
+                </form>
+
+                <fieldset class="scheduler-border" id="uploadfile">
+                    <legend class="scheduler-border">Seleccione Archivo</legend>
+                    <div class="custom-file" id="customFile">
+                        <input type="file" class="custom-file-input" id="inputFile">
+                        <label class="custom-file-label" for="inputFile"></label><br><br>
+                        <button type="button" id="btnupload" class="btnsidebar">UPLOAD</button><br>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+                
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+              
+                <button class="btn btn-primary" id="menu-toggle" style="width: 50px; background-color: white; border-color: black;">
+                    <img src="img/toogle.svg"></button>
+
+                <a class="navbar-brand">
+                    <span><img src="img/logo.png" width="50px"></span>
+                    <span id="header-text">Respiramos con Madrid</span>
+                </a>
+
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">MAPA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyecto.html">PROYECTO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="medidores.html">MEDIDORES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="medimos.html">QUÉ MEDIMOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="colaboradores.html">COLABORADORES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="referencias.html">REFERENCIAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" id="loginButton" data-toggle="modal" data-target="#modalform">LOGIN</a>
+                        </li>
+                    </ul>
+                    <a class="nav-link" href="http://geomatico.es"><img src="img/markers.svg"
+                        style="width:40px; float: right;"></a>
+                </div>
+            </nav>
+
+            <div class="modal" id="modalform" tabindex="-1" role="dialog"
+                    aria-labelledby="modalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <label for="uname" class="datepickerLabel">Username</label><br>
+                            <input type="text" style="width:100%" placeholder="Enter Username" id="uname" name="uname" required><br><br>
+                            <label for="psw" class="datepickerLabel">Password</label><br>
+                            <input type="password" style="width:100%" placeholder="Enter Password" id="psw" name="psw" required><br><br>
+                            <button type="button" class="btn btn-light btn-block" id="btnlogin">LOGIN</button>
+                        </div>
+                    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light mr-auto" data-dismiss="modal">CANCEL</button>
+                            <span class="psw">¿Quieres <a href="registro.html">registrarte?</a></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="alert alert-success alert-dismissible" id="alert">
+                    <button type="button" class="close" id="close">&times;</button>
+                    <p></p>
+                </div>
+                
+                <div id='center' class="main center">
+                    <div id="map"></div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+<script src="main.bfe0428d9c4aded0f46c.js"></script></body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title data-i18n="title">Respiramos con Madrid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#973572" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:card" content="summary" />
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+
+</head>
+<body>
+    <div id="page-content-wrapper">
+                
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+            <a class="navbar-brand">
+                <span><img src="img/logo.png" width="50px"></span>
+                <span id="header-text">Respiramos con Madrid</span>
+            </a>
+
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">MAPA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyecto.html">PROYECTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="medidores.html">MEDIDORES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="medimos.html">QUÉ MEDIMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="colaboradores.html">COLABORADORES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="referencias.html">REFERENCIAS</a>
+                    </li>
+                </ul>
+                <a class="nav-link" href="http://geomatico.es"><img src="img/markers.svg"
+                    style="width:40px; float: right;"></a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="desc">
+
+                <img src="../img/ParticulasVolatiles_small.jpg" class="principal responsive"><br>
+
+                <p>La contaminación es un término muy amplio que engloba componentes distintos. En nuestro proyecto nos centramos en las partículas
+                    volátiles, material particulado respirable presente en la atmósfera en forma sólida o líquida.</p>
+
+                <p>Estas partículas según su tamaño se dividen principalmente en dos grupos:</p>
+                
+                <p style="padding-left: 30px;">• PM10, de diámetro igual o inferior a 10 um provenientes de fuentes naturales como el polen
+                    o polvo sahariano o artificiales como la combustión de los vehículos de gasolina. </p>
+                
+                <p style="padding-left: 30px;">• PM2.5, de diámetro inferior a 2,5 um, asociadas a la combustión, en particular proveniente de calderas
+                    y vehículos diésel. Varios estudios científicos asocian este tipo de contaminación con el aumento de las enfermedades respiratorias
+                    ya que, debido a su reducido tamaño, penetran en los alveolos pulmonares e incluso llegan al torrente sanguíneo.</p>
+                
+                <p>La legislación europea establece un valor límite anual para las partículas PM2.5, las más dañinas para la salud, fijado en 25 ug/m3,
+                muy superior al recomendado por la OMS, 10 ug/m3, para una adecuada protección de la salud humana. También un valor límite anual 
+                para las partículas PM10 de 40ug/m3, sin embargo, la OMS recomienda valores inferiores a los 20 ug/m3.</p>
+                
+                <p>Este estudio de la calidad del aire en Madrid durante 2019 nos parece muy interesante. También esta evaluación del Plan de Calidad
+                del Aire y Cambio Climático del Ayto. de Madrid.</p>
+            </div>
+        </div>
+    </div>
+<script src="main.bfe0428d9c4aded0f46c.js"></script></body>
+</html>

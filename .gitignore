@@ -21,3 +21,7 @@ diysatellite/.env
 client/node_modules
 client/.env
 .history/
+
+devops/upload/data/postgresql
+devops/upload/data/static
+client/dist
